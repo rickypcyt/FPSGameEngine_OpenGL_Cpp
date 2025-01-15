@@ -3,6 +3,13 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include "../include/movement.h"
 #include "../include/globals.h"
+#include "../include/input.h"
+#include "../include/godmode.h"
+#include <stdio.h>
+
+bool isDragging = false;
+bool godMode = false;
+float cubePos[3] = {0.0f, 0.0f, 0.0f};  // Posición del cubo en la escena
 
 // Movement constants
 struct MovementConstants {
@@ -37,7 +44,7 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
             case GLFW_KEY_A: moveState.moveLeft = true; break;
             case GLFW_KEY_D: moveState.moveRight = true; break;
             case GLFW_KEY_SPACE: 
-                // Only jump if we're grounded
+                // Jump logic
                 if (characterPosY <= MovementConstants::GROUND_LEVEL) {
                     moveState.isJumping = true;
                     moveState.verticalVelocity = MovementConstants::INITIAL_JUMP_VELOCITY;
@@ -55,7 +62,16 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
             case GLFW_KEY_D: moveState.moveRight = false; break;
         }
     }
+
+    // Handle God Mode toggle separately
+    if (key == GLFW_KEY_G && action == GLFW_PRESS) {
+        if (mods & GLFW_MOD_SHIFT) {  // Detect Shift + G
+            godMode = !godMode;  // Toggle God Mode
+            toggleGodMode(godMode);
+        }
+    }
 }
+
 
 void updateJump(float deltaTime) {
     if (moveState.isJumping) {

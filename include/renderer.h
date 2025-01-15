@@ -8,9 +8,11 @@ GLuint loadTexture(const char* filepath);
 
 extern GLuint textureID; // Add this line
 
+void drawWall();
+void drawCheckerboardFloor(float size, float tileSize);
 // Function to draw the floor
-void drawFloor();
-
-
+void drawScene();
+void drawCube(float size);
+void initializeOpenGL();
 
 #endif // RENDERER_H

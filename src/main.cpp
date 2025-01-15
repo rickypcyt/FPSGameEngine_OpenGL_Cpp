@@ -12,6 +12,8 @@
 #include "../include/movement.h"
 #include "../include/globals.h"
 #include "../include/cursor.h"
+#include "../include/input.h"
+#include "../include/godmode.h"
 
 // Constants
 const float TARGET_FPS = 60.0f;
@@ -33,6 +35,7 @@ void initializeGLEW();
 void initializeGLUT(int& argc, char** argv);
 void setupCallbacks();
 void mainLoop();
+void initializeInput(GLFWwindow* window);
 
 // Function Implementations
 void displayFPS(float fps) {
@@ -108,9 +111,11 @@ void mainLoop() {
         gluLookAt(cameraPosition.x, cameraPosition.y, cameraPosition.z,
                   cameraTarget.x, cameraTarget.y, cameraTarget.z,
                   0.0f, 1.0f, 0.0f);
-
-        drawFloor();
+        
+        drawScene();
+        
         updateMovement(deltaTime);
+        
 
         // FPS calculation
         frameCount++;
@@ -150,14 +155,19 @@ int main() {
 
         setupCallbacks();
         setupProjection();
-
+        // Inicializar los callbacks de entrada
+        
+        
         mainLoop();
+
+        
+        
     } catch (const std::exception& e) {
         std::cerr << e.what() << std::endl;
         glfwTerminate();
         return -1;
     }
-
+    
     glfwTerminate();
     return 0;
 }

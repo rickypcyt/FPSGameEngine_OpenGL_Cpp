@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 3.10)
 project(My3DGame)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 20)
+
+set(CMAKE_C_COMPILER "clang")
+set(CMAKE_CXX_COMPILER "clang++")
 
 # Set OpenGL preference
 set(OpenGL_GL_PREFERENCE "GLVND")
@@ -14,7 +17,6 @@ find_package(GLUT REQUIRED) # Add this line to find FreeGLUT
 
 # Include directories
 include_directories(include)             # Include your project headers
-include_directories(include/glad)        # Include GLAD headers
 
 # Add the source files for your project
 add_executable(My3DGame 
@@ -25,6 +27,8 @@ add_executable(My3DGame
     src/cursor.cpp
     src/camera.cpp
     src/glad.c
+    src/input.cpp
+    src/godmode.cpp
 )
 
 # Link against OpenGL, GLEW, GLFW, FreeGLUT

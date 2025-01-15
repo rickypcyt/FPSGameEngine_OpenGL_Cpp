@@ -85,12 +85,12 @@ clean: CMakeFiles/My3DGame.dir/clean
 CMakeFiles/My3DGame.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ricky/coding/CppOpenGLGameEngine-main/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target My3DGame"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ricky/coding/CppOpenGLGameEngine-main/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target My3DGame"
 .PHONY : CMakeFiles/My3DGame.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/My3DGame.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ricky/coding/CppOpenGLGameEngine-main/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ricky/coding/CppOpenGLGameEngine-main/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/My3DGame.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ricky/coding/CppOpenGLGameEngine-main/build/CMakeFiles 0
 .PHONY : CMakeFiles/My3DGame.dir/rule
@@ -102,7 +102,7 @@ My3DGame: CMakeFiles/My3DGame.dir/rule
 # codegen rule for target.
 CMakeFiles/My3DGame.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ricky/coding/CppOpenGLGameEngine-main/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Finished codegen for target My3DGame"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ricky/coding/CppOpenGLGameEngine-main/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Finished codegen for target My3DGame"
 .PHONY : CMakeFiles/My3DGame.dir/codegen
 
 # clean rule for target.
