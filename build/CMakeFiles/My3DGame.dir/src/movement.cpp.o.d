@@ -299,7 +299,8 @@ CMakeFiles/My3DGame.dir/src/movement.cpp.o: \
   /home/ricky/coding/CppOpenGLGameEngine-main/src/../include/globals.h \
   /home/ricky/coding/CppOpenGLGameEngine-main/src/../include/input.h \
   /home/ricky/coding/CppOpenGLGameEngine-main/src/../include/godmode.h \
-  /usr/include/stdio.h /usr/lib/clang/19/include/stdarg.h \
+  /usr/lib/clang/19/include/stdbool.h /usr/include/stdio.h \
+  /usr/lib/clang/19/include/stdarg.h \
   /usr/lib/clang/19/include/__stdarg___gnuc_va_list.h \
   /usr/include/bits/types/__fpos_t.h \
   /usr/include/bits/types/__mbstate_t.h \

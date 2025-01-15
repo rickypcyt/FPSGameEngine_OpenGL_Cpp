@@ -2,13 +2,19 @@
 #include "../include/input.h"
 #include <stdio.h>
 
+bool canFly = false;
+
 // Función para activar o desactivar el god mode
 void toggleGodMode(bool active) {
     if (active) {
         printf("¡God Mode activado!\n");
-        // Aquí puedes activar otras características del god mode, como la invulnerabilidad, más velocidad, etc.
+        // Aquí activamos el vuelo
+        canFly = true;
+        // Puedes agregar más características aquí, como invulnerabilidad, mayor velocidad, etc.
     } else {
         printf("¡God Mode desactivado!\n");
+        // Desactivamos el vuelo
+        canFly = false;
         // Restablece las características del god mode
     }
 }

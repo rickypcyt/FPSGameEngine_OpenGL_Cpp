@@ -1,7 +1,10 @@
 #ifndef GODMODE_H
 #define GODMODE_H
 
-// Función que activa o desactiva el god mode
-void toggleGodMode(bool active);
+#include <stdbool.h>
 
-#endif
+extern bool canFly;  // Variable global para controlar el vuelo
+
+void toggleGodMode(bool active);  // Función para activar/desactivar el god mode
+
+#endif // GODMODE_H
