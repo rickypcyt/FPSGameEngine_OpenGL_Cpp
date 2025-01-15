@@ -14,9 +14,6 @@ extern float jumpHeight;      // Maximum height of the jump
 extern float verticalVelocity; // Current vertical velocity
 
 // Window dimensions (defined elsewhere)
-extern const int WIDTH;       // Window width
-extern const int HEIGHT;      // Window height
-
 // Character position
 extern float characterPosX;   // Character's X position
 extern float characterPosY;   // Character's Y position

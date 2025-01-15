@@ -10,14 +10,16 @@ float characterPosY = 0.0f;
 float characterPosZ = 5.0f;
 float deltaTime = 0.0f;
 
-const int WIDTH = 1920;
-const int HEIGHT = 1080;
+float pitch = 0.0f;           // Define pitch
+float yaw = -90.0f;           // Define yaw
 
-float pitch = 0.0f;  // Define pitch
-float yaw = -90.0f;  // Define yaw
+glm::vec3 cameraPos(0.0f, 1.0f, 5.0f);    // Adjusted camera position for better starting view
+glm::vec3 cameraFront(0.0f, 0.0f, -1.0f);  // Initial direction the camera faces
+glm::vec3 cameraUp(0.0f, 1.0f, 0.0f);      // Upward direction for the camera
 
-glm::vec3 cameraPos(0.0f, 0.0f, -1.0f);
-glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f); // Initial direction the camera faces
-glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);     // Upward direction for the camera
+float sensitivity = 0.5f;       // Mouse sensitivity
 
-float sensitivity = 0.5f;
+// Additional global variables for enhanced gameplay
+bool isJumping = false;         // Jumping state initialized to false
+float jumpHeight = 5.0f;        // Default jump height (can be adjusted)
+float gravity = -9.81f;         // Gravity force (can be adjusted)

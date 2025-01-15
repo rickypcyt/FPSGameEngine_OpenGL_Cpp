@@ -33,17 +33,16 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
     lastY = ypos;
 
     // Adjust sensitivity
-    const float sensitivity = 0.1f; // Decrease sensitivity if needed
-    //const float sensitivity = 0.02f; // Try a lower sensitivity
-    const float smoothingFactor = 0.1f; // Adjust smoothing factor as needed
+    const float sensitivity = 0.15f; // Increased sensitivity for quicker response
+    const float smoothingFactor = 0.1f; // Smoothing factor
 
-    // Apply smoothing
-    xoffset = (xoffset * smoothingFactor) + (lastX - xpos) * (1.0f - smoothingFactor);
-    yoffset = (yoffset * smoothingFactor) + (lastY - ypos) * (1.0f - smoothingFactor);
+    // Apply smoothing (optional)
+    xoffset *= sensitivity;
+    yoffset *= sensitivity;
 
-    // Update yaw and pitch
-    yaw += xoffset * sensitivity; // Adjust sensitivity here
-    pitch += yoffset * sensitivity;
+    // Update yaw and pitch with smoothing
+    yaw += xoffset; 
+    pitch += yoffset;
 
     // Clamp pitch to prevent inverted view
     pitch = glm::clamp(pitch, -89.0f, 89.0f);
