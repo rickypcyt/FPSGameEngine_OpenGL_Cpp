@@ -1,0 +1,3 @@
+/home/ricky/coding/CppOpenGLGameEngine-main/build/CMakeFiles/My3DGame.dir
+/home/ricky/coding/CppOpenGLGameEngine-main/build/CMakeFiles/edit_cache.dir
+/home/ricky/coding/CppOpenGLGameEngine-main/build/CMakeFiles/rebuild_cache.dir
