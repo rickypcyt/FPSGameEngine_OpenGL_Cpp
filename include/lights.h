@@ -3,8 +3,6 @@
 #ifndef LIGHTS_H
 #define LIGHTS_H
 
-#include <GL/glew.h>
-#include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
 // Function declarations

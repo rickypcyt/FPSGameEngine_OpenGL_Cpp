@@ -1,4 +1,6 @@
 #include "../include/lights.h"
+#include <GL/glew.h>
+#include <glm/glm.hpp>
 
 // Initialize external variables
 glm::vec3 lightPosition(100.0f, 100.0f, 100.0f);

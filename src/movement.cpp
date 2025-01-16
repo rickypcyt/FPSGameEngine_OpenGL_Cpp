@@ -14,18 +14,18 @@ float cubePos[3] = {0.0f, 0.0f, 0.0f};  // Posición del cubo en la escena
 // Movement constants
 struct MovementConstants {
     static constexpr float JUMP_HEIGHT = 5.0f;
-    static constexpr float GRAVITY = 20.0f;         // Adjusted gravity for better feel
+    static constexpr float GRAVITY = 20.0f;
     static constexpr float GROUND_LEVEL = 0.0f;
-    static constexpr float AIR_CONTROL = 0.5f;       // Reduced air control for more realistic jumps
-    static constexpr float ACCELERATION = 0.0f;      // Instantaneous acceleration
-    static constexpr float DECELERATION = 0.0f;      // Instantaneous deceleration
-    static constexpr float INITIAL_JUMP_VELOCITY = 8.0f; // Adjusted for more height
+    static constexpr float AIR_CONTROL = 0.5f;
+    static constexpr float ACCELERATION = 0.0f;
+    static constexpr float DECELERATION = 0.0f;
+    static constexpr float INITIAL_JUMP_VELOCITY = 8.0f;
 };
 
 // Movement state
-// Estructura de estado de movimiento
 struct MovementState {
     bool isJumping = false;
+    bool isRunning = false;
     float verticalVelocity = 0.0f;
     
     // Estado de entrada
@@ -33,10 +33,9 @@ struct MovementState {
     bool moveBackward = false;
     bool moveLeft = false;
     bool moveRight = false;
-    bool moveUp = false;  // Para movimiento hacia arriba (flotación)
-    bool moveDown = false; // Para movimiento hacia abajo (descenso)
+    bool moveUp = false;
+    bool moveDown = false;
 };
-
 
 static MovementState moveState;
 
@@ -49,20 +48,19 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
             case GLFW_KEY_D: moveState.moveRight = true; break;
             case GLFW_KEY_SPACE:
                 if (godMode && canFly) {
-                    // Si estamos en God Mode y podemos volar, flotamos hacia arriba
                     moveState.moveUp = true;
-                    moveState.moveDown = false; // Aseguramos que no baje si está flotando
+                    moveState.moveDown = false;
                 } else if (!godMode && characterPosY <= MovementConstants::GROUND_LEVEL) {
-                    // Salto normal si no estamos en God Mode
                     moveState.isJumping = true;
                     moveState.verticalVelocity = MovementConstants::INITIAL_JUMP_VELOCITY;
                 }
                 break;
-            case GLFW_KEY_LEFT_SHIFT:  // Asegurándonos de que Shift sea reconocido correctamente
+            case GLFW_KEY_LEFT_SHIFT:
                 if (godMode && canFly) {
-                    // Si estamos en God Mode y podemos volar, descendemos
                     moveState.moveDown = true;
-                    moveState.moveUp = false;  // Aseguramos que no suba si está bajando
+                    moveState.moveUp = false;
+                } else {
+                    moveState.isRunning = true;
                 }
                 break;
             case GLFW_KEY_ESCAPE:
@@ -77,14 +75,14 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
             case GLFW_KEY_D: moveState.moveRight = false; break;
             case GLFW_KEY_SPACE:
                 if (godMode && canFly) {
-                    // Dejar de flotar cuando se suelta la tecla Space
                     moveState.moveUp = false;
                 }
                 break;
-            case GLFW_KEY_LEFT_SHIFT:  // Asegurándonos de que Shift sea reconocido correctamente
+            case GLFW_KEY_LEFT_SHIFT:
                 if (godMode && canFly) {
-                    // Dejar de bajar cuando se suelta Shift
                     moveState.moveDown = false;
+                } else {
+                    moveState.isRunning = false;
                 }
                 break;
         }
@@ -92,15 +90,13 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 
     // Activación/desactivación de God Mode
     if (key == GLFW_KEY_G && action == GLFW_PRESS) {
-        if (mods & GLFW_MOD_SHIFT) {  // Detecta si Shift está presionado junto con G
-            godMode = !godMode;  // Activa o desactiva el god mode
+        if (mods & GLFW_MOD_SHIFT) {
+            godMode = !godMode;
             toggleGodMode(godMode);
             printf("God Mode: %s\n", godMode ? "Activado" : "Desactivado");
         }
     }
 }
-
-
 
 void updateJump(float deltaTime) {
     if (moveState.isJumping) {
@@ -117,36 +113,34 @@ void updateJump(float deltaTime) {
 }
 
 void updateMovement(float deltaTime) {
-    // Calculamos la dirección del movimiento
     glm::vec3 moveDirection(0.0f);
 
-    // Movimiento hacia adelante/atrás
     if (moveState.moveForward) moveDirection += cameraFront;
     if (moveState.moveBackward) moveDirection -= cameraFront;
 
-    // Movimiento lateral (izquierda/derecha)
     glm::vec3 right = glm::normalize(glm::cross(cameraFront, glm::vec3(0.0f, 1.0f, 0.0f)));
     if (moveState.moveRight) moveDirection += right;
     if (moveState.moveLeft) moveDirection -= right;
 
-    // Normalizamos la dirección de movimiento
     if (glm::length(moveDirection) > 0.0f) {
         moveDirection = glm::normalize(moveDirection);
-        moveDirection.y = 0.0f; // Prevenir el movimiento vertical cuando no estamos flotando o descendiendo
+        moveDirection.y = 0.0f;
     }
 
-    // Si estamos en el god mode y podemos volar, habilitamos el movimiento vertical
     if (godMode && canFly) {
-        if (moveState.moveUp) moveDirection.y = 1.0f;  // Mover hacia arriba (flotar)
-        if (moveState.moveDown) moveDirection.y = -1.0f;  // Mover hacia abajo (descender)
+        if (moveState.moveUp) moveDirection.y = 1.0f;
+        if (moveState.moveDown) moveDirection.y = -1.0f;
     }
 
-    // Aplicar movimiento con velocidad y deltaTime
-    float speed = moveSpeed * deltaTime; // Aseguramos que el movimiento no dependa de la tasa de refresco
+    float speed = moveSpeed;
+    if (!godMode && moveState.isRunning) {
+        speed *= 2.0f; // Velocidad de carrera
+    }
+    speed *= deltaTime;
+
     characterPosX += moveDirection.x * speed;
-    characterPosY += moveDirection.y * speed;  // Actualizar la posición Y
+    characterPosY += moveDirection.y * speed;
     characterPosZ += moveDirection.z * speed;
 
-    // Actualizamos la lógica de salto
     updateJump(deltaTime);
 }

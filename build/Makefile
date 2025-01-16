@@ -129,6 +129,30 @@ My3DGame/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/build
 .PHONY : My3DGame/fast
 
+src/crosshair.o: src/crosshair.cpp.o
+.PHONY : src/crosshair.o
+
+# target to build an object file
+src/crosshair.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/crosshair.cpp.o
+.PHONY : src/crosshair.cpp.o
+
+src/crosshair.i: src/crosshair.cpp.i
+.PHONY : src/crosshair.i
+
+# target to preprocess a source file
+src/crosshair.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/crosshair.cpp.i
+.PHONY : src/crosshair.cpp.i
+
+src/crosshair.s: src/crosshair.cpp.s
+.PHONY : src/crosshair.s
+
+# target to generate assembly for a file
+src/crosshair.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/crosshair.cpp.s
+.PHONY : src/crosshair.cpp.s
+
 src/cursor.o: src/cursor.cpp.o
 .PHONY : src/cursor.o
 
@@ -249,6 +273,30 @@ src/input.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input.cpp.s
 .PHONY : src/input.cpp.s
 
+src/lights.o: src/lights.cpp.o
+.PHONY : src/lights.o
+
+# target to build an object file
+src/lights.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/lights.cpp.o
+.PHONY : src/lights.cpp.o
+
+src/lights.i: src/lights.cpp.i
+.PHONY : src/lights.i
+
+# target to preprocess a source file
+src/lights.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/lights.cpp.i
+.PHONY : src/lights.cpp.i
+
+src/lights.s: src/lights.cpp.s
+.PHONY : src/lights.s
+
+# target to generate assembly for a file
+src/lights.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/lights.cpp.s
+.PHONY : src/lights.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -272,6 +320,30 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
+
+src/models.o: src/models.cpp.o
+.PHONY : src/models.o
+
+# target to build an object file
+src/models.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/models.cpp.o
+.PHONY : src/models.cpp.o
+
+src/models.i: src/models.cpp.i
+.PHONY : src/models.i
+
+# target to preprocess a source file
+src/models.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/models.cpp.i
+.PHONY : src/models.cpp.i
+
+src/models.s: src/models.cpp.s
+.PHONY : src/models.s
+
+# target to generate assembly for a file
+src/models.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/models.cpp.s
+.PHONY : src/models.cpp.s
 
 src/movement.o: src/movement.cpp.o
 .PHONY : src/movement.o
@@ -330,6 +402,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... My3DGame"
+	@echo "... src/crosshair.o"
+	@echo "... src/crosshair.i"
+	@echo "... src/crosshair.s"
 	@echo "... src/cursor.o"
 	@echo "... src/cursor.i"
 	@echo "... src/cursor.s"
@@ -345,9 +420,15 @@ help:
 	@echo "... src/input.o"
 	@echo "... src/input.i"
 	@echo "... src/input.s"
+	@echo "... src/lights.o"
+	@echo "... src/lights.i"
+	@echo "... src/lights.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/models.o"
+	@echo "... src/models.i"
+	@echo "... src/models.s"
 	@echo "... src/movement.o"
 	@echo "... src/movement.i"
 	@echo "... src/movement.s"

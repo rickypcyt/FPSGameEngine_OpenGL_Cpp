@@ -1,6 +1,5 @@
 #include <GL/glew.h> // Asegúrate de incluir GLEW o GL si estás usando OpenGL
 #include "../include/crosshair.h"
-#include "../include/globals.h"
 
 // Implementación de la función para dibujar el crosshair
 void drawCrosshair(int screenWidth, int screenHeight) {

@@ -10,6 +10,9 @@ My3DGame: \
   CMakeFiles/My3DGame.dir/src/glad.c.o \
   CMakeFiles/My3DGame.dir/src/input.cpp.o \
   CMakeFiles/My3DGame.dir/src/godmode.cpp.o \
+  CMakeFiles/My3DGame.dir/src/lights.cpp.o \
+  CMakeFiles/My3DGame.dir/src/models.cpp.o \
+  CMakeFiles/My3DGame.dir/src/crosshair.cpp.o \
   /usr/lib/libOpenGL.so \
   /usr/lib/libGLX.so \
   /usr/lib/libGLU.so \
@@ -97,6 +100,12 @@ CMakeFiles/My3DGame.dir/src/glad.c.o:
 CMakeFiles/My3DGame.dir/src/input.cpp.o:
 
 CMakeFiles/My3DGame.dir/src/godmode.cpp.o:
+
+CMakeFiles/My3DGame.dir/src/lights.cpp.o:
+
+CMakeFiles/My3DGame.dir/src/models.cpp.o:
+
+CMakeFiles/My3DGame.dir/src/crosshair.cpp.o:
 
 /usr/lib/libOpenGL.so:
 

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(My3DGame)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 11)
 
 set(CMAKE_C_COMPILER "clang")
 set(CMAKE_CXX_COMPILER "clang++")
@@ -28,6 +28,9 @@ add_executable(My3DGame
     src/glad.c
     src/input.cpp
     src/godmode.cpp
+    src/lights.cpp
+    src/models.cpp 
+    src/crosshair.cpp
 )
 
 # Link against OpenGL, GLEW, GLFW, FreeGLUT

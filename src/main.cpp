@@ -12,6 +12,7 @@
 #include "../include/movement.h"
 #include "../include/globals.h"
 #include "../include/cursor.h"
+#include "../include/crosshair.h"
 // #include "../include/input.h"
 // #include "../include/godmode.h"
 
@@ -114,6 +115,7 @@ void mainLoop() {
                   0.0f, 1.0f, 0.0f);
         
         drawScene();
+        drawCrosshair(WIDTH, HEIGHT);
         
         updateMovement(deltaTime);
         

@@ -5,7 +5,9 @@
 #include <vector>
 #include <glm/glm.hpp>
 #include <GL/glew.h> // Make sure to include GLEW (or your OpenGL loader)
-#include <tiny_obj_loader.h> // Include TinyOBJ loader
+#define TINYOBJLOADER_IMPLEMENTATION
+#include "tiny_obj_loader.h"
+
 
 struct Vertex {
     glm::vec3 position;

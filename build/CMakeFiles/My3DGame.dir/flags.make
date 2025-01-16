@@ -13,5 +13,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/ricky/coding/CppOpenGLGameEngine-main/include
 
-CXX_FLAGS = -std=gnu++20
+CXX_FLAGS = -std=gnu++11
 

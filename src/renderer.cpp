@@ -1,6 +1,7 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include "../include/renderer.h"
+#include "../include/lights.h"
 
 // Función para dibujar un piso, techo y paredes de tablero de ajedrez
 void drawCheckerboardFloor(float size, float tileSize) {
@@ -143,18 +144,7 @@ void drawScene() {
 }
 
 // Configuración de iluminación (si se desea)
-void setupLighting() {
-    GLfloat light_position[] = { 1.0f, 1.0f, 1.0f , 1.0 }; // Posición de la luz (cambiado a posición homogénea)
-    GLfloat ambient_light[] = { 0.2f , 0.2 , 0.2 , 1 };     // Color de luz ambiental
-    GLfloat diffuse_light[] = { 1 , 1 , 1 , 1 };           // Color de luz difusa
 
-    glEnable(GL_LIGHTING);
-    glEnable(GL_LIGHT0); // Habilitar la primera fuente de luz
-
-    glLightfv(GL_LIGHT0 , GL_POSITION , light_position);   // Establecer posición de la luz
-    glLightfv(GL_LIGHT0 , GL_AMBIENT , ambient_light);     // Establecer color de luz ambiental
-    glLightfv(GL_LIGHT0 , GL_DIFFUSE , diffuse_light);     // Establecer color de luz difusa
-}
 
 // Llamar a esta función en tu código de inicialización para configurar el estado de OpenGL
 void initializeOpenGL() {
