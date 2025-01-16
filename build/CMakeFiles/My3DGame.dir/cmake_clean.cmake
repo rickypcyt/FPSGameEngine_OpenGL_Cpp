@@ -1,7 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/My3DGame.dir/link.d"
-  "CMakeFiles/My3DGame.dir/src/camera.cpp.o"
-  "CMakeFiles/My3DGame.dir/src/camera.cpp.o.d"
   "CMakeFiles/My3DGame.dir/src/cursor.cpp.o"
   "CMakeFiles/My3DGame.dir/src/cursor.cpp.o.d"
   "CMakeFiles/My3DGame.dir/src/glad.c.o"

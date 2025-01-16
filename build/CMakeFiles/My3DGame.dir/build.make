@@ -142,24 +142,10 @@ CMakeFiles/My3DGame.dir/src/cursor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My3DGame.dir/src/cursor.cpp.s"
 	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ricky/coding/CppOpenGLGameEngine-main/src/cursor.cpp -o CMakeFiles/My3DGame.dir/src/cursor.cpp.s
 
-CMakeFiles/My3DGame.dir/src/camera.cpp.o: CMakeFiles/My3DGame.dir/flags.make
-CMakeFiles/My3DGame.dir/src/camera.cpp.o: /home/ricky/coding/CppOpenGLGameEngine-main/src/camera.cpp
-CMakeFiles/My3DGame.dir/src/camera.cpp.o: CMakeFiles/My3DGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/CppOpenGLGameEngine-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/My3DGame.dir/src/camera.cpp.o"
-	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My3DGame.dir/src/camera.cpp.o -MF CMakeFiles/My3DGame.dir/src/camera.cpp.o.d -o CMakeFiles/My3DGame.dir/src/camera.cpp.o -c /home/ricky/coding/CppOpenGLGameEngine-main/src/camera.cpp
-
-CMakeFiles/My3DGame.dir/src/camera.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/My3DGame.dir/src/camera.cpp.i"
-	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ricky/coding/CppOpenGLGameEngine-main/src/camera.cpp > CMakeFiles/My3DGame.dir/src/camera.cpp.i
-
-CMakeFiles/My3DGame.dir/src/camera.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My3DGame.dir/src/camera.cpp.s"
-	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ricky/coding/CppOpenGLGameEngine-main/src/camera.cpp -o CMakeFiles/My3DGame.dir/src/camera.cpp.s
-
 CMakeFiles/My3DGame.dir/src/glad.c.o: CMakeFiles/My3DGame.dir/flags.make
 CMakeFiles/My3DGame.dir/src/glad.c.o: /home/ricky/coding/CppOpenGLGameEngine-main/src/glad.c
 CMakeFiles/My3DGame.dir/src/glad.c.o: CMakeFiles/My3DGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/CppOpenGLGameEngine-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/My3DGame.dir/src/glad.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/CppOpenGLGameEngine-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/My3DGame.dir/src/glad.c.o"
 	clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/My3DGame.dir/src/glad.c.o -MF CMakeFiles/My3DGame.dir/src/glad.c.o.d -o CMakeFiles/My3DGame.dir/src/glad.c.o -c /home/ricky/coding/CppOpenGLGameEngine-main/src/glad.c
 
 CMakeFiles/My3DGame.dir/src/glad.c.i: cmake_force
@@ -173,7 +159,7 @@ CMakeFiles/My3DGame.dir/src/glad.c.s: cmake_force
 CMakeFiles/My3DGame.dir/src/input.cpp.o: CMakeFiles/My3DGame.dir/flags.make
 CMakeFiles/My3DGame.dir/src/input.cpp.o: /home/ricky/coding/CppOpenGLGameEngine-main/src/input.cpp
 CMakeFiles/My3DGame.dir/src/input.cpp.o: CMakeFiles/My3DGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/CppOpenGLGameEngine-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/My3DGame.dir/src/input.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/CppOpenGLGameEngine-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/My3DGame.dir/src/input.cpp.o"
 	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My3DGame.dir/src/input.cpp.o -MF CMakeFiles/My3DGame.dir/src/input.cpp.o.d -o CMakeFiles/My3DGame.dir/src/input.cpp.o -c /home/ricky/coding/CppOpenGLGameEngine-main/src/input.cpp
 
 CMakeFiles/My3DGame.dir/src/input.cpp.i: cmake_force
@@ -187,7 +173,7 @@ CMakeFiles/My3DGame.dir/src/input.cpp.s: cmake_force
 CMakeFiles/My3DGame.dir/src/godmode.cpp.o: CMakeFiles/My3DGame.dir/flags.make
 CMakeFiles/My3DGame.dir/src/godmode.cpp.o: /home/ricky/coding/CppOpenGLGameEngine-main/src/godmode.cpp
 CMakeFiles/My3DGame.dir/src/godmode.cpp.o: CMakeFiles/My3DGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/CppOpenGLGameEngine-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/My3DGame.dir/src/godmode.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/CppOpenGLGameEngine-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/My3DGame.dir/src/godmode.cpp.o"
 	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My3DGame.dir/src/godmode.cpp.o -MF CMakeFiles/My3DGame.dir/src/godmode.cpp.o.d -o CMakeFiles/My3DGame.dir/src/godmode.cpp.o -c /home/ricky/coding/CppOpenGLGameEngine-main/src/godmode.cpp
 
 CMakeFiles/My3DGame.dir/src/godmode.cpp.i: cmake_force
@@ -205,7 +191,6 @@ My3DGame_OBJECTS = \
 "CMakeFiles/My3DGame.dir/src/renderer.cpp.o" \
 "CMakeFiles/My3DGame.dir/src/globals.cpp.o" \
 "CMakeFiles/My3DGame.dir/src/cursor.cpp.o" \
-"CMakeFiles/My3DGame.dir/src/camera.cpp.o" \
 "CMakeFiles/My3DGame.dir/src/glad.c.o" \
 "CMakeFiles/My3DGame.dir/src/input.cpp.o" \
 "CMakeFiles/My3DGame.dir/src/godmode.cpp.o"
@@ -218,7 +203,6 @@ My3DGame: CMakeFiles/My3DGame.dir/src/movement.cpp.o
 My3DGame: CMakeFiles/My3DGame.dir/src/renderer.cpp.o
 My3DGame: CMakeFiles/My3DGame.dir/src/globals.cpp.o
 My3DGame: CMakeFiles/My3DGame.dir/src/cursor.cpp.o
-My3DGame: CMakeFiles/My3DGame.dir/src/camera.cpp.o
 My3DGame: CMakeFiles/My3DGame.dir/src/glad.c.o
 My3DGame: CMakeFiles/My3DGame.dir/src/input.cpp.o
 My3DGame: CMakeFiles/My3DGame.dir/src/godmode.cpp.o
@@ -233,7 +217,7 @@ My3DGame: /usr/lib/libglut.so
 My3DGame: /usr/lib/libXmu.so
 My3DGame: /usr/lib/libXi.so
 My3DGame: CMakeFiles/My3DGame.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ricky/coding/CppOpenGLGameEngine-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable My3DGame"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ricky/coding/CppOpenGLGameEngine-main/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable My3DGame"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/My3DGame.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

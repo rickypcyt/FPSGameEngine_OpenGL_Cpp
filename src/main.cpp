@@ -12,11 +12,11 @@
 #include "../include/movement.h"
 #include "../include/globals.h"
 #include "../include/cursor.h"
-#include "../include/input.h"
-#include "../include/godmode.h"
+// #include "../include/input.h"
+// #include "../include/godmode.h"
 
 // Constants
-const float TARGET_FPS = 60.0f;
+const float TARGET_FPS = 120.0f;
 const float FRAME_DURATION = 1000.0f / TARGET_FPS; // in milliseconds
 
 // Globals
@@ -70,6 +70,7 @@ void initializeGLFW() {
     }
 
     glfwMakeContextCurrent(window);
+    glfwSwapInterval(0);  // Add this line to disable vsync
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
     glViewport(0, 0, 1920, 1080);
 }

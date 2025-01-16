@@ -472,7 +472,4 @@ CMakeFiles/My3DGame.dir/src/main.cpp.o: \
   /home/ricky/coding/CppOpenGLGameEngine-main/src/../include/stb_image.h \
   /home/ricky/coding/CppOpenGLGameEngine-main/src/../include/movement.h \
   /home/ricky/coding/CppOpenGLGameEngine-main/src/../include/globals.h \
-  /home/ricky/coding/CppOpenGLGameEngine-main/src/../include/cursor.h \
-  /home/ricky/coding/CppOpenGLGameEngine-main/src/../include/input.h \
-  /home/ricky/coding/CppOpenGLGameEngine-main/src/../include/godmode.h \
-  /usr/lib/clang/19/include/stdbool.h
+  /home/ricky/coding/CppOpenGLGameEngine-main/src/../include/cursor.h

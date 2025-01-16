@@ -7,7 +7,6 @@ My3DGame: \
   CMakeFiles/My3DGame.dir/src/renderer.cpp.o \
   CMakeFiles/My3DGame.dir/src/globals.cpp.o \
   CMakeFiles/My3DGame.dir/src/cursor.cpp.o \
-  CMakeFiles/My3DGame.dir/src/camera.cpp.o \
   CMakeFiles/My3DGame.dir/src/glad.c.o \
   CMakeFiles/My3DGame.dir/src/input.cpp.o \
   CMakeFiles/My3DGame.dir/src/godmode.cpp.o \
@@ -92,8 +91,6 @@ CMakeFiles/My3DGame.dir/src/renderer.cpp.o:
 CMakeFiles/My3DGame.dir/src/globals.cpp.o:
 
 CMakeFiles/My3DGame.dir/src/cursor.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/camera.cpp.o:
 
 CMakeFiles/My3DGame.dir/src/glad.c.o:
 

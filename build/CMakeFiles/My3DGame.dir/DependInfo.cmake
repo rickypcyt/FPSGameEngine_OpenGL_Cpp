@@ -9,7 +9,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ricky/coding/CppOpenGLGameEngine-main/src/glad.c" "CMakeFiles/My3DGame.dir/src/glad.c.o" "gcc" "CMakeFiles/My3DGame.dir/src/glad.c.o.d"
-  "/home/ricky/coding/CppOpenGLGameEngine-main/src/camera.cpp" "CMakeFiles/My3DGame.dir/src/camera.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/camera.cpp.o.d"
   "/home/ricky/coding/CppOpenGLGameEngine-main/src/cursor.cpp" "CMakeFiles/My3DGame.dir/src/cursor.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/cursor.cpp.o.d"
   "/home/ricky/coding/CppOpenGLGameEngine-main/src/globals.cpp" "CMakeFiles/My3DGame.dir/src/globals.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/globals.cpp.o.d"
   "/home/ricky/coding/CppOpenGLGameEngine-main/src/godmode.cpp" "CMakeFiles/My3DGame.dir/src/godmode.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/godmode.cpp.o.d"

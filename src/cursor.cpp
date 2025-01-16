@@ -10,7 +10,6 @@ bool firstMouse = true;
 
 // Function to update the camera direction
 void updateCameraDirection() {
-    // Calculate the new front vector
     glm::vec3 front;
     front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
     front.y = sin(glm::radians(pitch));
@@ -19,28 +18,24 @@ void updateCameraDirection() {
 }
 
 void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
-    // Check if first mouse input to initialize lastX and lastY
     if (firstMouse) {
         lastX = xpos;
         lastY = ypos;
         firstMouse = false;
     }
 
-    // Calculate offsets
     double xoffset = xpos - lastX;
     double yoffset = lastY - ypos; // Inverted y-axis for proper movement
     lastX = xpos;
     lastY = ypos;
 
-    // Adjust sensitivity
     const float sensitivity = 0.15f; // Increased sensitivity for quicker response
-    const float smoothingFactor = 0.1f; // Smoothing factor
 
-    // Apply smoothing (optional)
+    // Apply sensitivity
     xoffset *= sensitivity;
     yoffset *= sensitivity;
 
-    // Update yaw and pitch with smoothing
+    // Update yaw and pitch
     yaw += xoffset; 
     pitch += yoffset;
 

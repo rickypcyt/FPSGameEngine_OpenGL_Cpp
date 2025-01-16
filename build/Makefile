@@ -129,30 +129,6 @@ My3DGame/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/build
 .PHONY : My3DGame/fast
 
-src/camera.o: src/camera.cpp.o
-.PHONY : src/camera.o
-
-# target to build an object file
-src/camera.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/camera.cpp.o
-.PHONY : src/camera.cpp.o
-
-src/camera.i: src/camera.cpp.i
-.PHONY : src/camera.i
-
-# target to preprocess a source file
-src/camera.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/camera.cpp.i
-.PHONY : src/camera.cpp.i
-
-src/camera.s: src/camera.cpp.s
-.PHONY : src/camera.s
-
-# target to generate assembly for a file
-src/camera.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/camera.cpp.s
-.PHONY : src/camera.cpp.s
-
 src/cursor.o: src/cursor.cpp.o
 .PHONY : src/cursor.o
 
@@ -354,9 +330,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... My3DGame"
-	@echo "... src/camera.o"
-	@echo "... src/camera.i"
-	@echo "... src/camera.s"
 	@echo "... src/cursor.o"
 	@echo "... src/cursor.i"
 	@echo "... src/cursor.s"

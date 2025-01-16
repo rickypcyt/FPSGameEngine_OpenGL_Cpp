@@ -25,7 +25,6 @@ add_executable(My3DGame
     src/renderer.cpp 
     src/globals.cpp 
     src/cursor.cpp
-    src/camera.cpp
     src/glad.c
     src/input.cpp
     src/godmode.cpp

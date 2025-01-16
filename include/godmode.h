@@ -1,5 +1,6 @@
 #ifndef GODMODE_H
 #define GODMODE_H
+#include <GLFW/glfw3.h>
 
 #include <stdbool.h>
 
