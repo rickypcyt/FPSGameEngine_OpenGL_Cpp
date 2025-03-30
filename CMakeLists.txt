@@ -60,6 +60,7 @@ set(THIRD_PARTY_SOURCES
     src/third_party/imgui/imgui_widgets.cpp
     src/third_party/imgui/backends/imgui_impl_glfw.cpp
     src/third_party/imgui/backends/imgui_impl_opengl2.cpp
+    src/third_party/stb_image_impl.cpp
 )
 
 # Add ImGui sources

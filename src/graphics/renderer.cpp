@@ -1,89 +1,79 @@
+#include <GL/glew.h>  // Must be included first
 #include <GL/gl.h>
 #include <GL/glu.h>
+#include <iostream>   // Add for std::cerr and std::endl
 #include "../../include/graphics/renderer.h"
 #include "../../include/graphics/lights.h"
+#include "../../include/third_party/stb_image.h"
 
-// Función para dibujar un piso, techo y paredes de tablero de ajedrez
+// Function to load a texture
+GLuint loadTexture(const char* filepath) {
+    GLuint textureID;
+    glGenTextures(1, &textureID);
+    glBindTexture(GL_TEXTURE_2D, textureID);
+    
+    // Set texture parameters
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    
+    // Load image data
+    int width, height, nrChannels;
+    unsigned char* data = stbi_load(filepath, &width, &height, &nrChannels, 0);
+    if (data) {
+        GLenum format = GL_RGB;
+        if (nrChannels == 4) {
+            format = GL_RGBA;
+        }
+        
+        glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
+        
+        stbi_image_free(data);
+    } else {
+        std::cerr << "Failed to load texture: " << filepath << std::endl;
+        stbi_image_free(data);
+        return 0;
+    }
+    
+    return textureID;
+}
+
+// Global texture ID for the floor
+GLuint floorTextureID = 0;
+
+// Modified drawCheckerboardFloor function to use textures
 void drawCheckerboardFloor(float size, float tileSize) {
+    if (floorTextureID == 0) {
+        // Load the texture if not already loaded
+        floorTextureID = loadTexture("assets/textures/floor.jpg");
+    }
+    
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, floorTextureID);
+    
     glBegin(GL_QUADS);
-
+    
+    // Draw floor with texture coordinates
     for (float x = -size; x < size; x += tileSize) {
         for (float z = -size; z < size; z += tileSize) {
-            // Suelo
-            if (((int)(x / tileSize) + (int)(z / tileSize)) % 2 == 0) {
-                glColor3f(0.8f, 0.8f, 0.8f); // Gris claro (suelo)
-            } else {
-                glColor3f(0.6f, 0.6f, 0.6f); // Gris oscuro (suelo)
-            }
+            float texX = (x + size) / (2 * size);
+            float texZ = (z + size) / (2 * size);
+            
+            glTexCoord2f(texX, texZ);
             glVertex3f(x, 0.0f, z);
+            glTexCoord2f(texX + tileSize/(2*size), texZ);
             glVertex3f(x + tileSize, 0.0f, z);
+            glTexCoord2f(texX + tileSize/(2*size), texZ + tileSize/(2*size));
             glVertex3f(x + tileSize, 0.0f, z + tileSize);
+            glTexCoord2f(texX, texZ + tileSize/(2*size));
             glVertex3f(x, 0.0f, z + tileSize);
-
-            // Techo
-            if (((int)(x / tileSize) + (int)(z / tileSize)) % 2 == 0) {
-                glColor3f(0.7f, 0.7f, 0.7f); // Gris más oscuro (techo)
-            } else {
-                glColor3f(0.5f, 0.5f, 0.5f); // Gris más claro (techo)
-            }
-            glVertex3f(x, size, z);
-            glVertex3f(x + tileSize, size, z);
-            glVertex3f(x + tileSize, size, z + tileSize);
-            glVertex3f(x, size, z + tileSize);
         }
     }
-
-    for (float y = 0.0f; y < size; y += tileSize) {
-        for (float z = -size; z < size; z += tileSize) {
-            // Pared derecha
-            if (((int)(y / tileSize) + (int)(z / tileSize)) % 2 == 0) {
-                glColor3f(0.8f, 0.6f, 0.6f); // Color diferente
-            } else {
-                glColor3f(0.6f, 0.4f, 0.4f);
-            }
-            glVertex3f(size, y, z);
-            glVertex3f(size, y + tileSize, z);
-            glVertex3f(size, y + tileSize, z + tileSize);
-            glVertex3f(size, y, z + tileSize);
-
-            // Pared izquierda
-            if (((int)(y / tileSize) + (int)(z / tileSize)) % 2 == 0) {
-                glColor3f(0.6f, 0.6f, 0.8f);
-            } else {
-                glColor3f(0.4f, 0.4f, 0.6f);
-            }
-            glVertex3f(-size, y, z);
-            glVertex3f(-size, y + tileSize, z);
-            glVertex3f(-size, y + tileSize, z + tileSize);
-            glVertex3f(-size, y, z + tileSize);
-        }
-
-        for (float x = -size; x < size; x += tileSize) {
-            // Pared frontal
-            if (((int)(y / tileSize) + (int)(x / tileSize)) % 2 == 0) {
-                glColor3f(0.6f, 0.8f, 0.6f);
-            } else {
-                glColor3f(0.4f, 0.6f, 0.4f);
-            }
-            glVertex3f(x, y, size);
-            glVertex3f(x + tileSize, y, size);
-            glVertex3f(x + tileSize, y + tileSize, size);
-            glVertex3f(x, y + tileSize, size);
-
-            // Pared trasera
-            if (((int)(y / tileSize) + (int)(x / tileSize)) % 2 == 0) {
-                glColor3f(0.8f, 0.8f, 0.6f);
-            } else {
-                glColor3f(0.6f, 0.6f, 0.4f);
-            }
-            glVertex3f(x, y, -size);
-            glVertex3f(x + tileSize, y, -size);
-            glVertex3f(x + tileSize, y + tileSize, -size);
-            glVertex3f(x, y + tileSize, -size);
-        }
-    }
-
+    
     glEnd();
+    
+    glDisable(GL_TEXTURE_2D);
 }
 
 // Función para dibujar un cubo

@@ -153,22 +153,60 @@ void mainLoop() {
         UI::beginImGuiFrame();
         
         // FPS Display Window
-        {
-            ImGui::Begin("Performance", nullptr, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
-            ImGui::SetWindowPos(ImVec2(10, 10));
-            ImGui::SetWindowSize(ImVec2(200, 100));
+        ImGui::Begin("FPS");
+        ImGui::Text("FPS: %.1f", fpsCounter.getCurrentFPS());
+        ImGui::Text("Average: %.1f", fpsCounter.getAverageFPS());
+        ImGui::Text("Min: %.1f", fpsCounter.getMinFPS());
+        ImGui::Text("Max: %.1f", fpsCounter.getMaxFPS());
+        ImGui::End();
+        
+        // Editor Inventory Window
+        if (EditorInput::isEditorMode) {
+            ImGui::Begin("Inventory");
             
-            ImGui::Text("FPS: %.1f", fpsCounter.getCurrentFPS());
-            ImGui::Text("Average: %.1f", fpsCounter.getAverageFPS());
-            ImGui::Text("Min: %.1f", fpsCounter.getMinFPS());
-            ImGui::Text("Max: %.1f", fpsCounter.getMaxFPS());
+            const auto& inventoryItems = EditorInput::worldEditor.getInventoryItems();
+            size_t selectedIndex = EditorInput::worldEditor.getSelectedInventoryIndex();
+            
+            for (size_t i = 0; i < inventoryItems.size(); ++i) {
+                const char* itemName = "";
+                switch (inventoryItems[i]) {
+                    case Editor::ObjectType::WALL:
+                        itemName = "Wall";
+                        break;
+                    case Editor::ObjectType::RECTANGLE:
+                        itemName = "Rectangle";
+                        break;
+                    case Editor::ObjectType::HOUSE:
+                        itemName = "House";
+                        break;
+                    case Editor::ObjectType::TOWER:
+                        itemName = "Tower";
+                        break;
+                    case Editor::ObjectType::BRIDGE:
+                        itemName = "Bridge";
+                        break;
+                }
+                
+                bool isSelected = (i == selectedIndex);
+                if (ImGui::Selectable(itemName, isSelected)) {
+                    EditorInput::worldEditor.selectInventoryItem(i);
+                }
+                
+                if (isSelected) {
+                    ImGui::SetItemDefaultFocus();
+                }
+            }
+            
+            ImGui::Separator();
+            
+            if (EditorInput::worldEditor.isPlacingObject()) {
+                ImGui::Text("Press 'P' to place object");
+                ImGui::Text("Press 'X' to cancel");
+            }
             
             ImGui::End();
         }
-
-        if (EditorInput::isEditorMode) {
-            UI::renderEditorWindow(EditorInput::worldEditor);
-        }
+        
         UI::endImGuiFrame();
 
         glfwSwapBuffers(window);

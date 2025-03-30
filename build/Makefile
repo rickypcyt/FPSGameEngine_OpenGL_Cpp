@@ -590,6 +590,30 @@ src/third_party/imgui/imgui_widgets.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/imgui_widgets.cpp.s
 .PHONY : src/third_party/imgui/imgui_widgets.cpp.s
 
+src/third_party/stb_image_impl.o: src/third_party/stb_image_impl.cpp.o
+.PHONY : src/third_party/stb_image_impl.o
+
+# target to build an object file
+src/third_party/stb_image_impl.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/stb_image_impl.cpp.o
+.PHONY : src/third_party/stb_image_impl.cpp.o
+
+src/third_party/stb_image_impl.i: src/third_party/stb_image_impl.cpp.i
+.PHONY : src/third_party/stb_image_impl.i
+
+# target to preprocess a source file
+src/third_party/stb_image_impl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/stb_image_impl.cpp.i
+.PHONY : src/third_party/stb_image_impl.cpp.i
+
+src/third_party/stb_image_impl.s: src/third_party/stb_image_impl.cpp.s
+.PHONY : src/third_party/stb_image_impl.s
+
+# target to generate assembly for a file
+src/third_party/stb_image_impl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/stb_image_impl.cpp.s
+.PHONY : src/third_party/stb_image_impl.cpp.s
+
 src/ui/crosshair.o: src/ui/crosshair.cpp.o
 .PHONY : src/ui/crosshair.o
 
@@ -751,6 +775,9 @@ help:
 	@echo "... src/third_party/imgui/imgui_widgets.o"
 	@echo "... src/third_party/imgui/imgui_widgets.i"
 	@echo "... src/third_party/imgui/imgui_widgets.s"
+	@echo "... src/third_party/stb_image_impl.o"
+	@echo "... src/third_party/stb_image_impl.i"
+	@echo "... src/third_party/stb_image_impl.s"
 	@echo "... src/ui/crosshair.o"
 	@echo "... src/ui/crosshair.i"
 	@echo "... src/ui/crosshair.s"
