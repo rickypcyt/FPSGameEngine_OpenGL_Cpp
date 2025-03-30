@@ -7,6 +7,7 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <GL/freeglut.h>
+#include <imgui.h>
 
 #include "../../include/graphics/renderer.h"
 #include "../../include/input/movement.h"
@@ -15,6 +16,7 @@
 #include "../../include/ui/crosshair.h"
 #include "../../include/input/editor_input.h"
 #include "../../include/ui/imgui_interface.h"
+#include "../../include/ui/fps_counter.h"
 // #include "../include/input.h"
 // #include "../include/godmode.h"
 
@@ -28,6 +30,7 @@ float lastFrameTime = 0.0f;
 float lastTime = 0.0f;
 int frameCount = 0;
 float fps = 0.0f;
+FPSCounter fpsCounter;  // Add FPS counter instance
 
 // Function Declarations
 void displayFPS(float fps);
@@ -107,6 +110,9 @@ void mainLoop() {
         deltaTime = currentFrame - lastFrameTime;
         lastFrameTime = currentFrame;
 
+        // Update FPS counter
+        fpsCounter.update();
+
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glLoadIdentity();
 
@@ -143,25 +149,23 @@ void mainLoop() {
         
         EditorInput::update(deltaTime);
 
-        // FPS calculation
-        frameCount++;
-        if (currentFrame - lastTime >= 1.0f) {
-            fps = frameCount;
-            displayFPS(fps);
-            frameCount = 0;
-            lastTime += 1.0f;
-        }
-
-        // Render FPS and editor mode status
-        std::ostringstream statusStream;
-        statusStream << "FPS: " << fps;
-        if (EditorInput::isEditorMode) {
-            statusStream << " | Editor Mode";
-        }
-        renderText(statusStream.str(), -0.9f, 0.9f);
-
         // Render ImGui interface
         UI::beginImGuiFrame();
+        
+        // FPS Display Window
+        {
+            ImGui::Begin("Performance", nullptr, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse);
+            ImGui::SetWindowPos(ImVec2(10, 10));
+            ImGui::SetWindowSize(ImVec2(200, 100));
+            
+            ImGui::Text("FPS: %.1f", fpsCounter.getCurrentFPS());
+            ImGui::Text("Average: %.1f", fpsCounter.getAverageFPS());
+            ImGui::Text("Min: %.1f", fpsCounter.getMinFPS());
+            ImGui::Text("Max: %.1f", fpsCounter.getMaxFPS());
+            
+            ImGui::End();
+        }
+
         if (EditorInput::isEditorMode) {
             UI::renderEditorWindow(EditorInput::worldEditor);
         }

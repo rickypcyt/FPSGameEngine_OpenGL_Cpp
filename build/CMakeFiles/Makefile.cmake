@@ -11,6 +11,11 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.31.6/CMakeCCompiler.cmake"
   "CMakeFiles/3.31.6/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.31.6/CMakeSystem.cmake"
+  "/home/ricky/coding/GameEngineCpp/tests/CMakeLists.txt"
+  "/usr/lib/cmake/GTest/GTestConfig.cmake"
+  "/usr/lib/cmake/GTest/GTestConfigVersion.cmake"
+  "/usr/lib/cmake/GTest/GTestTargets-none.cmake"
+  "/usr/lib/cmake/GTest/GTestTargets.cmake"
   "/usr/lib/cmake/glfw3/glfw3Config.cmake"
   "/usr/lib/cmake/glfw3/glfw3ConfigVersion.cmake"
   "/usr/lib/cmake/glfw3/glfw3Targets-none.cmake"
@@ -33,11 +38,13 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake/Modules/Compiler/GNU.cmake"
   "/usr/share/cmake/Modules/FindGLEW.cmake"
   "/usr/share/cmake/Modules/FindGLUT.cmake"
+  "/usr/share/cmake/Modules/FindGTest.cmake"
   "/usr/share/cmake/Modules/FindOpenGL.cmake"
   "/usr/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/share/cmake/Modules/FindPackageMessage.cmake"
   "/usr/share/cmake/Modules/FindPkgConfig.cmake"
   "/usr/share/cmake/Modules/FindThreads.cmake"
+  "/usr/share/cmake/Modules/GoogleTest.cmake"
   "/usr/share/cmake/Modules/Internal/CMakeCLinkerInformation.cmake"
   "/usr/share/cmake/Modules/Internal/CMakeCXXLinkerInformation.cmake"
   "/usr/share/cmake/Modules/Internal/CMakeCommonLinkerInformation.cmake"
@@ -67,9 +74,12 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "tests/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/game_engine_lib.dir/DependInfo.cmake"
   "CMakeFiles/My3DGame.dir/DependInfo.cmake"
+  "tests/CMakeFiles/game_engine_tests.dir/DependInfo.cmake"
   )

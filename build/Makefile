@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named game_engine_lib
+
+# Build rule for target.
+game_engine_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 game_engine_lib
+.PHONY : game_engine_lib
+
+# fast build rule for target.
+game_engine_lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/build
+.PHONY : game_engine_lib/fast
+
+#=============================================================================
 # Target rules for targets named My3DGame
 
 # Build rule for target.
@@ -129,12 +142,25 @@ My3DGame/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/build
 .PHONY : My3DGame/fast
 
+#=============================================================================
+# Target rules for targets named game_engine_tests
+
+# Build rule for target.
+game_engine_tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 game_engine_tests
+.PHONY : game_engine_tests
+
+# fast build rule for target.
+game_engine_tests/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/game_engine_tests.dir/build.make tests/CMakeFiles/game_engine_tests.dir/build
+.PHONY : game_engine_tests/fast
+
 src/core/globals.o: src/core/globals.cpp.o
 .PHONY : src/core/globals.o
 
 # target to build an object file
 src/core/globals.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/globals.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/globals.cpp.o
 .PHONY : src/core/globals.cpp.o
 
 src/core/globals.i: src/core/globals.cpp.i
@@ -142,7 +168,7 @@ src/core/globals.i: src/core/globals.cpp.i
 
 # target to preprocess a source file
 src/core/globals.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/globals.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/globals.cpp.i
 .PHONY : src/core/globals.cpp.i
 
 src/core/globals.s: src/core/globals.cpp.s
@@ -150,7 +176,7 @@ src/core/globals.s: src/core/globals.cpp.s
 
 # target to generate assembly for a file
 src/core/globals.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/globals.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/globals.cpp.s
 .PHONY : src/core/globals.cpp.s
 
 src/core/godmode.o: src/core/godmode.cpp.o
@@ -158,7 +184,7 @@ src/core/godmode.o: src/core/godmode.cpp.o
 
 # target to build an object file
 src/core/godmode.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/godmode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/godmode.cpp.o
 .PHONY : src/core/godmode.cpp.o
 
 src/core/godmode.i: src/core/godmode.cpp.i
@@ -166,7 +192,7 @@ src/core/godmode.i: src/core/godmode.cpp.i
 
 # target to preprocess a source file
 src/core/godmode.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/godmode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/godmode.cpp.i
 .PHONY : src/core/godmode.cpp.i
 
 src/core/godmode.s: src/core/godmode.cpp.s
@@ -174,7 +200,7 @@ src/core/godmode.s: src/core/godmode.cpp.s
 
 # target to generate assembly for a file
 src/core/godmode.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/godmode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/godmode.cpp.s
 .PHONY : src/core/godmode.cpp.s
 
 src/core/main.o: src/core/main.cpp.o
@@ -182,6 +208,7 @@ src/core/main.o: src/core/main.cpp.o
 
 # target to build an object file
 src/core/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/main.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/main.cpp.o
 .PHONY : src/core/main.cpp.o
 
@@ -190,6 +217,7 @@ src/core/main.i: src/core/main.cpp.i
 
 # target to preprocess a source file
 src/core/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/main.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/main.cpp.i
 .PHONY : src/core/main.cpp.i
 
@@ -198,6 +226,7 @@ src/core/main.s: src/core/main.cpp.s
 
 # target to generate assembly for a file
 src/core/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/main.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/main.cpp.s
 .PHONY : src/core/main.cpp.s
 
@@ -206,7 +235,7 @@ src/editor/editor.o: src/editor/editor.cpp.o
 
 # target to build an object file
 src/editor/editor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/editor/editor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/editor/editor.cpp.o
 .PHONY : src/editor/editor.cpp.o
 
 src/editor/editor.i: src/editor/editor.cpp.i
@@ -214,7 +243,7 @@ src/editor/editor.i: src/editor/editor.cpp.i
 
 # target to preprocess a source file
 src/editor/editor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/editor/editor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/editor/editor.cpp.i
 .PHONY : src/editor/editor.cpp.i
 
 src/editor/editor.s: src/editor/editor.cpp.s
@@ -222,7 +251,7 @@ src/editor/editor.s: src/editor/editor.cpp.s
 
 # target to generate assembly for a file
 src/editor/editor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/editor/editor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/editor/editor.cpp.s
 .PHONY : src/editor/editor.cpp.s
 
 src/glad.o: src/glad.c.o
@@ -230,7 +259,7 @@ src/glad.o: src/glad.c.o
 
 # target to build an object file
 src/glad.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/glad.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/glad.c.o
 .PHONY : src/glad.c.o
 
 src/glad.i: src/glad.c.i
@@ -238,7 +267,7 @@ src/glad.i: src/glad.c.i
 
 # target to preprocess a source file
 src/glad.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/glad.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/glad.c.i
 .PHONY : src/glad.c.i
 
 src/glad.s: src/glad.c.s
@@ -246,7 +275,7 @@ src/glad.s: src/glad.c.s
 
 # target to generate assembly for a file
 src/glad.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/glad.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/glad.c.s
 .PHONY : src/glad.c.s
 
 src/graphics/lights.o: src/graphics/lights.cpp.o
@@ -254,7 +283,7 @@ src/graphics/lights.o: src/graphics/lights.cpp.o
 
 # target to build an object file
 src/graphics/lights.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/graphics/lights.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/lights.cpp.o
 .PHONY : src/graphics/lights.cpp.o
 
 src/graphics/lights.i: src/graphics/lights.cpp.i
@@ -262,7 +291,7 @@ src/graphics/lights.i: src/graphics/lights.cpp.i
 
 # target to preprocess a source file
 src/graphics/lights.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/graphics/lights.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/lights.cpp.i
 .PHONY : src/graphics/lights.cpp.i
 
 src/graphics/lights.s: src/graphics/lights.cpp.s
@@ -270,7 +299,7 @@ src/graphics/lights.s: src/graphics/lights.cpp.s
 
 # target to generate assembly for a file
 src/graphics/lights.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/graphics/lights.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/lights.cpp.s
 .PHONY : src/graphics/lights.cpp.s
 
 src/graphics/models.o: src/graphics/models.cpp.o
@@ -278,7 +307,7 @@ src/graphics/models.o: src/graphics/models.cpp.o
 
 # target to build an object file
 src/graphics/models.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/graphics/models.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/models.cpp.o
 .PHONY : src/graphics/models.cpp.o
 
 src/graphics/models.i: src/graphics/models.cpp.i
@@ -286,7 +315,7 @@ src/graphics/models.i: src/graphics/models.cpp.i
 
 # target to preprocess a source file
 src/graphics/models.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/graphics/models.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/models.cpp.i
 .PHONY : src/graphics/models.cpp.i
 
 src/graphics/models.s: src/graphics/models.cpp.s
@@ -294,7 +323,7 @@ src/graphics/models.s: src/graphics/models.cpp.s
 
 # target to generate assembly for a file
 src/graphics/models.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/graphics/models.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/models.cpp.s
 .PHONY : src/graphics/models.cpp.s
 
 src/graphics/renderer.o: src/graphics/renderer.cpp.o
@@ -302,7 +331,7 @@ src/graphics/renderer.o: src/graphics/renderer.cpp.o
 
 # target to build an object file
 src/graphics/renderer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/graphics/renderer.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/renderer.cpp.o
 .PHONY : src/graphics/renderer.cpp.o
 
 src/graphics/renderer.i: src/graphics/renderer.cpp.i
@@ -310,7 +339,7 @@ src/graphics/renderer.i: src/graphics/renderer.cpp.i
 
 # target to preprocess a source file
 src/graphics/renderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/graphics/renderer.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/renderer.cpp.i
 .PHONY : src/graphics/renderer.cpp.i
 
 src/graphics/renderer.s: src/graphics/renderer.cpp.s
@@ -318,7 +347,7 @@ src/graphics/renderer.s: src/graphics/renderer.cpp.s
 
 # target to generate assembly for a file
 src/graphics/renderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/graphics/renderer.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/renderer.cpp.s
 .PHONY : src/graphics/renderer.cpp.s
 
 src/input/editor_input.o: src/input/editor_input.cpp.o
@@ -326,7 +355,7 @@ src/input/editor_input.o: src/input/editor_input.cpp.o
 
 # target to build an object file
 src/input/editor_input.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/input/editor_input.cpp.o
 .PHONY : src/input/editor_input.cpp.o
 
 src/input/editor_input.i: src/input/editor_input.cpp.i
@@ -334,7 +363,7 @@ src/input/editor_input.i: src/input/editor_input.cpp.i
 
 # target to preprocess a source file
 src/input/editor_input.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/input/editor_input.cpp.i
 .PHONY : src/input/editor_input.cpp.i
 
 src/input/editor_input.s: src/input/editor_input.cpp.s
@@ -342,7 +371,7 @@ src/input/editor_input.s: src/input/editor_input.cpp.s
 
 # target to generate assembly for a file
 src/input/editor_input.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/input/editor_input.cpp.s
 .PHONY : src/input/editor_input.cpp.s
 
 src/input/input.o: src/input/input.cpp.o
@@ -350,7 +379,7 @@ src/input/input.o: src/input/input.cpp.o
 
 # target to build an object file
 src/input/input.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input/input.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/input/input.cpp.o
 .PHONY : src/input/input.cpp.o
 
 src/input/input.i: src/input/input.cpp.i
@@ -358,7 +387,7 @@ src/input/input.i: src/input/input.cpp.i
 
 # target to preprocess a source file
 src/input/input.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input/input.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/input/input.cpp.i
 .PHONY : src/input/input.cpp.i
 
 src/input/input.s: src/input/input.cpp.s
@@ -366,7 +395,7 @@ src/input/input.s: src/input/input.cpp.s
 
 # target to generate assembly for a file
 src/input/input.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input/input.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/input/input.cpp.s
 .PHONY : src/input/input.cpp.s
 
 src/input/movement.o: src/input/movement.cpp.o
@@ -374,7 +403,7 @@ src/input/movement.o: src/input/movement.cpp.o
 
 # target to build an object file
 src/input/movement.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input/movement.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/input/movement.cpp.o
 .PHONY : src/input/movement.cpp.o
 
 src/input/movement.i: src/input/movement.cpp.i
@@ -382,7 +411,7 @@ src/input/movement.i: src/input/movement.cpp.i
 
 # target to preprocess a source file
 src/input/movement.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input/movement.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/input/movement.cpp.i
 .PHONY : src/input/movement.cpp.i
 
 src/input/movement.s: src/input/movement.cpp.s
@@ -390,7 +419,7 @@ src/input/movement.s: src/input/movement.cpp.s
 
 # target to generate assembly for a file
 src/input/movement.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input/movement.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/input/movement.cpp.s
 .PHONY : src/input/movement.cpp.s
 
 src/third_party/imgui/backends/imgui_impl_glfw.o: src/third_party/imgui/backends/imgui_impl_glfw.cpp.o
@@ -398,7 +427,7 @@ src/third_party/imgui/backends/imgui_impl_glfw.o: src/third_party/imgui/backends
 
 # target to build an object file
 src/third_party/imgui/backends/imgui_impl_glfw.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.o
 .PHONY : src/third_party/imgui/backends/imgui_impl_glfw.cpp.o
 
 src/third_party/imgui/backends/imgui_impl_glfw.i: src/third_party/imgui/backends/imgui_impl_glfw.cpp.i
@@ -406,7 +435,7 @@ src/third_party/imgui/backends/imgui_impl_glfw.i: src/third_party/imgui/backends
 
 # target to preprocess a source file
 src/third_party/imgui/backends/imgui_impl_glfw.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.i
 .PHONY : src/third_party/imgui/backends/imgui_impl_glfw.cpp.i
 
 src/third_party/imgui/backends/imgui_impl_glfw.s: src/third_party/imgui/backends/imgui_impl_glfw.cpp.s
@@ -414,7 +443,7 @@ src/third_party/imgui/backends/imgui_impl_glfw.s: src/third_party/imgui/backends
 
 # target to generate assembly for a file
 src/third_party/imgui/backends/imgui_impl_glfw.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.s
 .PHONY : src/third_party/imgui/backends/imgui_impl_glfw.cpp.s
 
 src/third_party/imgui/backends/imgui_impl_opengl2.o: src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o
@@ -422,7 +451,7 @@ src/third_party/imgui/backends/imgui_impl_opengl2.o: src/third_party/imgui/backe
 
 # target to build an object file
 src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o
 .PHONY : src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o
 
 src/third_party/imgui/backends/imgui_impl_opengl2.i: src/third_party/imgui/backends/imgui_impl_opengl2.cpp.i
@@ -430,7 +459,7 @@ src/third_party/imgui/backends/imgui_impl_opengl2.i: src/third_party/imgui/backe
 
 # target to preprocess a source file
 src/third_party/imgui/backends/imgui_impl_opengl2.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.i
 .PHONY : src/third_party/imgui/backends/imgui_impl_opengl2.cpp.i
 
 src/third_party/imgui/backends/imgui_impl_opengl2.s: src/third_party/imgui/backends/imgui_impl_opengl2.cpp.s
@@ -438,7 +467,7 @@ src/third_party/imgui/backends/imgui_impl_opengl2.s: src/third_party/imgui/backe
 
 # target to generate assembly for a file
 src/third_party/imgui/backends/imgui_impl_opengl2.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.s
 .PHONY : src/third_party/imgui/backends/imgui_impl_opengl2.cpp.s
 
 src/third_party/imgui/imgui.o: src/third_party/imgui/imgui.cpp.o
@@ -446,7 +475,7 @@ src/third_party/imgui/imgui.o: src/third_party/imgui/imgui.cpp.o
 
 # target to build an object file
 src/third_party/imgui/imgui.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/imgui.cpp.o
 .PHONY : src/third_party/imgui/imgui.cpp.o
 
 src/third_party/imgui/imgui.i: src/third_party/imgui/imgui.cpp.i
@@ -454,7 +483,7 @@ src/third_party/imgui/imgui.i: src/third_party/imgui/imgui.cpp.i
 
 # target to preprocess a source file
 src/third_party/imgui/imgui.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/imgui.cpp.i
 .PHONY : src/third_party/imgui/imgui.cpp.i
 
 src/third_party/imgui/imgui.s: src/third_party/imgui/imgui.cpp.s
@@ -462,7 +491,7 @@ src/third_party/imgui/imgui.s: src/third_party/imgui/imgui.cpp.s
 
 # target to generate assembly for a file
 src/third_party/imgui/imgui.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/imgui.cpp.s
 .PHONY : src/third_party/imgui/imgui.cpp.s
 
 src/third_party/imgui/imgui_demo.o: src/third_party/imgui/imgui_demo.cpp.o
@@ -470,7 +499,7 @@ src/third_party/imgui/imgui_demo.o: src/third_party/imgui/imgui_demo.cpp.o
 
 # target to build an object file
 src/third_party/imgui/imgui_demo.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/imgui_demo.cpp.o
 .PHONY : src/third_party/imgui/imgui_demo.cpp.o
 
 src/third_party/imgui/imgui_demo.i: src/third_party/imgui/imgui_demo.cpp.i
@@ -478,7 +507,7 @@ src/third_party/imgui/imgui_demo.i: src/third_party/imgui/imgui_demo.cpp.i
 
 # target to preprocess a source file
 src/third_party/imgui/imgui_demo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/imgui_demo.cpp.i
 .PHONY : src/third_party/imgui/imgui_demo.cpp.i
 
 src/third_party/imgui/imgui_demo.s: src/third_party/imgui/imgui_demo.cpp.s
@@ -486,7 +515,7 @@ src/third_party/imgui/imgui_demo.s: src/third_party/imgui/imgui_demo.cpp.s
 
 # target to generate assembly for a file
 src/third_party/imgui/imgui_demo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/imgui_demo.cpp.s
 .PHONY : src/third_party/imgui/imgui_demo.cpp.s
 
 src/third_party/imgui/imgui_draw.o: src/third_party/imgui/imgui_draw.cpp.o
@@ -494,7 +523,7 @@ src/third_party/imgui/imgui_draw.o: src/third_party/imgui/imgui_draw.cpp.o
 
 # target to build an object file
 src/third_party/imgui/imgui_draw.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/imgui_draw.cpp.o
 .PHONY : src/third_party/imgui/imgui_draw.cpp.o
 
 src/third_party/imgui/imgui_draw.i: src/third_party/imgui/imgui_draw.cpp.i
@@ -502,7 +531,7 @@ src/third_party/imgui/imgui_draw.i: src/third_party/imgui/imgui_draw.cpp.i
 
 # target to preprocess a source file
 src/third_party/imgui/imgui_draw.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/imgui_draw.cpp.i
 .PHONY : src/third_party/imgui/imgui_draw.cpp.i
 
 src/third_party/imgui/imgui_draw.s: src/third_party/imgui/imgui_draw.cpp.s
@@ -510,7 +539,7 @@ src/third_party/imgui/imgui_draw.s: src/third_party/imgui/imgui_draw.cpp.s
 
 # target to generate assembly for a file
 src/third_party/imgui/imgui_draw.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/imgui_draw.cpp.s
 .PHONY : src/third_party/imgui/imgui_draw.cpp.s
 
 src/third_party/imgui/imgui_tables.o: src/third_party/imgui/imgui_tables.cpp.o
@@ -518,7 +547,7 @@ src/third_party/imgui/imgui_tables.o: src/third_party/imgui/imgui_tables.cpp.o
 
 # target to build an object file
 src/third_party/imgui/imgui_tables.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/imgui_tables.cpp.o
 .PHONY : src/third_party/imgui/imgui_tables.cpp.o
 
 src/third_party/imgui/imgui_tables.i: src/third_party/imgui/imgui_tables.cpp.i
@@ -526,7 +555,7 @@ src/third_party/imgui/imgui_tables.i: src/third_party/imgui/imgui_tables.cpp.i
 
 # target to preprocess a source file
 src/third_party/imgui/imgui_tables.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/imgui_tables.cpp.i
 .PHONY : src/third_party/imgui/imgui_tables.cpp.i
 
 src/third_party/imgui/imgui_tables.s: src/third_party/imgui/imgui_tables.cpp.s
@@ -534,7 +563,7 @@ src/third_party/imgui/imgui_tables.s: src/third_party/imgui/imgui_tables.cpp.s
 
 # target to generate assembly for a file
 src/third_party/imgui/imgui_tables.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/imgui_tables.cpp.s
 .PHONY : src/third_party/imgui/imgui_tables.cpp.s
 
 src/third_party/imgui/imgui_widgets.o: src/third_party/imgui/imgui_widgets.cpp.o
@@ -542,7 +571,7 @@ src/third_party/imgui/imgui_widgets.o: src/third_party/imgui/imgui_widgets.cpp.o
 
 # target to build an object file
 src/third_party/imgui/imgui_widgets.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/imgui_widgets.cpp.o
 .PHONY : src/third_party/imgui/imgui_widgets.cpp.o
 
 src/third_party/imgui/imgui_widgets.i: src/third_party/imgui/imgui_widgets.cpp.i
@@ -550,7 +579,7 @@ src/third_party/imgui/imgui_widgets.i: src/third_party/imgui/imgui_widgets.cpp.i
 
 # target to preprocess a source file
 src/third_party/imgui/imgui_widgets.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/imgui_widgets.cpp.i
 .PHONY : src/third_party/imgui/imgui_widgets.cpp.i
 
 src/third_party/imgui/imgui_widgets.s: src/third_party/imgui/imgui_widgets.cpp.s
@@ -558,7 +587,7 @@ src/third_party/imgui/imgui_widgets.s: src/third_party/imgui/imgui_widgets.cpp.s
 
 # target to generate assembly for a file
 src/third_party/imgui/imgui_widgets.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/third_party/imgui/imgui_widgets.cpp.s
 .PHONY : src/third_party/imgui/imgui_widgets.cpp.s
 
 src/ui/crosshair.o: src/ui/crosshair.cpp.o
@@ -566,7 +595,7 @@ src/ui/crosshair.o: src/ui/crosshair.cpp.o
 
 # target to build an object file
 src/ui/crosshair.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/ui/crosshair.cpp.o
 .PHONY : src/ui/crosshair.cpp.o
 
 src/ui/crosshair.i: src/ui/crosshair.cpp.i
@@ -574,7 +603,7 @@ src/ui/crosshair.i: src/ui/crosshair.cpp.i
 
 # target to preprocess a source file
 src/ui/crosshair.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/ui/crosshair.cpp.i
 .PHONY : src/ui/crosshair.cpp.i
 
 src/ui/crosshair.s: src/ui/crosshair.cpp.s
@@ -582,7 +611,7 @@ src/ui/crosshair.s: src/ui/crosshair.cpp.s
 
 # target to generate assembly for a file
 src/ui/crosshair.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/ui/crosshair.cpp.s
 .PHONY : src/ui/crosshair.cpp.s
 
 src/ui/cursor.o: src/ui/cursor.cpp.o
@@ -590,7 +619,7 @@ src/ui/cursor.o: src/ui/cursor.cpp.o
 
 # target to build an object file
 src/ui/cursor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/ui/cursor.cpp.o
 .PHONY : src/ui/cursor.cpp.o
 
 src/ui/cursor.i: src/ui/cursor.cpp.i
@@ -598,7 +627,7 @@ src/ui/cursor.i: src/ui/cursor.cpp.i
 
 # target to preprocess a source file
 src/ui/cursor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/ui/cursor.cpp.i
 .PHONY : src/ui/cursor.cpp.i
 
 src/ui/cursor.s: src/ui/cursor.cpp.s
@@ -606,7 +635,7 @@ src/ui/cursor.s: src/ui/cursor.cpp.s
 
 # target to generate assembly for a file
 src/ui/cursor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/ui/cursor.cpp.s
 .PHONY : src/ui/cursor.cpp.s
 
 src/ui/fps_counter.o: src/ui/fps_counter.cpp.o
@@ -614,7 +643,7 @@ src/ui/fps_counter.o: src/ui/fps_counter.cpp.o
 
 # target to build an object file
 src/ui/fps_counter.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/ui/fps_counter.cpp.o
 .PHONY : src/ui/fps_counter.cpp.o
 
 src/ui/fps_counter.i: src/ui/fps_counter.cpp.i
@@ -622,7 +651,7 @@ src/ui/fps_counter.i: src/ui/fps_counter.cpp.i
 
 # target to preprocess a source file
 src/ui/fps_counter.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/ui/fps_counter.cpp.i
 .PHONY : src/ui/fps_counter.cpp.i
 
 src/ui/fps_counter.s: src/ui/fps_counter.cpp.s
@@ -630,7 +659,7 @@ src/ui/fps_counter.s: src/ui/fps_counter.cpp.s
 
 # target to generate assembly for a file
 src/ui/fps_counter.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/ui/fps_counter.cpp.s
 .PHONY : src/ui/fps_counter.cpp.s
 
 src/ui/imgui_interface.o: src/ui/imgui_interface.cpp.o
@@ -638,7 +667,7 @@ src/ui/imgui_interface.o: src/ui/imgui_interface.cpp.o
 
 # target to build an object file
 src/ui/imgui_interface.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/ui/imgui_interface.cpp.o
 .PHONY : src/ui/imgui_interface.cpp.o
 
 src/ui/imgui_interface.i: src/ui/imgui_interface.cpp.i
@@ -646,7 +675,7 @@ src/ui/imgui_interface.i: src/ui/imgui_interface.cpp.i
 
 # target to preprocess a source file
 src/ui/imgui_interface.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/ui/imgui_interface.cpp.i
 .PHONY : src/ui/imgui_interface.cpp.i
 
 src/ui/imgui_interface.s: src/ui/imgui_interface.cpp.s
@@ -654,7 +683,7 @@ src/ui/imgui_interface.s: src/ui/imgui_interface.cpp.s
 
 # target to generate assembly for a file
 src/ui/imgui_interface.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/ui/imgui_interface.cpp.s
 .PHONY : src/ui/imgui_interface.cpp.s
 
 # Help Target
@@ -666,6 +695,8 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... My3DGame"
+	@echo "... game_engine_lib"
+	@echo "... game_engine_tests"
 	@echo "... src/core/globals.o"
 	@echo "... src/core/globals.i"
 	@echo "... src/core/globals.s"

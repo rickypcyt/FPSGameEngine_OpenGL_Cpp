@@ -1,29 +1,9 @@
 My3DGame: \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/Scrt1.o \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/crti.o \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/Scrt1.o \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/crti.o \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o \
   CMakeFiles/My3DGame.dir/src/core/main.cpp.o \
-  CMakeFiles/My3DGame.dir/src/core/globals.cpp.o \
-  CMakeFiles/My3DGame.dir/src/core/godmode.cpp.o \
-  CMakeFiles/My3DGame.dir/src/graphics/renderer.cpp.o \
-  CMakeFiles/My3DGame.dir/src/graphics/lights.cpp.o \
-  CMakeFiles/My3DGame.dir/src/graphics/models.cpp.o \
-  CMakeFiles/My3DGame.dir/src/input/input.cpp.o \
-  CMakeFiles/My3DGame.dir/src/input/movement.cpp.o \
-  CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.o \
-  CMakeFiles/My3DGame.dir/src/editor/editor.cpp.o \
-  CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.o \
-  CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.o \
-  CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.o \
-  CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.o \
-  CMakeFiles/My3DGame.dir/src/glad.c.o \
-  CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.o \
-  CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.o \
-  CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.o \
-  CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.o \
-  CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.o \
-  CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.o \
-  CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o \
+  libgame_engine_lib.a \
   /usr/lib/libOpenGL.so \
   /usr/lib/libGLX.so \
   /usr/lib/libGLU.so \
@@ -32,32 +12,32 @@ My3DGame: \
   /usr/lib/libglut.so \
   /usr/lib/libXmu.so \
   /usr/lib/libXi.so \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libstdc++.so \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libm.so \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libm.so \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libm.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libstdc++.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libm.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libm.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libm.so \
   /usr/lib/libm.so.6 \
   /usr/lib/libmvec.so.1 \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libgcc_s.so \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libgcc_s.so \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libgcc_s.so \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libgcc_s.so.1 \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/libgcc.a \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/libgcc.a \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libc.so \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libc.so \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libc.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libgcc_s.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libgcc_s.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libgcc_s.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libgcc_s.so.1 \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/libgcc.a \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/libgcc.a \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libc.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libc.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libc.so \
   /usr/lib/libc.so.6 \
   /usr/lib/libc_nonshared.a \
   /usr/lib/ld-linux-x86-64.so.2 \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libgcc_s.so \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libgcc_s.so \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libgcc_s.so \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libgcc_s.so.1 \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/libgcc.a \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/libgcc.a \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/crtendS.o \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/crtn.o \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libgcc_s.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libgcc_s.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libgcc_s.so \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libgcc_s.so.1 \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/libgcc.a \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/libgcc.a \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/crtendS.o \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/crtn.o \
   /usr/lib32/libGLdispatch.so.0 \
   /usr/lib/libGLdispatch.so.0 \
   /usr/lib32/libX11.so.6 \
@@ -90,55 +70,15 @@ My3DGame: \
   /usr/lib32/libuuid.so.1 \
   /usr/lib/libuuid.so.1
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/Scrt1.o:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/Scrt1.o:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/crti.o:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/crti.o:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o:
 
 CMakeFiles/My3DGame.dir/src/core/main.cpp.o:
 
-CMakeFiles/My3DGame.dir/src/core/globals.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/core/godmode.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/graphics/renderer.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/graphics/lights.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/graphics/models.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/input/input.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/input/movement.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/editor/editor.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/glad.c.o:
-
-CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o:
+libgame_engine_lib.a:
 
 /usr/lib/libOpenGL.so:
 
@@ -156,35 +96,35 @@ CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o:
 
 /usr/lib/libXi.so:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libstdc++.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libstdc++.so:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libm.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libm.so:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libm.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libm.so:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libm.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libm.so:
 
 /usr/lib/libm.so.6:
 
 /usr/lib/libmvec.so.1:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libgcc_s.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libgcc_s.so:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libgcc_s.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libgcc_s.so:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libgcc_s.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libgcc_s.so:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libgcc_s.so.1:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libgcc_s.so.1:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/libgcc.a:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/libgcc.a:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/libgcc.a:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/libgcc.a:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libc.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libc.so:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libc.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libc.so:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libc.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libc.so:
 
 /usr/lib/libc.so.6:
 
@@ -192,21 +132,21 @@ CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o:
 
 /usr/lib/ld-linux-x86-64.so.2:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libgcc_s.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libgcc_s.so:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libgcc_s.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libgcc_s.so:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libgcc_s.so:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libgcc_s.so:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/libgcc_s.so.1:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/libgcc_s.so.1:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/libgcc.a:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/libgcc.a:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/libgcc.a:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/libgcc.a:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/crtendS.o:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/crtendS.o:
 
-/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/crtn.o:
+/usr/lib/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib/crtn.o:
 
 /usr/lib32/libGLdispatch.so.0:
 

@@ -3,6 +3,19 @@
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 
+// Movement state structure
+struct MovementState {
+    bool isJumping = false;
+    bool isRunning = false;
+    float verticalVelocity = 0.0f;
+    bool moveForward = false;
+    bool moveBackward = false;
+    bool moveLeft = false;
+    bool moveRight = false;
+    bool moveUp = false;
+    bool moveDown = false;
+};
+
 // External variables for movement speeds
 extern float moveSpeed;       // Movement speed
 extern float moveSpeedX;      // Forward/Backward movement speed

@@ -21,21 +21,6 @@ struct MovementConstants {
     static constexpr float INITIAL_JUMP_VELOCITY = 8.0f;
 };
 
-// Movement state
-struct MovementState {
-    bool isJumping = false;
-    bool isRunning = false;
-    float verticalVelocity = 0.0f;
-    
-    // Estado de entrada
-    bool moveForward = false;
-    bool moveBackward = false;
-    bool moveLeft = false;
-    bool moveRight = false;
-    bool moveUp = false;
-    bool moveDown = false;
-};
-
 // Global variables
 MovementState moveState;
 bool isDragging = false;

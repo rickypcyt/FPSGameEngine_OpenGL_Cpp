@@ -1,3 +1,7 @@
+/home/ricky/coding/GameEngineCpp/build/CMakeFiles/game_engine_lib.dir
 /home/ricky/coding/GameEngineCpp/build/CMakeFiles/My3DGame.dir
 /home/ricky/coding/GameEngineCpp/build/CMakeFiles/edit_cache.dir
 /home/ricky/coding/GameEngineCpp/build/CMakeFiles/rebuild_cache.dir
+/home/ricky/coding/GameEngineCpp/build/tests/CMakeFiles/game_engine_tests.dir
+/home/ricky/coding/GameEngineCpp/build/tests/CMakeFiles/edit_cache.dir
+/home/ricky/coding/GameEngineCpp/build/tests/CMakeFiles/rebuild_cache.dir

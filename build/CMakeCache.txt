@@ -245,6 +245,18 @@ GLUT_Xmu_LIBRARY:FILEPATH=/usr/lib/libXmu.so
 //Path to a library.
 GLUT_glut_LIBRARY:FILEPATH=/usr/lib/libglut.so
 
+//The directory containing a CMake configuration file for GTest.
+GTest_DIR:PATH=/usr/lib/cmake/GTest
+
+//Value Computed by CMake
+GameEngineTests_BINARY_DIR:STATIC=/home/ricky/coding/GameEngineCpp/build/tests
+
+//Value Computed by CMake
+GameEngineTests_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+GameEngineTests_SOURCE_DIR:STATIC=/home/ricky/coding/GameEngineCpp/tests
+
 //Value Computed by CMake
 My3DGame_BINARY_DIR:STATIC=/home/ricky/coding/GameEngineCpp/build
 
@@ -298,6 +310,9 @@ PKG_CONFIG_ARGN:STRING=
 
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
+
+//Dependencies for the target
+game_engine_lib_LIB_DEPENDS:STATIC=general;/usr/lib/libOpenGL.so;general;/usr/lib/libGLX.so;general;/usr/lib/libGLU.so;general;GLEW::GLEW;general;glfw;general;GLUT::GLUT;
 
 //The directory containing a CMake configuration file for glfw3.
 glfw3_DIR:PATH=/usr/lib/cmake/glfw3
@@ -414,7 +429,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -463,6 +478,8 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 FIND_PACKAGE_MESSAGE_DETAILS_GLEW:INTERNAL=[/usr/include][/usr/lib/libGLEW.so][v2.2.0()]
 //Details about finding GLUT
 FIND_PACKAGE_MESSAGE_DETAILS_GLUT:INTERNAL=[/usr/lib/libglut.so][/usr/include][v()]
+//Details about finding GTest
+FIND_PACKAGE_MESSAGE_DETAILS_GTest:INTERNAL=[/usr/lib/cmake/GTest/GTestConfig.cmake][c ][v1.16.0()]
 //Details about finding OpenGL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/usr/lib/libOpenGL.so][/usr/lib/libGLX.so][/usr/include][c ][v()]
 //Details about finding Threads
