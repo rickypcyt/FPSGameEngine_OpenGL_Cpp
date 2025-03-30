@@ -1,6 +1,5 @@
 CMakeFiles/My3DGame.dir/src/main.cpp.o: \
-  /home/ricky/coding/CppOpenGLGameEngine-main/src/main.cpp \
-  /usr/include/GL/glew.h \
+  /home/ricky/coding/GameEngineCpp/src/main.cpp /usr/include/GL/glew.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../include/c++/14.2.1/cstddef \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../include/c++/14.2.1/x86_64-pc-linux-gnu/bits/c++config.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../include/c++/14.2.1/x86_64-pc-linux-gnu/bits/os_defines.h \
@@ -69,6 +68,13 @@ CMakeFiles/My3DGame.dir/src/main.cpp.o: \
   /usr/include/pthread.h /usr/include/sched.h \
   /usr/include/bits/types/time_t.h \
   /usr/include/bits/types/struct_timespec.h /usr/include/bits/sched.h \
+  /usr/include/linux/sched/types.h /usr/include/linux/types.h \
+  /usr/include/asm/types.h /usr/include/asm-generic/types.h \
+  /usr/include/asm-generic/int-ll64.h /usr/include/asm/bitsperlong.h \
+  /usr/include/asm-generic/bitsperlong.h \
+  /usr/include/linux/posix_types.h /usr/include/linux/stddef.h \
+  /usr/include/asm/posix_types.h /usr/include/asm/posix_types_64.h \
+  /usr/include/asm-generic/posix_types.h \
   /usr/include/bits/types/struct_sched_param.h \
   /usr/include/bits/cpu-set.h /usr/include/time.h \
   /usr/include/bits/time.h /usr/include/bits/timex.h \
@@ -178,7 +184,7 @@ CMakeFiles/My3DGame.dir/src/main.cpp.o: \
   /usr/include/math.h /usr/include/bits/math-vector.h \
   /usr/include/bits/libm-simd-decl-stubs.h \
   /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
-  /usr/include/bits/fp-fast.h \
+  /usr/include/bits/fp-fast.h /usr/include/bits/mathcalls-macros.h \
   /usr/include/bits/mathcalls-helper-functions.h \
   /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
   /usr/include/bits/iscanonical.h /usr/include/glm/detail/setup.hpp \
@@ -385,9 +391,9 @@ CMakeFiles/My3DGame.dir/src/main.cpp.o: \
   /usr/lib/clang/19/include/__stdarg___va_copy.h \
   /usr/lib/clang/19/include/__stdarg_va_copy.h \
   /usr/include/GL/freeglut_ucall.h \
-  /home/ricky/coding/CppOpenGLGameEngine-main/src/../include/renderer.h \
-  /home/ricky/coding/CppOpenGLGameEngine-main/src/../include/stb_image.h \
-  /home/ricky/coding/CppOpenGLGameEngine-main/src/../include/movement.h \
-  /home/ricky/coding/CppOpenGLGameEngine-main/src/../include/globals.h \
-  /home/ricky/coding/CppOpenGLGameEngine-main/src/../include/cursor.h \
-  /home/ricky/coding/CppOpenGLGameEngine-main/src/../include/crosshair.h
+  /home/ricky/coding/GameEngineCpp/src/../include/renderer.h \
+  /home/ricky/coding/GameEngineCpp/src/../include/stb_image.h \
+  /home/ricky/coding/GameEngineCpp/src/../include/movement.h \
+  /home/ricky/coding/GameEngineCpp/src/../include/globals.h \
+  /home/ricky/coding/GameEngineCpp/src/../include/cursor.h \
+  /home/ricky/coding/GameEngineCpp/src/../include/crosshair.h

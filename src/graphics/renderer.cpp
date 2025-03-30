@@ -1,7 +1,7 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
-#include "../include/renderer.h"
-#include "../include/lights.h"
+#include "../../include/graphics/renderer.h"
+#include "../../include/graphics/lights.h"
 
 // Función para dibujar un piso, techo y paredes de tablero de ajedrez
 void drawCheckerboardFloor(float size, float tileSize) {

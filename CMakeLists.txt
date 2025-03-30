@@ -13,35 +13,63 @@ set(OpenGL_GL_PREFERENCE "GLVND")
 find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
 find_package(glfw3 REQUIRED)
-find_package(GLUT REQUIRED) # Add this line to find FreeGLUT
+find_package(GLUT REQUIRED)
 
 # Include directories
-include_directories(include)             # Include your project headers
-
-# Add the source files for your project
-add_executable(My3DGame 
-    src/main.cpp 
-    src/movement.cpp 
-    src/renderer.cpp 
-    src/globals.cpp 
-    src/cursor.cpp
-    src/glad.c
-    src/input.cpp
-    src/godmode.cpp
-    src/lights.cpp
-    src/models.cpp 
-    src/crosshair.cpp
+include_directories(
+    ${CMAKE_SOURCE_DIR}/include
+    ${CMAKE_SOURCE_DIR}/include/third_party
 )
 
-# Link against OpenGL, GLEW, GLFW, FreeGLUT
+# Source files by category
+set(CORE_SOURCES
+    src/core/main.cpp
+    src/core/globals.cpp
+    src/core/godmode.cpp
+)
+
+set(GRAPHICS_SOURCES
+    src/graphics/renderer.cpp
+    src/graphics/lights.cpp
+    src/graphics/models.cpp
+)
+
+set(INPUT_SOURCES
+    src/input/input.cpp
+    src/input/movement.cpp
+)
+
+set(UI_SOURCES
+    src/ui/crosshair.cpp
+    src/ui/cursor.cpp
+    src/ui/fps_counter.cpp
+)
+
+set(THIRD_PARTY_SOURCES
+    src/glad.c
+)
+
+# Combine all source files
+set(SOURCES
+    ${CORE_SOURCES}
+    ${GRAPHICS_SOURCES}
+    ${INPUT_SOURCES}
+    ${UI_SOURCES}
+    ${THIRD_PARTY_SOURCES}
+)
+
+# Add the executable
+add_executable(My3DGame ${SOURCES})
+
+# Link libraries
 target_link_libraries(My3DGame 
     ${OPENGL_LIBRARIES} 
     GLEW::GLEW 
     glfw 
-    GLUT::GLUT  # Link to FreeGLUT
+    GLUT::GLUT
 )
 
-# Optional: Print configuration summary
+# Print configuration summary
 message(STATUS "Using OpenGL: ${OPENGL_VERSION}")
 message(STATUS "Using GLEW: ${GLEW_VERSION}")
 message(STATUS "Using GLFW: ${GLFW_VERSION}")

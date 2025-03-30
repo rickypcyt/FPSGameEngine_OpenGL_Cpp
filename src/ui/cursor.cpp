@@ -1,8 +1,8 @@
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include "../include/cursor.h"
-#include "../include/globals.h"
+#include "../../include/ui/cursor.h"
+#include "../../include/core/globals.h"
 
 float lastX = WIDTH / 2.0f;
 float lastY = HEIGHT / 2.0f;
@@ -22,26 +22,31 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
         lastX = xpos;
         lastY = ypos;
         firstMouse = false;
+        return;
     }
 
+    // Calcular el offset del mouse
     double xoffset = xpos - lastX;
-    double yoffset = lastY - ypos; // Inverted y-axis for proper movement
+    double yoffset = lastY - ypos;
+    
+    // Actualizar la última posición del mouse
     lastX = xpos;
     lastY = ypos;
 
-    const float sensitivity = 0.15f; // Increased sensitivity for quicker response
+    // Ajustar la sensibilidad del mouse
+    const float sensitivity = 0.1f; // Reducida para un control más suave
 
-    // Apply sensitivity
+    // Aplicar la sensibilidad
     xoffset *= sensitivity;
     yoffset *= sensitivity;
 
-    // Update yaw and pitch
-    yaw += xoffset; 
+    // Actualizar yaw y pitch
+    yaw += xoffset;
     pitch += yoffset;
 
-    // Clamp pitch to prevent inverted view
+    // Limitar el pitch para evitar que la cámara se voltee
     pitch = glm::clamp(pitch, -89.0f, 89.0f);
 
-    // Update camera direction based on new yaw and pitch
+    // Actualizar la dirección de la cámara
     updateCameraDirection();
 }

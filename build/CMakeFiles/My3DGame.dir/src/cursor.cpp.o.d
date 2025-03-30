@@ -1,5 +1,5 @@
 CMakeFiles/My3DGame.dir/src/cursor.cpp.o: \
-  /home/ricky/coding/CppOpenGLGameEngine-main/src/cursor.cpp \
+  /home/ricky/coding/GameEngineCpp/src/cursor.cpp \
   /usr/include/GLFW/glfw3.h /usr/lib/clang/19/include/stddef.h \
   /usr/lib/clang/19/include/__stddef_header_macro.h \
   /usr/lib/clang/19/include/__stddef_ptrdiff_t.h \
@@ -27,11 +27,13 @@ CMakeFiles/My3DGame.dir/src/cursor.cpp.o: \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../include/c++/14.2.1/x86_64-pc-linux-gnu/bits/os_defines.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../include/c++/14.2.1/x86_64-pc-linux-gnu/bits/cpu_defines.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../include/c++/14.2.1/bits/cpp_type_traits.h \
+  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../include/c++/14.2.1/bits/version.h \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../include/c++/14.2.1/ext/type_traits.h \
   /usr/include/math.h /usr/include/bits/math-vector.h \
   /usr/include/bits/libm-simd-decl-stubs.h /usr/include/bits/floatn.h \
   /usr/include/bits/floatn-common.h /usr/include/bits/flt-eval-method.h \
   /usr/include/bits/fp-logb.h /usr/include/bits/fp-fast.h \
+  /usr/include/bits/mathcalls-macros.h \
   /usr/include/bits/mathcalls-helper-functions.h \
   /usr/include/bits/mathcalls.h /usr/include/bits/mathcalls-narrow.h \
   /usr/include/bits/iscanonical.h \
@@ -54,7 +56,6 @@ CMakeFiles/My3DGame.dir/src/cursor.cpp.o: \
   /usr/include/bits/atomic_wide_counter.h \
   /usr/include/bits/struct_mutex.h /usr/include/bits/struct_rwlock.h \
   /usr/include/alloca.h /usr/include/bits/stdlib-float.h \
-  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../include/c++/14.2.1/bits/version.h \
   /usr/include/glm/detail/setup.hpp \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../include/c++/14.2.1/cassert \
   /usr/include/assert.h \
@@ -257,5 +258,5 @@ CMakeFiles/My3DGame.dir/src/cursor.cpp.o: \
   /usr/include/glm/gtc/../geometric.hpp \
   /usr/include/glm/gtc/../trigonometric.hpp \
   /usr/include/glm/gtc/../matrix.hpp \
-  /home/ricky/coding/CppOpenGLGameEngine-main/src/../include/cursor.h \
-  /home/ricky/coding/CppOpenGLGameEngine-main/src/../include/globals.h
+  /home/ricky/coding/GameEngineCpp/src/../include/cursor.h \
+  /home/ricky/coding/GameEngineCpp/src/../include/globals.h

@@ -1,4 +1,4 @@
-#include "../include/globals.h"
+#include "../../include/core/globals.h"
 
 // Define global variables
 float moveSpeed = 5.0f;      // Movement speed

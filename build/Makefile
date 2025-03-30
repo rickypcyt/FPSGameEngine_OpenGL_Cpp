@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ricky/coding/CppOpenGLGameEngine-main
+CMAKE_SOURCE_DIR = /home/ricky/coding/GameEngineCpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ricky/coding/CppOpenGLGameEngine-main/build
+CMAKE_BINARY_DIR = /home/ricky/coding/GameEngineCpp/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ricky/coding/CppOpenGLGameEngine-main/build/CMakeFiles /home/ricky/coding/CppOpenGLGameEngine-main/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ricky/coding/GameEngineCpp/build/CMakeFiles /home/ricky/coding/GameEngineCpp/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ricky/coding/CppOpenGLGameEngine-main/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ricky/coding/GameEngineCpp/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,53 +129,77 @@ My3DGame/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/build
 .PHONY : My3DGame/fast
 
-src/crosshair.o: src/crosshair.cpp.o
-.PHONY : src/crosshair.o
+src/core/globals.o: src/core/globals.cpp.o
+.PHONY : src/core/globals.o
 
 # target to build an object file
-src/crosshair.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/crosshair.cpp.o
-.PHONY : src/crosshair.cpp.o
+src/core/globals.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/globals.cpp.o
+.PHONY : src/core/globals.cpp.o
 
-src/crosshair.i: src/crosshair.cpp.i
-.PHONY : src/crosshair.i
+src/core/globals.i: src/core/globals.cpp.i
+.PHONY : src/core/globals.i
 
 # target to preprocess a source file
-src/crosshair.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/crosshair.cpp.i
-.PHONY : src/crosshair.cpp.i
+src/core/globals.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/globals.cpp.i
+.PHONY : src/core/globals.cpp.i
 
-src/crosshair.s: src/crosshair.cpp.s
-.PHONY : src/crosshair.s
+src/core/globals.s: src/core/globals.cpp.s
+.PHONY : src/core/globals.s
 
 # target to generate assembly for a file
-src/crosshair.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/crosshair.cpp.s
-.PHONY : src/crosshair.cpp.s
+src/core/globals.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/globals.cpp.s
+.PHONY : src/core/globals.cpp.s
 
-src/cursor.o: src/cursor.cpp.o
-.PHONY : src/cursor.o
+src/core/godmode.o: src/core/godmode.cpp.o
+.PHONY : src/core/godmode.o
 
 # target to build an object file
-src/cursor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/cursor.cpp.o
-.PHONY : src/cursor.cpp.o
+src/core/godmode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/godmode.cpp.o
+.PHONY : src/core/godmode.cpp.o
 
-src/cursor.i: src/cursor.cpp.i
-.PHONY : src/cursor.i
+src/core/godmode.i: src/core/godmode.cpp.i
+.PHONY : src/core/godmode.i
 
 # target to preprocess a source file
-src/cursor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/cursor.cpp.i
-.PHONY : src/cursor.cpp.i
+src/core/godmode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/godmode.cpp.i
+.PHONY : src/core/godmode.cpp.i
 
-src/cursor.s: src/cursor.cpp.s
-.PHONY : src/cursor.s
+src/core/godmode.s: src/core/godmode.cpp.s
+.PHONY : src/core/godmode.s
 
 # target to generate assembly for a file
-src/cursor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/cursor.cpp.s
-.PHONY : src/cursor.cpp.s
+src/core/godmode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/godmode.cpp.s
+.PHONY : src/core/godmode.cpp.s
+
+src/core/main.o: src/core/main.cpp.o
+.PHONY : src/core/main.o
+
+# target to build an object file
+src/core/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/main.cpp.o
+.PHONY : src/core/main.cpp.o
+
+src/core/main.i: src/core/main.cpp.i
+.PHONY : src/core/main.i
+
+# target to preprocess a source file
+src/core/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/main.cpp.i
+.PHONY : src/core/main.cpp.i
+
+src/core/main.s: src/core/main.cpp.s
+.PHONY : src/core/main.s
+
+# target to generate assembly for a file
+src/core/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/main.cpp.s
+.PHONY : src/core/main.cpp.s
 
 src/glad.o: src/glad.c.o
 .PHONY : src/glad.o
@@ -201,197 +225,197 @@ src/glad.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/glad.c.s
 .PHONY : src/glad.c.s
 
-src/globals.o: src/globals.cpp.o
-.PHONY : src/globals.o
+src/graphics/lights.o: src/graphics/lights.cpp.o
+.PHONY : src/graphics/lights.o
 
 # target to build an object file
-src/globals.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/globals.cpp.o
-.PHONY : src/globals.cpp.o
+src/graphics/lights.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/graphics/lights.cpp.o
+.PHONY : src/graphics/lights.cpp.o
 
-src/globals.i: src/globals.cpp.i
-.PHONY : src/globals.i
+src/graphics/lights.i: src/graphics/lights.cpp.i
+.PHONY : src/graphics/lights.i
 
 # target to preprocess a source file
-src/globals.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/globals.cpp.i
-.PHONY : src/globals.cpp.i
+src/graphics/lights.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/graphics/lights.cpp.i
+.PHONY : src/graphics/lights.cpp.i
 
-src/globals.s: src/globals.cpp.s
-.PHONY : src/globals.s
+src/graphics/lights.s: src/graphics/lights.cpp.s
+.PHONY : src/graphics/lights.s
 
 # target to generate assembly for a file
-src/globals.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/globals.cpp.s
-.PHONY : src/globals.cpp.s
+src/graphics/lights.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/graphics/lights.cpp.s
+.PHONY : src/graphics/lights.cpp.s
 
-src/godmode.o: src/godmode.cpp.o
-.PHONY : src/godmode.o
+src/graphics/models.o: src/graphics/models.cpp.o
+.PHONY : src/graphics/models.o
 
 # target to build an object file
-src/godmode.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/godmode.cpp.o
-.PHONY : src/godmode.cpp.o
+src/graphics/models.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/graphics/models.cpp.o
+.PHONY : src/graphics/models.cpp.o
 
-src/godmode.i: src/godmode.cpp.i
-.PHONY : src/godmode.i
+src/graphics/models.i: src/graphics/models.cpp.i
+.PHONY : src/graphics/models.i
 
 # target to preprocess a source file
-src/godmode.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/godmode.cpp.i
-.PHONY : src/godmode.cpp.i
+src/graphics/models.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/graphics/models.cpp.i
+.PHONY : src/graphics/models.cpp.i
 
-src/godmode.s: src/godmode.cpp.s
-.PHONY : src/godmode.s
+src/graphics/models.s: src/graphics/models.cpp.s
+.PHONY : src/graphics/models.s
 
 # target to generate assembly for a file
-src/godmode.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/godmode.cpp.s
-.PHONY : src/godmode.cpp.s
+src/graphics/models.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/graphics/models.cpp.s
+.PHONY : src/graphics/models.cpp.s
 
-src/input.o: src/input.cpp.o
-.PHONY : src/input.o
+src/graphics/renderer.o: src/graphics/renderer.cpp.o
+.PHONY : src/graphics/renderer.o
 
 # target to build an object file
-src/input.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input.cpp.o
-.PHONY : src/input.cpp.o
+src/graphics/renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/graphics/renderer.cpp.o
+.PHONY : src/graphics/renderer.cpp.o
 
-src/input.i: src/input.cpp.i
-.PHONY : src/input.i
+src/graphics/renderer.i: src/graphics/renderer.cpp.i
+.PHONY : src/graphics/renderer.i
 
 # target to preprocess a source file
-src/input.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input.cpp.i
-.PHONY : src/input.cpp.i
+src/graphics/renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/graphics/renderer.cpp.i
+.PHONY : src/graphics/renderer.cpp.i
 
-src/input.s: src/input.cpp.s
-.PHONY : src/input.s
+src/graphics/renderer.s: src/graphics/renderer.cpp.s
+.PHONY : src/graphics/renderer.s
 
 # target to generate assembly for a file
-src/input.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input.cpp.s
-.PHONY : src/input.cpp.s
+src/graphics/renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/graphics/renderer.cpp.s
+.PHONY : src/graphics/renderer.cpp.s
 
-src/lights.o: src/lights.cpp.o
-.PHONY : src/lights.o
+src/input/input.o: src/input/input.cpp.o
+.PHONY : src/input/input.o
 
 # target to build an object file
-src/lights.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/lights.cpp.o
-.PHONY : src/lights.cpp.o
+src/input/input.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input/input.cpp.o
+.PHONY : src/input/input.cpp.o
 
-src/lights.i: src/lights.cpp.i
-.PHONY : src/lights.i
+src/input/input.i: src/input/input.cpp.i
+.PHONY : src/input/input.i
 
 # target to preprocess a source file
-src/lights.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/lights.cpp.i
-.PHONY : src/lights.cpp.i
+src/input/input.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input/input.cpp.i
+.PHONY : src/input/input.cpp.i
 
-src/lights.s: src/lights.cpp.s
-.PHONY : src/lights.s
+src/input/input.s: src/input/input.cpp.s
+.PHONY : src/input/input.s
 
 # target to generate assembly for a file
-src/lights.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/lights.cpp.s
-.PHONY : src/lights.cpp.s
+src/input/input.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input/input.cpp.s
+.PHONY : src/input/input.cpp.s
 
-src/main.o: src/main.cpp.o
-.PHONY : src/main.o
+src/input/movement.o: src/input/movement.cpp.o
+.PHONY : src/input/movement.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/input/movement.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input/movement.cpp.o
+.PHONY : src/input/movement.cpp.o
 
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
+src/input/movement.i: src/input/movement.cpp.i
+.PHONY : src/input/movement.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/input/movement.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input/movement.cpp.i
+.PHONY : src/input/movement.cpp.i
 
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
+src/input/movement.s: src/input/movement.cpp.s
+.PHONY : src/input/movement.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/input/movement.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input/movement.cpp.s
+.PHONY : src/input/movement.cpp.s
 
-src/models.o: src/models.cpp.o
-.PHONY : src/models.o
+src/ui/crosshair.o: src/ui/crosshair.cpp.o
+.PHONY : src/ui/crosshair.o
 
 # target to build an object file
-src/models.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/models.cpp.o
-.PHONY : src/models.cpp.o
+src/ui/crosshair.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.o
+.PHONY : src/ui/crosshair.cpp.o
 
-src/models.i: src/models.cpp.i
-.PHONY : src/models.i
+src/ui/crosshair.i: src/ui/crosshair.cpp.i
+.PHONY : src/ui/crosshair.i
 
 # target to preprocess a source file
-src/models.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/models.cpp.i
-.PHONY : src/models.cpp.i
+src/ui/crosshair.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.i
+.PHONY : src/ui/crosshair.cpp.i
 
-src/models.s: src/models.cpp.s
-.PHONY : src/models.s
+src/ui/crosshair.s: src/ui/crosshair.cpp.s
+.PHONY : src/ui/crosshair.s
 
 # target to generate assembly for a file
-src/models.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/models.cpp.s
-.PHONY : src/models.cpp.s
+src/ui/crosshair.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.s
+.PHONY : src/ui/crosshair.cpp.s
 
-src/movement.o: src/movement.cpp.o
-.PHONY : src/movement.o
+src/ui/cursor.o: src/ui/cursor.cpp.o
+.PHONY : src/ui/cursor.o
 
 # target to build an object file
-src/movement.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/movement.cpp.o
-.PHONY : src/movement.cpp.o
+src/ui/cursor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.o
+.PHONY : src/ui/cursor.cpp.o
 
-src/movement.i: src/movement.cpp.i
-.PHONY : src/movement.i
+src/ui/cursor.i: src/ui/cursor.cpp.i
+.PHONY : src/ui/cursor.i
 
 # target to preprocess a source file
-src/movement.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/movement.cpp.i
-.PHONY : src/movement.cpp.i
+src/ui/cursor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.i
+.PHONY : src/ui/cursor.cpp.i
 
-src/movement.s: src/movement.cpp.s
-.PHONY : src/movement.s
+src/ui/cursor.s: src/ui/cursor.cpp.s
+.PHONY : src/ui/cursor.s
 
 # target to generate assembly for a file
-src/movement.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/movement.cpp.s
-.PHONY : src/movement.cpp.s
+src/ui/cursor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.s
+.PHONY : src/ui/cursor.cpp.s
 
-src/renderer.o: src/renderer.cpp.o
-.PHONY : src/renderer.o
+src/ui/fps_counter.o: src/ui/fps_counter.cpp.o
+.PHONY : src/ui/fps_counter.o
 
 # target to build an object file
-src/renderer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/renderer.cpp.o
-.PHONY : src/renderer.cpp.o
+src/ui/fps_counter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.o
+.PHONY : src/ui/fps_counter.cpp.o
 
-src/renderer.i: src/renderer.cpp.i
-.PHONY : src/renderer.i
+src/ui/fps_counter.i: src/ui/fps_counter.cpp.i
+.PHONY : src/ui/fps_counter.i
 
 # target to preprocess a source file
-src/renderer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/renderer.cpp.i
-.PHONY : src/renderer.cpp.i
+src/ui/fps_counter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.i
+.PHONY : src/ui/fps_counter.cpp.i
 
-src/renderer.s: src/renderer.cpp.s
-.PHONY : src/renderer.s
+src/ui/fps_counter.s: src/ui/fps_counter.cpp.s
+.PHONY : src/ui/fps_counter.s
 
 # target to generate assembly for a file
-src/renderer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/renderer.cpp.s
-.PHONY : src/renderer.cpp.s
+src/ui/fps_counter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.s
+.PHONY : src/ui/fps_counter.cpp.s
 
 # Help Target
 help:
@@ -402,39 +426,42 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... My3DGame"
-	@echo "... src/crosshair.o"
-	@echo "... src/crosshair.i"
-	@echo "... src/crosshair.s"
-	@echo "... src/cursor.o"
-	@echo "... src/cursor.i"
-	@echo "... src/cursor.s"
+	@echo "... src/core/globals.o"
+	@echo "... src/core/globals.i"
+	@echo "... src/core/globals.s"
+	@echo "... src/core/godmode.o"
+	@echo "... src/core/godmode.i"
+	@echo "... src/core/godmode.s"
+	@echo "... src/core/main.o"
+	@echo "... src/core/main.i"
+	@echo "... src/core/main.s"
 	@echo "... src/glad.o"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"
-	@echo "... src/globals.o"
-	@echo "... src/globals.i"
-	@echo "... src/globals.s"
-	@echo "... src/godmode.o"
-	@echo "... src/godmode.i"
-	@echo "... src/godmode.s"
-	@echo "... src/input.o"
-	@echo "... src/input.i"
-	@echo "... src/input.s"
-	@echo "... src/lights.o"
-	@echo "... src/lights.i"
-	@echo "... src/lights.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
-	@echo "... src/models.o"
-	@echo "... src/models.i"
-	@echo "... src/models.s"
-	@echo "... src/movement.o"
-	@echo "... src/movement.i"
-	@echo "... src/movement.s"
-	@echo "... src/renderer.o"
-	@echo "... src/renderer.i"
-	@echo "... src/renderer.s"
+	@echo "... src/graphics/lights.o"
+	@echo "... src/graphics/lights.i"
+	@echo "... src/graphics/lights.s"
+	@echo "... src/graphics/models.o"
+	@echo "... src/graphics/models.i"
+	@echo "... src/graphics/models.s"
+	@echo "... src/graphics/renderer.o"
+	@echo "... src/graphics/renderer.i"
+	@echo "... src/graphics/renderer.s"
+	@echo "... src/input/input.o"
+	@echo "... src/input/input.i"
+	@echo "... src/input/input.s"
+	@echo "... src/input/movement.o"
+	@echo "... src/input/movement.i"
+	@echo "... src/input/movement.s"
+	@echo "... src/ui/crosshair.o"
+	@echo "... src/ui/crosshair.i"
+	@echo "... src/ui/crosshair.s"
+	@echo "... src/ui/cursor.o"
+	@echo "... src/ui/cursor.i"
+	@echo "... src/ui/cursor.s"
+	@echo "... src/ui/fps_counter.o"
+	@echo "... src/ui/fps_counter.i"
+	@echo "... src/ui/fps_counter.s"
 .PHONY : help
 
 

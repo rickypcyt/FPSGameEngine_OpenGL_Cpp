@@ -1,5 +1,5 @@
-#include "../include/godmode.h"
-#include "../include/input.h"
+#include "../../include/core/godmode.h"
+#include "../../include/input/input.h"
 #include <stdio.h>
 
 bool canFly = false;

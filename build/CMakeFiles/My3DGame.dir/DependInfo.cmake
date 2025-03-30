@@ -8,17 +8,18 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ricky/coding/CppOpenGLGameEngine-main/src/glad.c" "CMakeFiles/My3DGame.dir/src/glad.c.o" "gcc" "CMakeFiles/My3DGame.dir/src/glad.c.o.d"
-  "/home/ricky/coding/CppOpenGLGameEngine-main/src/crosshair.cpp" "CMakeFiles/My3DGame.dir/src/crosshair.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/crosshair.cpp.o.d"
-  "/home/ricky/coding/CppOpenGLGameEngine-main/src/cursor.cpp" "CMakeFiles/My3DGame.dir/src/cursor.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/cursor.cpp.o.d"
-  "/home/ricky/coding/CppOpenGLGameEngine-main/src/globals.cpp" "CMakeFiles/My3DGame.dir/src/globals.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/globals.cpp.o.d"
-  "/home/ricky/coding/CppOpenGLGameEngine-main/src/godmode.cpp" "CMakeFiles/My3DGame.dir/src/godmode.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/godmode.cpp.o.d"
-  "/home/ricky/coding/CppOpenGLGameEngine-main/src/input.cpp" "CMakeFiles/My3DGame.dir/src/input.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/input.cpp.o.d"
-  "/home/ricky/coding/CppOpenGLGameEngine-main/src/lights.cpp" "CMakeFiles/My3DGame.dir/src/lights.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/lights.cpp.o.d"
-  "/home/ricky/coding/CppOpenGLGameEngine-main/src/main.cpp" "CMakeFiles/My3DGame.dir/src/main.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/main.cpp.o.d"
-  "/home/ricky/coding/CppOpenGLGameEngine-main/src/models.cpp" "CMakeFiles/My3DGame.dir/src/models.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/models.cpp.o.d"
-  "/home/ricky/coding/CppOpenGLGameEngine-main/src/movement.cpp" "CMakeFiles/My3DGame.dir/src/movement.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/movement.cpp.o.d"
-  "/home/ricky/coding/CppOpenGLGameEngine-main/src/renderer.cpp" "CMakeFiles/My3DGame.dir/src/renderer.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/renderer.cpp.o.d"
+  "/home/ricky/coding/GameEngineCpp/src/glad.c" "CMakeFiles/My3DGame.dir/src/glad.c.o" "gcc" "CMakeFiles/My3DGame.dir/src/glad.c.o.d"
+  "/home/ricky/coding/GameEngineCpp/src/core/globals.cpp" "CMakeFiles/My3DGame.dir/src/core/globals.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/core/globals.cpp.o.d"
+  "/home/ricky/coding/GameEngineCpp/src/core/godmode.cpp" "CMakeFiles/My3DGame.dir/src/core/godmode.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/core/godmode.cpp.o.d"
+  "/home/ricky/coding/GameEngineCpp/src/core/main.cpp" "CMakeFiles/My3DGame.dir/src/core/main.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/core/main.cpp.o.d"
+  "/home/ricky/coding/GameEngineCpp/src/graphics/lights.cpp" "CMakeFiles/My3DGame.dir/src/graphics/lights.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/graphics/lights.cpp.o.d"
+  "/home/ricky/coding/GameEngineCpp/src/graphics/models.cpp" "CMakeFiles/My3DGame.dir/src/graphics/models.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/graphics/models.cpp.o.d"
+  "/home/ricky/coding/GameEngineCpp/src/graphics/renderer.cpp" "CMakeFiles/My3DGame.dir/src/graphics/renderer.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/graphics/renderer.cpp.o.d"
+  "/home/ricky/coding/GameEngineCpp/src/input/input.cpp" "CMakeFiles/My3DGame.dir/src/input/input.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/input/input.cpp.o.d"
+  "/home/ricky/coding/GameEngineCpp/src/input/movement.cpp" "CMakeFiles/My3DGame.dir/src/input/movement.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/input/movement.cpp.o.d"
+  "/home/ricky/coding/GameEngineCpp/src/ui/crosshair.cpp" "CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.o.d"
+  "/home/ricky/coding/GameEngineCpp/src/ui/cursor.cpp" "CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.o.d"
+  "/home/ricky/coding/GameEngineCpp/src/ui/fps_counter.cpp" "CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.o" "gcc" "CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.o.d"
   "" "My3DGame" "gcc" "CMakeFiles/My3DGame.dir/link.d"
   )
 

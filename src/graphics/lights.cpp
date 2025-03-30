@@ -1,4 +1,4 @@
-#include "../include/lights.h"
+#include "../../include/graphics/lights.h"
 #include <GL/glew.h>
 #include <glm/glm.hpp>
 

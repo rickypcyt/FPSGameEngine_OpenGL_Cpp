@@ -8,11 +8,11 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <GL/freeglut.h>
 
-#include "../include/renderer.h"
-#include "../include/movement.h"
-#include "../include/globals.h"
-#include "../include/cursor.h"
-#include "../include/crosshair.h"
+#include "../../include/graphics/renderer.h"
+#include "../../include/input/movement.h"
+#include "../../include/core/globals.h"
+#include "../../include/ui/cursor.h"
+#include "../../include/ui/crosshair.h"
 // #include "../include/input.h"
 // #include "../include/godmode.h"
 
@@ -96,6 +96,20 @@ void setupCallbacks() {
 void mainLoop() {
     using namespace std::chrono;
     auto lastFrameTimePoint = high_resolution_clock::now();
+    
+    // Habilitar optimizaciones de OpenGL
+    glEnable(GL_CULL_FACE);  // Culling de caras ocultas
+    glCullFace(GL_BACK);
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_MULTISAMPLE);  // Antialiasing
+    
+    // Configurar el buffer de profundidad
+    glClearDepth(1.0f);
+    glDepthFunc(GL_LEQUAL);
+    
+    // Habilitar blending para transparencias
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     while (!glfwWindowShouldClose(window)) {
         auto frameStartTime = high_resolution_clock::now();
@@ -104,23 +118,25 @@ void mainLoop() {
         deltaTime = currentFrame - lastFrameTime;
         lastFrameTime = currentFrame;
 
+        // Limpiar buffers
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glLoadIdentity();
 
-        // Set up camera
+        // Configurar la cámara con optimizaciones
         glm::vec3 cameraPosition(characterPosX, characterPosY + 1.5f, characterPosZ);
         glm::vec3 cameraTarget = cameraPosition + cameraFront;
         gluLookAt(cameraPosition.x, cameraPosition.y, cameraPosition.z,
                   cameraTarget.x, cameraTarget.y, cameraTarget.z,
                   0.0f, 1.0f, 0.0f);
         
+        // Renderizar la escena
         drawScene();
         drawCrosshair(WIDTH, HEIGHT);
         
+        // Actualizar movimiento y física
         updateMovement(deltaTime);
-        
 
-        // FPS calculation
+        // Calcular y mostrar FPS
         frameCount++;
         if (currentFrame - lastTime >= 1.0f) {
             fps = frameCount;
@@ -129,15 +145,16 @@ void mainLoop() {
             lastTime += 1.0f;
         }
 
-        // Render FPS
+        // Renderizar información de FPS
         std::ostringstream fpsStream;
         fpsStream << "FPS: " << fps;
         renderText(fpsStream.str(), -0.9f, 0.9f);
 
+        // Intercambiar buffers y procesar eventos
         glfwSwapBuffers(window);
         glfwPollEvents();
 
-        // Frame capping
+        // Control de frame rate
         auto frameEndTime = high_resolution_clock::now();
         duration<float, std::milli> frameDuration = frameEndTime - frameStartTime;
 

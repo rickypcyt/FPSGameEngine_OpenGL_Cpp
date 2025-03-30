@@ -5,13 +5,13 @@
 # compile CXX with clang++
 C_DEFINES = 
 
-C_INCLUDES = -I/home/ricky/coding/CppOpenGLGameEngine-main/include
+C_INCLUDES = -I/home/ricky/coding/GameEngineCpp/include -I/home/ricky/coding/GameEngineCpp/include/third_party
 
 C_FLAGS = 
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ricky/coding/CppOpenGLGameEngine-main/include
+CXX_INCLUDES = -I/home/ricky/coding/GameEngineCpp/include -I/home/ricky/coding/GameEngineCpp/include/third_party
 
 CXX_FLAGS = -std=gnu++11
 

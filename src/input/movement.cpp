@@ -1,10 +1,10 @@
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include "../include/movement.h"
-#include "../include/globals.h"
-#include "../include/input.h"
-#include "../include/godmode.h"
+#include "../../include/input/movement.h"
+#include "../../include/core/globals.h"
+#include "../../include/input/input.h"
+#include "../../include/core/godmode.h"
 #include <stdio.h>
 
 bool isDragging = false;

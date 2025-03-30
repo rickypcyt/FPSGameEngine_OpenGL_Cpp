@@ -2,17 +2,18 @@ My3DGame: \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/Scrt1.o \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/../../../../lib64/crti.o \
   /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o \
-  CMakeFiles/My3DGame.dir/src/main.cpp.o \
-  CMakeFiles/My3DGame.dir/src/movement.cpp.o \
-  CMakeFiles/My3DGame.dir/src/renderer.cpp.o \
-  CMakeFiles/My3DGame.dir/src/globals.cpp.o \
-  CMakeFiles/My3DGame.dir/src/cursor.cpp.o \
+  CMakeFiles/My3DGame.dir/src/core/main.cpp.o \
+  CMakeFiles/My3DGame.dir/src/core/globals.cpp.o \
+  CMakeFiles/My3DGame.dir/src/core/godmode.cpp.o \
+  CMakeFiles/My3DGame.dir/src/graphics/renderer.cpp.o \
+  CMakeFiles/My3DGame.dir/src/graphics/lights.cpp.o \
+  CMakeFiles/My3DGame.dir/src/graphics/models.cpp.o \
+  CMakeFiles/My3DGame.dir/src/input/input.cpp.o \
+  CMakeFiles/My3DGame.dir/src/input/movement.cpp.o \
+  CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.o \
+  CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.o \
+  CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.o \
   CMakeFiles/My3DGame.dir/src/glad.c.o \
-  CMakeFiles/My3DGame.dir/src/input.cpp.o \
-  CMakeFiles/My3DGame.dir/src/godmode.cpp.o \
-  CMakeFiles/My3DGame.dir/src/lights.cpp.o \
-  CMakeFiles/My3DGame.dir/src/models.cpp.o \
-  CMakeFiles/My3DGame.dir/src/crosshair.cpp.o \
   /usr/lib/libOpenGL.so \
   /usr/lib/libGLX.so \
   /usr/lib/libGLU.so \
@@ -85,27 +86,29 @@ My3DGame: \
 
 /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/14.2.1/crtbeginS.o:
 
-CMakeFiles/My3DGame.dir/src/main.cpp.o:
+CMakeFiles/My3DGame.dir/src/core/main.cpp.o:
 
-CMakeFiles/My3DGame.dir/src/movement.cpp.o:
+CMakeFiles/My3DGame.dir/src/core/globals.cpp.o:
 
-CMakeFiles/My3DGame.dir/src/renderer.cpp.o:
+CMakeFiles/My3DGame.dir/src/core/godmode.cpp.o:
 
-CMakeFiles/My3DGame.dir/src/globals.cpp.o:
+CMakeFiles/My3DGame.dir/src/graphics/renderer.cpp.o:
 
-CMakeFiles/My3DGame.dir/src/cursor.cpp.o:
+CMakeFiles/My3DGame.dir/src/graphics/lights.cpp.o:
+
+CMakeFiles/My3DGame.dir/src/graphics/models.cpp.o:
+
+CMakeFiles/My3DGame.dir/src/input/input.cpp.o:
+
+CMakeFiles/My3DGame.dir/src/input/movement.cpp.o:
+
+CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.o:
+
+CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.o:
+
+CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.o:
 
 CMakeFiles/My3DGame.dir/src/glad.c.o:
-
-CMakeFiles/My3DGame.dir/src/input.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/godmode.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/lights.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/models.cpp.o:
-
-CMakeFiles/My3DGame.dir/src/crosshair.cpp.o:
 
 /usr/lib/libOpenGL.so:
 
