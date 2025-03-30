@@ -13,6 +13,8 @@
 #include "../../include/core/globals.h"
 #include "../../include/ui/cursor.h"
 #include "../../include/ui/crosshair.h"
+#include "../../include/input/editor_input.h"
+#include "../../include/ui/imgui_interface.h"
 // #include "../include/input.h"
 // #include "../include/godmode.h"
 
@@ -91,25 +93,12 @@ void initializeGLUT(int& argc, char** argv) {
 void setupCallbacks() {
     glfwSetKeyCallback(window, key_callback);
     glfwSetCursorPosCallback(window, mouse_callback);
+    glfwSetMouseButtonCallback(window, mouse_button_callback);
 }
 
 void mainLoop() {
     using namespace std::chrono;
     auto lastFrameTimePoint = high_resolution_clock::now();
-    
-    // Habilitar optimizaciones de OpenGL
-    glEnable(GL_CULL_FACE);  // Culling de caras ocultas
-    glCullFace(GL_BACK);
-    glEnable(GL_DEPTH_TEST);
-    glEnable(GL_MULTISAMPLE);  // Antialiasing
-    
-    // Configurar el buffer de profundidad
-    glClearDepth(1.0f);
-    glDepthFunc(GL_LEQUAL);
-    
-    // Habilitar blending para transparencias
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     while (!glfwWindowShouldClose(window)) {
         auto frameStartTime = high_resolution_clock::now();
@@ -118,25 +107,43 @@ void mainLoop() {
         deltaTime = currentFrame - lastFrameTime;
         lastFrameTime = currentFrame;
 
-        // Limpiar buffers
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glLoadIdentity();
 
-        // Configurar la cámara con optimizaciones
+        // Set up camera
         glm::vec3 cameraPosition(characterPosX, characterPosY + 1.5f, characterPosZ);
         glm::vec3 cameraTarget = cameraPosition + cameraFront;
         gluLookAt(cameraPosition.x, cameraPosition.y, cameraPosition.z,
                   cameraTarget.x, cameraTarget.y, cameraTarget.z,
                   0.0f, 1.0f, 0.0f);
         
-        // Renderizar la escena
         drawScene();
+        
+        // Render editor objects and preview
+        if (EditorInput::isEditorMode) {
+            EditorInput::worldEditor.render();
+            
+            // Draw preview if placing object
+            if (EditorInput::isPlacingObject) {
+                glPushMatrix();
+                glColor4f(1.0f, 1.0f, 1.0f, 0.5f);
+                glBegin(GL_LINES);
+                glVertex3f(EditorInput::placementStart.x, EditorInput::placementStart.y, EditorInput::placementStart.z);
+                glVertex3f(EditorInput::placementEnd.x, EditorInput::placementEnd.y, EditorInput::placementEnd.z);
+                glEnd();
+                glPopMatrix();
+            }
+        }
+        
         drawCrosshair(WIDTH, HEIGHT);
         
-        // Actualizar movimiento y física
-        updateMovement(deltaTime);
+        if (!EditorInput::isEditorMode) {
+            Movement::updateMovement(deltaTime);
+        }
+        
+        EditorInput::update(deltaTime);
 
-        // Calcular y mostrar FPS
+        // FPS calculation
         frameCount++;
         if (currentFrame - lastTime >= 1.0f) {
             fps = frameCount;
@@ -145,16 +152,25 @@ void mainLoop() {
             lastTime += 1.0f;
         }
 
-        // Renderizar información de FPS
-        std::ostringstream fpsStream;
-        fpsStream << "FPS: " << fps;
-        renderText(fpsStream.str(), -0.9f, 0.9f);
+        // Render FPS and editor mode status
+        std::ostringstream statusStream;
+        statusStream << "FPS: " << fps;
+        if (EditorInput::isEditorMode) {
+            statusStream << " | Editor Mode";
+        }
+        renderText(statusStream.str(), -0.9f, 0.9f);
 
-        // Intercambiar buffers y procesar eventos
+        // Render ImGui interface
+        UI::beginImGuiFrame();
+        if (EditorInput::isEditorMode) {
+            UI::renderEditorWindow(EditorInput::worldEditor);
+        }
+        UI::endImGuiFrame();
+
         glfwSwapBuffers(window);
         glfwPollEvents();
 
-        // Control de frame rate
+        // Frame capping
         auto frameEndTime = high_resolution_clock::now();
         duration<float, std::milli> frameDuration = frameEndTime - frameStartTime;
 
@@ -162,6 +178,10 @@ void mainLoop() {
             std::this_thread::sleep_for(milliseconds(static_cast<int>(FRAME_DURATION - frameDuration.count())));
         }
     }
+}
+
+void initializeInput(GLFWwindow* window) {
+    // Implementation of initializeInput function
 }
 
 int main() {
@@ -175,12 +195,13 @@ int main() {
 
         setupCallbacks();
         setupProjection();
-        // Inicializar los callbacks de entrada
         
+        EditorInput::initialize(window);
+        UI::initializeImGui(window);
         
         mainLoop();
-
         
+        UI::cleanupImGui();
         
     } catch (const std::exception& e) {
         std::cerr << e.what() << std::endl;

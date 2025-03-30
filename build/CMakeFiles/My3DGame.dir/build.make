@@ -184,10 +184,38 @@ CMakeFiles/My3DGame.dir/src/input/movement.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My3DGame.dir/src/input/movement.cpp.s"
 	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ricky/coding/GameEngineCpp/src/input/movement.cpp -o CMakeFiles/My3DGame.dir/src/input/movement.cpp.s
 
+CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.o: CMakeFiles/My3DGame.dir/flags.make
+CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.o: /home/ricky/coding/GameEngineCpp/src/input/editor_input.cpp
+CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.o: CMakeFiles/My3DGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/GameEngineCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.o"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.o -MF CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.o.d -o CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.o -c /home/ricky/coding/GameEngineCpp/src/input/editor_input.cpp
+
+CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.i"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ricky/coding/GameEngineCpp/src/input/editor_input.cpp > CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.i
+
+CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.s"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ricky/coding/GameEngineCpp/src/input/editor_input.cpp -o CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.s
+
+CMakeFiles/My3DGame.dir/src/editor/editor.cpp.o: CMakeFiles/My3DGame.dir/flags.make
+CMakeFiles/My3DGame.dir/src/editor/editor.cpp.o: /home/ricky/coding/GameEngineCpp/src/editor/editor.cpp
+CMakeFiles/My3DGame.dir/src/editor/editor.cpp.o: CMakeFiles/My3DGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/GameEngineCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/My3DGame.dir/src/editor/editor.cpp.o"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My3DGame.dir/src/editor/editor.cpp.o -MF CMakeFiles/My3DGame.dir/src/editor/editor.cpp.o.d -o CMakeFiles/My3DGame.dir/src/editor/editor.cpp.o -c /home/ricky/coding/GameEngineCpp/src/editor/editor.cpp
+
+CMakeFiles/My3DGame.dir/src/editor/editor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/My3DGame.dir/src/editor/editor.cpp.i"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ricky/coding/GameEngineCpp/src/editor/editor.cpp > CMakeFiles/My3DGame.dir/src/editor/editor.cpp.i
+
+CMakeFiles/My3DGame.dir/src/editor/editor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My3DGame.dir/src/editor/editor.cpp.s"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ricky/coding/GameEngineCpp/src/editor/editor.cpp -o CMakeFiles/My3DGame.dir/src/editor/editor.cpp.s
+
 CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.o: CMakeFiles/My3DGame.dir/flags.make
 CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.o: /home/ricky/coding/GameEngineCpp/src/ui/crosshair.cpp
 CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.o: CMakeFiles/My3DGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/GameEngineCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/GameEngineCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.o"
 	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.o -MF CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.o.d -o CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.o -c /home/ricky/coding/GameEngineCpp/src/ui/crosshair.cpp
 
 CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.i: cmake_force
@@ -201,7 +229,7 @@ CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.s: cmake_force
 CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.o: CMakeFiles/My3DGame.dir/flags.make
 CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.o: /home/ricky/coding/GameEngineCpp/src/ui/cursor.cpp
 CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.o: CMakeFiles/My3DGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/GameEngineCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/GameEngineCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.o"
 	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.o -MF CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.o.d -o CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.o -c /home/ricky/coding/GameEngineCpp/src/ui/cursor.cpp
 
 CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.i: cmake_force
@@ -215,7 +243,7 @@ CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.s: cmake_force
 CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.o: CMakeFiles/My3DGame.dir/flags.make
 CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.o: /home/ricky/coding/GameEngineCpp/src/ui/fps_counter.cpp
 CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.o: CMakeFiles/My3DGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/GameEngineCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/GameEngineCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.o"
 	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.o -MF CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.o.d -o CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.o -c /home/ricky/coding/GameEngineCpp/src/ui/fps_counter.cpp
 
 CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.i: cmake_force
@@ -226,10 +254,24 @@ CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.s"
 	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ricky/coding/GameEngineCpp/src/ui/fps_counter.cpp -o CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.s
 
+CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.o: CMakeFiles/My3DGame.dir/flags.make
+CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.o: /home/ricky/coding/GameEngineCpp/src/ui/imgui_interface.cpp
+CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.o: CMakeFiles/My3DGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/GameEngineCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.o"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.o -MF CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.o.d -o CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.o -c /home/ricky/coding/GameEngineCpp/src/ui/imgui_interface.cpp
+
+CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.i"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ricky/coding/GameEngineCpp/src/ui/imgui_interface.cpp > CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.i
+
+CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.s"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ricky/coding/GameEngineCpp/src/ui/imgui_interface.cpp -o CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.s
+
 CMakeFiles/My3DGame.dir/src/glad.c.o: CMakeFiles/My3DGame.dir/flags.make
 CMakeFiles/My3DGame.dir/src/glad.c.o: /home/ricky/coding/GameEngineCpp/src/glad.c
 CMakeFiles/My3DGame.dir/src/glad.c.o: CMakeFiles/My3DGame.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/GameEngineCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/My3DGame.dir/src/glad.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/GameEngineCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/My3DGame.dir/src/glad.c.o"
 	clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/My3DGame.dir/src/glad.c.o -MF CMakeFiles/My3DGame.dir/src/glad.c.o.d -o CMakeFiles/My3DGame.dir/src/glad.c.o -c /home/ricky/coding/GameEngineCpp/src/glad.c
 
 CMakeFiles/My3DGame.dir/src/glad.c.i: cmake_force
@@ -239,6 +281,104 @@ CMakeFiles/My3DGame.dir/src/glad.c.i: cmake_force
 CMakeFiles/My3DGame.dir/src/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/My3DGame.dir/src/glad.c.s"
 	clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ricky/coding/GameEngineCpp/src/glad.c -o CMakeFiles/My3DGame.dir/src/glad.c.s
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.o: CMakeFiles/My3DGame.dir/flags.make
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.o: /home/ricky/coding/GameEngineCpp/src/third_party/imgui/imgui.cpp
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.o: CMakeFiles/My3DGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/GameEngineCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.o"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.o -MF CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.o.d -o CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.o -c /home/ricky/coding/GameEngineCpp/src/third_party/imgui/imgui.cpp
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.i"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ricky/coding/GameEngineCpp/src/third_party/imgui/imgui.cpp > CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.i
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.s"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ricky/coding/GameEngineCpp/src/third_party/imgui/imgui.cpp -o CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.s
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.o: CMakeFiles/My3DGame.dir/flags.make
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.o: /home/ricky/coding/GameEngineCpp/src/third_party/imgui/imgui_demo.cpp
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.o: CMakeFiles/My3DGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/GameEngineCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.o"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.o -MF CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.o.d -o CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.o -c /home/ricky/coding/GameEngineCpp/src/third_party/imgui/imgui_demo.cpp
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.i"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ricky/coding/GameEngineCpp/src/third_party/imgui/imgui_demo.cpp > CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.i
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.s"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ricky/coding/GameEngineCpp/src/third_party/imgui/imgui_demo.cpp -o CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.s
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.o: CMakeFiles/My3DGame.dir/flags.make
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.o: /home/ricky/coding/GameEngineCpp/src/third_party/imgui/imgui_draw.cpp
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.o: CMakeFiles/My3DGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/GameEngineCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.o"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.o -MF CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.o.d -o CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.o -c /home/ricky/coding/GameEngineCpp/src/third_party/imgui/imgui_draw.cpp
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.i"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ricky/coding/GameEngineCpp/src/third_party/imgui/imgui_draw.cpp > CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.i
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.s"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ricky/coding/GameEngineCpp/src/third_party/imgui/imgui_draw.cpp -o CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.s
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.o: CMakeFiles/My3DGame.dir/flags.make
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.o: /home/ricky/coding/GameEngineCpp/src/third_party/imgui/imgui_tables.cpp
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.o: CMakeFiles/My3DGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/GameEngineCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.o"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.o -MF CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.o.d -o CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.o -c /home/ricky/coding/GameEngineCpp/src/third_party/imgui/imgui_tables.cpp
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.i"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ricky/coding/GameEngineCpp/src/third_party/imgui/imgui_tables.cpp > CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.i
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.s"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ricky/coding/GameEngineCpp/src/third_party/imgui/imgui_tables.cpp -o CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.s
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.o: CMakeFiles/My3DGame.dir/flags.make
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.o: /home/ricky/coding/GameEngineCpp/src/third_party/imgui/imgui_widgets.cpp
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.o: CMakeFiles/My3DGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/GameEngineCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.o"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.o -MF CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.o.d -o CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.o -c /home/ricky/coding/GameEngineCpp/src/third_party/imgui/imgui_widgets.cpp
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.i"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ricky/coding/GameEngineCpp/src/third_party/imgui/imgui_widgets.cpp > CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.i
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.s"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ricky/coding/GameEngineCpp/src/third_party/imgui/imgui_widgets.cpp -o CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.s
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.o: CMakeFiles/My3DGame.dir/flags.make
+CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.o: /home/ricky/coding/GameEngineCpp/src/third_party/imgui/backends/imgui_impl_glfw.cpp
+CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.o: CMakeFiles/My3DGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/GameEngineCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.o"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.o -MF CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.o.d -o CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.o -c /home/ricky/coding/GameEngineCpp/src/third_party/imgui/backends/imgui_impl_glfw.cpp
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.i"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ricky/coding/GameEngineCpp/src/third_party/imgui/backends/imgui_impl_glfw.cpp > CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.i
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.s"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ricky/coding/GameEngineCpp/src/third_party/imgui/backends/imgui_impl_glfw.cpp -o CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.s
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o: CMakeFiles/My3DGame.dir/flags.make
+CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o: /home/ricky/coding/GameEngineCpp/src/third_party/imgui/backends/imgui_impl_opengl2.cpp
+CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o: CMakeFiles/My3DGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ricky/coding/GameEngineCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o -MF CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o.d -o CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o -c /home/ricky/coding/GameEngineCpp/src/third_party/imgui/backends/imgui_impl_opengl2.cpp
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.i"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ricky/coding/GameEngineCpp/src/third_party/imgui/backends/imgui_impl_opengl2.cpp > CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.i
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.s"
+	clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ricky/coding/GameEngineCpp/src/third_party/imgui/backends/imgui_impl_opengl2.cpp -o CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.s
 
 # Object files for target My3DGame
 My3DGame_OBJECTS = \
@@ -250,10 +390,20 @@ My3DGame_OBJECTS = \
 "CMakeFiles/My3DGame.dir/src/graphics/models.cpp.o" \
 "CMakeFiles/My3DGame.dir/src/input/input.cpp.o" \
 "CMakeFiles/My3DGame.dir/src/input/movement.cpp.o" \
+"CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.o" \
+"CMakeFiles/My3DGame.dir/src/editor/editor.cpp.o" \
 "CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.o" \
 "CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.o" \
 "CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.o" \
-"CMakeFiles/My3DGame.dir/src/glad.c.o"
+"CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.o" \
+"CMakeFiles/My3DGame.dir/src/glad.c.o" \
+"CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.o" \
+"CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.o" \
+"CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.o" \
+"CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.o" \
+"CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.o" \
+"CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.o" \
+"CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o"
 
 # External object files for target My3DGame
 My3DGame_EXTERNAL_OBJECTS =
@@ -266,10 +416,20 @@ My3DGame: CMakeFiles/My3DGame.dir/src/graphics/lights.cpp.o
 My3DGame: CMakeFiles/My3DGame.dir/src/graphics/models.cpp.o
 My3DGame: CMakeFiles/My3DGame.dir/src/input/input.cpp.o
 My3DGame: CMakeFiles/My3DGame.dir/src/input/movement.cpp.o
+My3DGame: CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.o
+My3DGame: CMakeFiles/My3DGame.dir/src/editor/editor.cpp.o
 My3DGame: CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.o
 My3DGame: CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.o
 My3DGame: CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.o
+My3DGame: CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.o
 My3DGame: CMakeFiles/My3DGame.dir/src/glad.c.o
+My3DGame: CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.o
+My3DGame: CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.o
+My3DGame: CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.o
+My3DGame: CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.o
+My3DGame: CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.o
+My3DGame: CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.o
+My3DGame: CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o
 My3DGame: CMakeFiles/My3DGame.dir/build.make
 My3DGame: CMakeFiles/My3DGame.dir/compiler_depend.ts
 My3DGame: /usr/lib/libOpenGL.so
@@ -281,7 +441,7 @@ My3DGame: /usr/lib/libglut.so
 My3DGame: /usr/lib/libXmu.so
 My3DGame: /usr/lib/libXi.so
 My3DGame: CMakeFiles/My3DGame.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ricky/coding/GameEngineCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable My3DGame"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ricky/coding/GameEngineCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable My3DGame"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/My3DGame.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

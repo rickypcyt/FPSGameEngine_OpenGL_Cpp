@@ -201,6 +201,30 @@ src/core/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/main.cpp.s
 .PHONY : src/core/main.cpp.s
 
+src/editor/editor.o: src/editor/editor.cpp.o
+.PHONY : src/editor/editor.o
+
+# target to build an object file
+src/editor/editor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/editor/editor.cpp.o
+.PHONY : src/editor/editor.cpp.o
+
+src/editor/editor.i: src/editor/editor.cpp.i
+.PHONY : src/editor/editor.i
+
+# target to preprocess a source file
+src/editor/editor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/editor/editor.cpp.i
+.PHONY : src/editor/editor.cpp.i
+
+src/editor/editor.s: src/editor/editor.cpp.s
+.PHONY : src/editor/editor.s
+
+# target to generate assembly for a file
+src/editor/editor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/editor/editor.cpp.s
+.PHONY : src/editor/editor.cpp.s
+
 src/glad.o: src/glad.c.o
 .PHONY : src/glad.o
 
@@ -297,6 +321,30 @@ src/graphics/renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/graphics/renderer.cpp.s
 .PHONY : src/graphics/renderer.cpp.s
 
+src/input/editor_input.o: src/input/editor_input.cpp.o
+.PHONY : src/input/editor_input.o
+
+# target to build an object file
+src/input/editor_input.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.o
+.PHONY : src/input/editor_input.cpp.o
+
+src/input/editor_input.i: src/input/editor_input.cpp.i
+.PHONY : src/input/editor_input.i
+
+# target to preprocess a source file
+src/input/editor_input.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.i
+.PHONY : src/input/editor_input.cpp.i
+
+src/input/editor_input.s: src/input/editor_input.cpp.s
+.PHONY : src/input/editor_input.s
+
+# target to generate assembly for a file
+src/input/editor_input.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.s
+.PHONY : src/input/editor_input.cpp.s
+
 src/input/input.o: src/input/input.cpp.o
 .PHONY : src/input/input.o
 
@@ -344,6 +392,174 @@ src/input/movement.s: src/input/movement.cpp.s
 src/input/movement.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/input/movement.cpp.s
 .PHONY : src/input/movement.cpp.s
+
+src/third_party/imgui/backends/imgui_impl_glfw.o: src/third_party/imgui/backends/imgui_impl_glfw.cpp.o
+.PHONY : src/third_party/imgui/backends/imgui_impl_glfw.o
+
+# target to build an object file
+src/third_party/imgui/backends/imgui_impl_glfw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.o
+.PHONY : src/third_party/imgui/backends/imgui_impl_glfw.cpp.o
+
+src/third_party/imgui/backends/imgui_impl_glfw.i: src/third_party/imgui/backends/imgui_impl_glfw.cpp.i
+.PHONY : src/third_party/imgui/backends/imgui_impl_glfw.i
+
+# target to preprocess a source file
+src/third_party/imgui/backends/imgui_impl_glfw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.i
+.PHONY : src/third_party/imgui/backends/imgui_impl_glfw.cpp.i
+
+src/third_party/imgui/backends/imgui_impl_glfw.s: src/third_party/imgui/backends/imgui_impl_glfw.cpp.s
+.PHONY : src/third_party/imgui/backends/imgui_impl_glfw.s
+
+# target to generate assembly for a file
+src/third_party/imgui/backends/imgui_impl_glfw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.s
+.PHONY : src/third_party/imgui/backends/imgui_impl_glfw.cpp.s
+
+src/third_party/imgui/backends/imgui_impl_opengl2.o: src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o
+.PHONY : src/third_party/imgui/backends/imgui_impl_opengl2.o
+
+# target to build an object file
+src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o
+.PHONY : src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o
+
+src/third_party/imgui/backends/imgui_impl_opengl2.i: src/third_party/imgui/backends/imgui_impl_opengl2.cpp.i
+.PHONY : src/third_party/imgui/backends/imgui_impl_opengl2.i
+
+# target to preprocess a source file
+src/third_party/imgui/backends/imgui_impl_opengl2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.i
+.PHONY : src/third_party/imgui/backends/imgui_impl_opengl2.cpp.i
+
+src/third_party/imgui/backends/imgui_impl_opengl2.s: src/third_party/imgui/backends/imgui_impl_opengl2.cpp.s
+.PHONY : src/third_party/imgui/backends/imgui_impl_opengl2.s
+
+# target to generate assembly for a file
+src/third_party/imgui/backends/imgui_impl_opengl2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.s
+.PHONY : src/third_party/imgui/backends/imgui_impl_opengl2.cpp.s
+
+src/third_party/imgui/imgui.o: src/third_party/imgui/imgui.cpp.o
+.PHONY : src/third_party/imgui/imgui.o
+
+# target to build an object file
+src/third_party/imgui/imgui.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.o
+.PHONY : src/third_party/imgui/imgui.cpp.o
+
+src/third_party/imgui/imgui.i: src/third_party/imgui/imgui.cpp.i
+.PHONY : src/third_party/imgui/imgui.i
+
+# target to preprocess a source file
+src/third_party/imgui/imgui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.i
+.PHONY : src/third_party/imgui/imgui.cpp.i
+
+src/third_party/imgui/imgui.s: src/third_party/imgui/imgui.cpp.s
+.PHONY : src/third_party/imgui/imgui.s
+
+# target to generate assembly for a file
+src/third_party/imgui/imgui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.s
+.PHONY : src/third_party/imgui/imgui.cpp.s
+
+src/third_party/imgui/imgui_demo.o: src/third_party/imgui/imgui_demo.cpp.o
+.PHONY : src/third_party/imgui/imgui_demo.o
+
+# target to build an object file
+src/third_party/imgui/imgui_demo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.o
+.PHONY : src/third_party/imgui/imgui_demo.cpp.o
+
+src/third_party/imgui/imgui_demo.i: src/third_party/imgui/imgui_demo.cpp.i
+.PHONY : src/third_party/imgui/imgui_demo.i
+
+# target to preprocess a source file
+src/third_party/imgui/imgui_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.i
+.PHONY : src/third_party/imgui/imgui_demo.cpp.i
+
+src/third_party/imgui/imgui_demo.s: src/third_party/imgui/imgui_demo.cpp.s
+.PHONY : src/third_party/imgui/imgui_demo.s
+
+# target to generate assembly for a file
+src/third_party/imgui/imgui_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.s
+.PHONY : src/third_party/imgui/imgui_demo.cpp.s
+
+src/third_party/imgui/imgui_draw.o: src/third_party/imgui/imgui_draw.cpp.o
+.PHONY : src/third_party/imgui/imgui_draw.o
+
+# target to build an object file
+src/third_party/imgui/imgui_draw.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.o
+.PHONY : src/third_party/imgui/imgui_draw.cpp.o
+
+src/third_party/imgui/imgui_draw.i: src/third_party/imgui/imgui_draw.cpp.i
+.PHONY : src/third_party/imgui/imgui_draw.i
+
+# target to preprocess a source file
+src/third_party/imgui/imgui_draw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.i
+.PHONY : src/third_party/imgui/imgui_draw.cpp.i
+
+src/third_party/imgui/imgui_draw.s: src/third_party/imgui/imgui_draw.cpp.s
+.PHONY : src/third_party/imgui/imgui_draw.s
+
+# target to generate assembly for a file
+src/third_party/imgui/imgui_draw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.s
+.PHONY : src/third_party/imgui/imgui_draw.cpp.s
+
+src/third_party/imgui/imgui_tables.o: src/third_party/imgui/imgui_tables.cpp.o
+.PHONY : src/third_party/imgui/imgui_tables.o
+
+# target to build an object file
+src/third_party/imgui/imgui_tables.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.o
+.PHONY : src/third_party/imgui/imgui_tables.cpp.o
+
+src/third_party/imgui/imgui_tables.i: src/third_party/imgui/imgui_tables.cpp.i
+.PHONY : src/third_party/imgui/imgui_tables.i
+
+# target to preprocess a source file
+src/third_party/imgui/imgui_tables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.i
+.PHONY : src/third_party/imgui/imgui_tables.cpp.i
+
+src/third_party/imgui/imgui_tables.s: src/third_party/imgui/imgui_tables.cpp.s
+.PHONY : src/third_party/imgui/imgui_tables.s
+
+# target to generate assembly for a file
+src/third_party/imgui/imgui_tables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.s
+.PHONY : src/third_party/imgui/imgui_tables.cpp.s
+
+src/third_party/imgui/imgui_widgets.o: src/third_party/imgui/imgui_widgets.cpp.o
+.PHONY : src/third_party/imgui/imgui_widgets.o
+
+# target to build an object file
+src/third_party/imgui/imgui_widgets.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.o
+.PHONY : src/third_party/imgui/imgui_widgets.cpp.o
+
+src/third_party/imgui/imgui_widgets.i: src/third_party/imgui/imgui_widgets.cpp.i
+.PHONY : src/third_party/imgui/imgui_widgets.i
+
+# target to preprocess a source file
+src/third_party/imgui/imgui_widgets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.i
+.PHONY : src/third_party/imgui/imgui_widgets.cpp.i
+
+src/third_party/imgui/imgui_widgets.s: src/third_party/imgui/imgui_widgets.cpp.s
+.PHONY : src/third_party/imgui/imgui_widgets.s
+
+# target to generate assembly for a file
+src/third_party/imgui/imgui_widgets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.s
+.PHONY : src/third_party/imgui/imgui_widgets.cpp.s
 
 src/ui/crosshair.o: src/ui/crosshair.cpp.o
 .PHONY : src/ui/crosshair.o
@@ -417,6 +633,30 @@ src/ui/fps_counter.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.s
 .PHONY : src/ui/fps_counter.cpp.s
 
+src/ui/imgui_interface.o: src/ui/imgui_interface.cpp.o
+.PHONY : src/ui/imgui_interface.o
+
+# target to build an object file
+src/ui/imgui_interface.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.o
+.PHONY : src/ui/imgui_interface.cpp.o
+
+src/ui/imgui_interface.i: src/ui/imgui_interface.cpp.i
+.PHONY : src/ui/imgui_interface.i
+
+# target to preprocess a source file
+src/ui/imgui_interface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.i
+.PHONY : src/ui/imgui_interface.cpp.i
+
+src/ui/imgui_interface.s: src/ui/imgui_interface.cpp.s
+.PHONY : src/ui/imgui_interface.s
+
+# target to generate assembly for a file
+src/ui/imgui_interface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.s
+.PHONY : src/ui/imgui_interface.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -435,6 +675,9 @@ help:
 	@echo "... src/core/main.o"
 	@echo "... src/core/main.i"
 	@echo "... src/core/main.s"
+	@echo "... src/editor/editor.o"
+	@echo "... src/editor/editor.i"
+	@echo "... src/editor/editor.s"
 	@echo "... src/glad.o"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"
@@ -447,12 +690,36 @@ help:
 	@echo "... src/graphics/renderer.o"
 	@echo "... src/graphics/renderer.i"
 	@echo "... src/graphics/renderer.s"
+	@echo "... src/input/editor_input.o"
+	@echo "... src/input/editor_input.i"
+	@echo "... src/input/editor_input.s"
 	@echo "... src/input/input.o"
 	@echo "... src/input/input.i"
 	@echo "... src/input/input.s"
 	@echo "... src/input/movement.o"
 	@echo "... src/input/movement.i"
 	@echo "... src/input/movement.s"
+	@echo "... src/third_party/imgui/backends/imgui_impl_glfw.o"
+	@echo "... src/third_party/imgui/backends/imgui_impl_glfw.i"
+	@echo "... src/third_party/imgui/backends/imgui_impl_glfw.s"
+	@echo "... src/third_party/imgui/backends/imgui_impl_opengl2.o"
+	@echo "... src/third_party/imgui/backends/imgui_impl_opengl2.i"
+	@echo "... src/third_party/imgui/backends/imgui_impl_opengl2.s"
+	@echo "... src/third_party/imgui/imgui.o"
+	@echo "... src/third_party/imgui/imgui.i"
+	@echo "... src/third_party/imgui/imgui.s"
+	@echo "... src/third_party/imgui/imgui_demo.o"
+	@echo "... src/third_party/imgui/imgui_demo.i"
+	@echo "... src/third_party/imgui/imgui_demo.s"
+	@echo "... src/third_party/imgui/imgui_draw.o"
+	@echo "... src/third_party/imgui/imgui_draw.i"
+	@echo "... src/third_party/imgui/imgui_draw.s"
+	@echo "... src/third_party/imgui/imgui_tables.o"
+	@echo "... src/third_party/imgui/imgui_tables.i"
+	@echo "... src/third_party/imgui/imgui_tables.s"
+	@echo "... src/third_party/imgui/imgui_widgets.o"
+	@echo "... src/third_party/imgui/imgui_widgets.i"
+	@echo "... src/third_party/imgui/imgui_widgets.s"
 	@echo "... src/ui/crosshair.o"
 	@echo "... src/ui/crosshair.i"
 	@echo "... src/ui/crosshair.s"
@@ -462,6 +729,9 @@ help:
 	@echo "... src/ui/fps_counter.o"
 	@echo "... src/ui/fps_counter.i"
 	@echo "... src/ui/fps_counter.s"
+	@echo "... src/ui/imgui_interface.o"
+	@echo "... src/ui/imgui_interface.i"
+	@echo "... src/ui/imgui_interface.s"
 .PHONY : help
 
 

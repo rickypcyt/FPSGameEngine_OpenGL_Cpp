@@ -5,11 +5,10 @@
 #include "../../include/core/globals.h"
 #include "../../include/input/input.h"
 #include "../../include/core/godmode.h"
+#include "../../include/input/editor_input.h"
+#include "../../include/ui/cursor.h"
 #include <stdio.h>
-
-bool isDragging = false;
-bool godMode = false;
-float cubePos[3] = {0.0f, 0.0f, 0.0f};  // Posición del cubo en la escena
+#include <iostream>
 
 // Movement constants
 struct MovementConstants {
@@ -37,9 +36,19 @@ struct MovementState {
     bool moveDown = false;
 };
 
-static MovementState moveState;
+// Global variables
+MovementState moveState;
+bool isDragging = false;
+bool godMode = false;
+float cubePos[3] = {0.0f, 0.0f, 0.0f};  // Posición del cubo en la escena
 
+// Callback function definitions (outside namespace)
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
+    if (EditorInput::isEditorMode) {
+        EditorInput::handleKeyPress(window, key, scancode, action, mods);
+        return;
+    }
+    
     if (action == GLFW_PRESS) {
         switch (key) {
             case GLFW_KEY_W: moveState.moveForward = true; break;
@@ -98,49 +107,81 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
     }
 }
 
-void updateJump(float deltaTime) {
-    if (moveState.isJumping) {
-        moveState.verticalVelocity -= MovementConstants::GRAVITY * deltaTime;
-        characterPosY += moveState.verticalVelocity * deltaTime;
-
-        // Land if below ground level
-        if (characterPosY <= MovementConstants::GROUND_LEVEL) {
-            characterPosY = MovementConstants::GROUND_LEVEL;
-            moveState.verticalVelocity = 0.0f;
-            moveState.isJumping = false;
-        }
+void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
+    if (EditorInput::isEditorMode) {
+        EditorInput::handleMouseMove(window, xpos, ypos);
+        return;
     }
+    
+    handleCameraMouseMovement(xpos, ypos);
 }
 
-void updateMovement(float deltaTime) {
-    glm::vec3 moveDirection(0.0f);
+void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) {
+    if (EditorInput::isEditorMode) {
+        EditorInput::handleMouseClick(window, button, action, mods);
+        return;
+    }
+    
+    // ... existing mouse button handling code ...
+}
 
-    if (moveState.moveForward) moveDirection += cameraFront;
-    if (moveState.moveBackward) moveDirection -= cameraFront;
-
-    glm::vec3 right = glm::normalize(glm::cross(cameraFront, glm::vec3(0.0f, 1.0f, 0.0f)));
-    if (moveState.moveRight) moveDirection += right;
-    if (moveState.moveLeft) moveDirection -= right;
-
-    if (glm::length(moveDirection) > 0.0f) {
-        moveDirection = glm::normalize(moveDirection);
-        moveDirection.y = 0.0f;
+namespace Movement {
+    void handleKey(GLFWwindow* window, int key, int scancode, int action, int mods) {
+        if (EditorInput::isEditorMode) {
+            EditorInput::handleKeyPress(window, key, scancode, action, mods);
+        }
     }
 
-    if (godMode && canFly) {
-        if (moveState.moveUp) moveDirection.y = 1.0f;
-        if (moveState.moveDown) moveDirection.y = -1.0f;
+    void handleMouseButton(GLFWwindow* window, int button, int action, int mods) {
+        if (EditorInput::isEditorMode) {
+            EditorInput::handleMouseClick(window, button, action, mods);
+        }
     }
 
-    float speed = moveSpeed;
-    if (!godMode && moveState.isRunning) {
-        speed *= 2.0f; // Velocidad de carrera
+    void updateJump(float deltaTime) {
+        if (moveState.isJumping) {
+            moveState.verticalVelocity -= MovementConstants::GRAVITY * deltaTime;
+            characterPosY += moveState.verticalVelocity * deltaTime;
+
+            // Land if below ground level
+            if (characterPosY <= MovementConstants::GROUND_LEVEL) {
+                characterPosY = MovementConstants::GROUND_LEVEL;
+                moveState.verticalVelocity = 0.0f;
+                moveState.isJumping = false;
+            }
+        }
     }
-    speed *= deltaTime;
 
-    characterPosX += moveDirection.x * speed;
-    characterPosY += moveDirection.y * speed;
-    characterPosZ += moveDirection.z * speed;
+    void updateMovement(float deltaTime) {
+        glm::vec3 moveDirection(0.0f);
 
-    updateJump(deltaTime);
+        if (moveState.moveForward) moveDirection += cameraFront;
+        if (moveState.moveBackward) moveDirection -= cameraFront;
+
+        glm::vec3 right = glm::normalize(glm::cross(cameraFront, glm::vec3(0.0f, 1.0f, 0.0f)));
+        if (moveState.moveRight) moveDirection += right;
+        if (moveState.moveLeft) moveDirection -= right;
+
+        if (glm::length(moveDirection) > 0.0f) {
+            moveDirection = glm::normalize(moveDirection);
+            moveDirection.y = 0.0f;
+        }
+
+        if (godMode && canFly) {
+            if (moveState.moveUp) moveDirection.y = 1.0f;
+            if (moveState.moveDown) moveDirection.y = -1.0f;
+        }
+
+        float speed = moveSpeed;
+        if (!godMode && moveState.isRunning) {
+            speed *= 2.0f; // Velocidad de carrera
+        }
+        speed *= deltaTime;
+
+        characterPosX += moveDirection.x * speed;
+        characterPosY += moveDirection.y * speed;
+        characterPosZ += moveDirection.z * speed;
+
+        updateJump(deltaTime);
+    }
 }

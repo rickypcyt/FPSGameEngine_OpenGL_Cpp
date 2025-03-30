@@ -17,36 +17,32 @@ void updateCameraDirection() {
     cameraFront = glm::normalize(front);
 }
 
-void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
+// Function to handle mouse movement for camera control
+void handleCameraMouseMovement(double xpos, double ypos) {
     if (firstMouse) {
         lastX = xpos;
         lastY = ypos;
         firstMouse = false;
-        return;
     }
 
-    // Calcular el offset del mouse
     double xoffset = xpos - lastX;
-    double yoffset = lastY - ypos;
-    
-    // Actualizar la última posición del mouse
+    double yoffset = lastY - ypos; // Inverted y-axis for proper movement
     lastX = xpos;
     lastY = ypos;
 
-    // Ajustar la sensibilidad del mouse
-    const float sensitivity = 0.1f; // Reducida para un control más suave
+    const float sensitivity = 0.15f; // Increased sensitivity for quicker response
 
-    // Aplicar la sensibilidad
+    // Apply sensitivity
     xoffset *= sensitivity;
     yoffset *= sensitivity;
 
-    // Actualizar yaw y pitch
-    yaw += xoffset;
+    // Update yaw and pitch
+    yaw += xoffset; 
     pitch += yoffset;
 
-    // Limitar el pitch para evitar que la cámara se voltee
+    // Clamp pitch to prevent inverted view
     pitch = glm::clamp(pitch, -89.0f, 89.0f);
 
-    // Actualizar la dirección de la cámara
+    // Update camera direction based on new yaw and pitch
     updateCameraDirection();
 }

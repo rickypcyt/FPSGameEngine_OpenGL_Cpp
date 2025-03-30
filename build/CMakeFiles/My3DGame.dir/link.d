@@ -10,10 +10,20 @@ My3DGame: \
   CMakeFiles/My3DGame.dir/src/graphics/models.cpp.o \
   CMakeFiles/My3DGame.dir/src/input/input.cpp.o \
   CMakeFiles/My3DGame.dir/src/input/movement.cpp.o \
+  CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.o \
+  CMakeFiles/My3DGame.dir/src/editor/editor.cpp.o \
   CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.o \
   CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.o \
   CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.o \
+  CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.o \
   CMakeFiles/My3DGame.dir/src/glad.c.o \
+  CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.o \
+  CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.o \
+  CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.o \
+  CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.o \
+  CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.o \
+  CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.o \
+  CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o \
   /usr/lib/libOpenGL.so \
   /usr/lib/libGLX.so \
   /usr/lib/libGLU.so \
@@ -102,13 +112,33 @@ CMakeFiles/My3DGame.dir/src/input/input.cpp.o:
 
 CMakeFiles/My3DGame.dir/src/input/movement.cpp.o:
 
+CMakeFiles/My3DGame.dir/src/input/editor_input.cpp.o:
+
+CMakeFiles/My3DGame.dir/src/editor/editor.cpp.o:
+
 CMakeFiles/My3DGame.dir/src/ui/crosshair.cpp.o:
 
 CMakeFiles/My3DGame.dir/src/ui/cursor.cpp.o:
 
 CMakeFiles/My3DGame.dir/src/ui/fps_counter.cpp.o:
 
+CMakeFiles/My3DGame.dir/src/ui/imgui_interface.cpp.o:
+
 CMakeFiles/My3DGame.dir/src/glad.c.o:
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui.cpp.o:
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_demo.cpp.o:
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_draw.cpp.o:
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_tables.cpp.o:
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/imgui_widgets.cpp.o:
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_glfw.cpp.o:
+
+CMakeFiles/My3DGame.dir/src/third_party/imgui/backends/imgui_impl_opengl2.cpp.o:
 
 /usr/lib/libOpenGL.so:
 

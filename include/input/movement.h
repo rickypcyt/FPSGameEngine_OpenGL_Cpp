@@ -1,7 +1,7 @@
-#ifndef MOVEMENT_H
-#define MOVEMENT_H
+#pragma once
 
 #include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
 
 // External variables for movement speeds
 extern float moveSpeed;       // Movement speed
@@ -22,10 +22,14 @@ extern float characterPosZ;   // Character's Z position
 // Time-related variable
 extern float deltaTime;       // Time since last frame
 
-// Function declarations
+// Callback function declarations (outside namespace)
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
-void updateMovement(float deltaTime); // Ensure deltaTime is passed
-void updateCamera();                   // Assuming this function exists
+void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
 
-#endif // MOVEMENT_H
+namespace Movement {
+    void updateMovement(float deltaTime);
+    void updateJump(float deltaTime);
+    void handleKey(GLFWwindow* window, int key, int scancode, int action, int mods);
+    void handleMouseButton(GLFWwindow* window, int button, int action, int mods);
+}
