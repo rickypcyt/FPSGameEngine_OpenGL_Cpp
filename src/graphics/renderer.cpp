@@ -2,6 +2,38 @@
 #include <GL/glu.h>
 #include "../../include/graphics/renderer.h"
 #include "../../include/graphics/lights.h"
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
+#include <iostream>
+#include "../../include/models/character.h"
+
+Character* playerCharacter = nullptr;
+
+// Función principal de dibujo
+void drawScene() {
+    drawCheckerboardFloor(20.0f, 1.0f); // Dibujar el piso de ajedrez
+glTranslatef(0.0f, 2.5f, 0.0f); // ← Mover el cubo hacia arriba (la mitad de su tamaño)
+    drawCube(2.5);                     // Dibujar el cubo que rodea al jugador
+        glPopMatrix();
+
+    if (playerCharacter) {
+        glPushMatrix();
+        glTranslatef(5.0f, 0.0f, -5.0f); // Posicionar el personaje
+        glScalef(0.1f, 0.1f, 0.1f);      // Escalar si está muy grande
+        playerCharacter->draw();
+        glPopMatrix();
+    }
+}
+
+void initializeOpenGL() {
+    glEnable(GL_DEPTH_TEST); // Habilitar pruebas de profundidad para un renderizado adecuado
+    setupLighting();         // Configurar iluminación si se desea
+        playerCharacter = new Character();
+    if (!playerCharacter->load("../../assets/models/Mutant.fbx")) {
+        std::cerr << "No se pudo cargar el personaje.\n";
+    }
+}
 
 // Función para dibujar un piso, techo y paredes de tablero de ajedrez
 void drawCheckerboardFloor(float size, float tileSize) {
@@ -121,14 +153,14 @@ void drawCube(float size) {
     glVertex3f(size, size, -size);
 
     // Cara superior
-    glColor3f(1.0f, 0.5f, 0.5f); // Rosa
+    glColor3f(0.5f, 0.5f, 0.5f); // Rosa
     glVertex3f(-size, size, -size);
     glVertex3f(-size, size, size);
     glVertex3f(size, size, size);
     glVertex3f(size, size, -size);
 
     // Cara inferior
-    glColor3f(0.5f, 0.5f, 1.0f); // Azul claro
+    glColor3f(0.5f, 0.5f, 0.5f); // Azul claro
     glVertex3f(-size, -size,-size);
     glVertex3f(size,-size,-size);
     glVertex3f(size,-size,size);
@@ -137,17 +169,4 @@ void drawCube(float size) {
     glEnd();
 }
 
-// Función principal de dibujo
-void drawScene() {
-    drawCheckerboardFloor(20.0f, 1.0f); // Dibujar el piso de ajedrez
-    drawCube(2.5);                     // Dibujar el cubo que rodea al jugador
-}
 
-// Configuración de iluminación (si se desea)
-
-
-// Llamar a esta función en tu código de inicialización para configurar el estado de OpenGL
-void initializeOpenGL() {
-    glEnable(GL_DEPTH_TEST); // Habilitar pruebas de profundidad para un renderizado adecuado
-    setupLighting();         // Configurar iluminación si se desea
-}

@@ -32,7 +32,7 @@ set(GRAPHICS_SOURCES
     src/graphics/renderer.cpp
     src/graphics/lights.cpp
     src/graphics/models.cpp
-)
+    src/graphics/character.cpp)
 
 set(INPUT_SOURCES
     src/input/input.cpp
@@ -99,7 +99,7 @@ target_link_libraries(game_engine_lib
 add_executable(My3DGame src/core/main.cpp)
 
 # Link the main executable with the library
-target_link_libraries(My3DGame game_engine_lib)
+target_link_libraries(My3DGame PRIVATE game_engine_lib)
 
 # Print configuration summary
 message(STATUS "Using OpenGL: ${OPENGL_VERSION}")
@@ -108,3 +108,7 @@ message(STATUS "Using GLFW: ${GLFW_VERSION}")
 
 # Add tests
 add_subdirectory(tests)
+
+find_package(assimp REQUIRED)
+
+target_link_libraries(My3DGame PRIVATE assimp::assimp)

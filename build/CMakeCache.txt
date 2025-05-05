@@ -311,6 +311,9 @@ PKG_CONFIG_ARGN:STRING=
 //pkg-config executable
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
+//The directory containing a CMake configuration file for assimp.
+assimp_DIR:PATH=/usr/lib/cmake/assimp-5.4
+
 //Dependencies for the target
 game_engine_lib_LIB_DEPENDS:STATIC=general;/usr/lib/libOpenGL.so;general;/usr/lib/libGLX.so;general;/usr/lib/libGLU.so;general;GLEW::GLEW;general;glfw;general;GLUT::GLUT;
 

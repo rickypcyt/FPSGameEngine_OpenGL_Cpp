@@ -97,6 +97,7 @@ My3DGame: CMakeFiles/My3DGame.dir/src/core/main.cpp.o
 My3DGame: CMakeFiles/My3DGame.dir/build.make
 My3DGame: CMakeFiles/My3DGame.dir/compiler_depend.ts
 My3DGame: libgame_engine_lib.a
+My3DGame: /usr/lib/libassimp.so.5.4.3
 My3DGame: /usr/lib/libOpenGL.so
 My3DGame: /usr/lib/libGLX.so
 My3DGame: /usr/lib/libGLU.so
@@ -105,6 +106,7 @@ My3DGame: /usr/lib/libglfw.so.3.4
 My3DGame: /usr/lib/libglut.so
 My3DGame: /usr/lib/libXmu.so
 My3DGame: /usr/lib/libXi.so
+My3DGame: /usr/lib/libz.so
 My3DGame: CMakeFiles/My3DGame.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ricky/coding/GameEngineCpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable My3DGame"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/My3DGame.dir/link.txt --verbose=$(VERBOSE)

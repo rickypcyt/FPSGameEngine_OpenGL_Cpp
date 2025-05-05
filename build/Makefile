@@ -278,6 +278,30 @@ src/glad.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/glad.c.s
 .PHONY : src/glad.c.s
 
+src/graphics/character.o: src/graphics/character.cpp.o
+.PHONY : src/graphics/character.o
+
+# target to build an object file
+src/graphics/character.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/character.cpp.o
+.PHONY : src/graphics/character.cpp.o
+
+src/graphics/character.i: src/graphics/character.cpp.i
+.PHONY : src/graphics/character.i
+
+# target to preprocess a source file
+src/graphics/character.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/character.cpp.i
+.PHONY : src/graphics/character.cpp.i
+
+src/graphics/character.s: src/graphics/character.cpp.s
+.PHONY : src/graphics/character.s
+
+# target to generate assembly for a file
+src/graphics/character.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/character.cpp.s
+.PHONY : src/graphics/character.cpp.s
+
 src/graphics/lights.o: src/graphics/lights.cpp.o
 .PHONY : src/graphics/lights.o
 
@@ -712,6 +736,9 @@ help:
 	@echo "... src/glad.o"
 	@echo "... src/glad.i"
 	@echo "... src/glad.s"
+	@echo "... src/graphics/character.o"
+	@echo "... src/graphics/character.i"
+	@echo "... src/graphics/character.s"
 	@echo "... src/graphics/lights.o"
 	@echo "... src/graphics/lights.i"
 	@echo "... src/graphics/lights.s"
