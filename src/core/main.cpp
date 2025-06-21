@@ -17,6 +17,7 @@
 #include "../../include/input/editor_input.h"
 #include "../../include/ui/imgui_interface.h"
 #include "../../include/ui/fps_counter.h"
+#include "../../include/core/main.h"
 // #include "../include/input.h"
 // #include "../include/godmode.h"
 
@@ -42,6 +43,7 @@ void initializeGLUT(int& argc, char** argv);
 void setupCallbacks();
 void mainLoop();
 void initializeInput(GLFWwindow* window);
+void cleanupGame();
 
 // Function Implementations
 void displayFPS(float fps) {
@@ -188,7 +190,13 @@ void initializeInput(GLFWwindow* window) {
     // Implementation of initializeInput function
 }
 
-int main() {
+void cleanupGame() {
+    UI::cleanupImGui();
+    glfwTerminate();
+}
+
+// Main game function that can be called from the menu
+void startGame() {
     try {
         initializeGLFW();
         initializeGLEW();
@@ -205,14 +213,10 @@ int main() {
         
         mainLoop();
         
-        UI::cleanupImGui();
+        cleanupGame();
         
     } catch (const std::exception& e) {
         std::cerr << e.what() << std::endl;
-        glfwTerminate();
-        return -1;
+        cleanupGame();
     }
-    
-    glfwTerminate();
-    return 0;
 }

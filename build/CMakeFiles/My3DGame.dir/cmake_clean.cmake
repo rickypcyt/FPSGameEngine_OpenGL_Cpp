@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/My3DGame.dir/link.d"
-  "CMakeFiles/My3DGame.dir/src/core/main.cpp.o"
-  "CMakeFiles/My3DGame.dir/src/core/main.cpp.o.d"
+  "CMakeFiles/My3DGame.dir/src/core/game_launcher.cpp.o"
+  "CMakeFiles/My3DGame.dir/src/core/game_launcher.cpp.o.d"
   "My3DGame"
   "My3DGame.pdb"
 )

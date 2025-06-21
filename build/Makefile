@@ -155,6 +155,30 @@ game_engine_tests/fast:
 	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/game_engine_tests.dir/build.make tests/CMakeFiles/game_engine_tests.dir/build
 .PHONY : game_engine_tests/fast
 
+src/core/game_launcher.o: src/core/game_launcher.cpp.o
+.PHONY : src/core/game_launcher.o
+
+# target to build an object file
+src/core/game_launcher.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/game_launcher.cpp.o
+.PHONY : src/core/game_launcher.cpp.o
+
+src/core/game_launcher.i: src/core/game_launcher.cpp.i
+.PHONY : src/core/game_launcher.i
+
+# target to preprocess a source file
+src/core/game_launcher.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/game_launcher.cpp.i
+.PHONY : src/core/game_launcher.cpp.i
+
+src/core/game_launcher.s: src/core/game_launcher.cpp.s
+.PHONY : src/core/game_launcher.s
+
+# target to generate assembly for a file
+src/core/game_launcher.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/game_launcher.cpp.s
+.PHONY : src/core/game_launcher.cpp.s
+
 src/core/globals.o: src/core/globals.cpp.o
 .PHONY : src/core/globals.o
 
@@ -209,7 +233,6 @@ src/core/main.o: src/core/main.cpp.o
 # target to build an object file
 src/core/main.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/main.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/main.cpp.o
 .PHONY : src/core/main.cpp.o
 
 src/core/main.i: src/core/main.cpp.i
@@ -218,7 +241,6 @@ src/core/main.i: src/core/main.cpp.i
 # target to preprocess a source file
 src/core/main.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/main.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/main.cpp.i
 .PHONY : src/core/main.cpp.i
 
 src/core/main.s: src/core/main.cpp.s
@@ -227,8 +249,55 @@ src/core/main.s: src/core/main.cpp.s
 # target to generate assembly for a file
 src/core/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/main.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/My3DGame.dir/build.make CMakeFiles/My3DGame.dir/src/core/main.cpp.s
 .PHONY : src/core/main.cpp.s
+
+src/core/menu.o: src/core/menu.cpp.o
+.PHONY : src/core/menu.o
+
+# target to build an object file
+src/core/menu.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/menu.cpp.o
+.PHONY : src/core/menu.cpp.o
+
+src/core/menu.i: src/core/menu.cpp.i
+.PHONY : src/core/menu.i
+
+# target to preprocess a source file
+src/core/menu.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/menu.cpp.i
+.PHONY : src/core/menu.cpp.i
+
+src/core/menu.s: src/core/menu.cpp.s
+.PHONY : src/core/menu.s
+
+# target to generate assembly for a file
+src/core/menu.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/menu.cpp.s
+.PHONY : src/core/menu.cpp.s
+
+src/core/modern_demo.o: src/core/modern_demo.cpp.o
+.PHONY : src/core/modern_demo.o
+
+# target to build an object file
+src/core/modern_demo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/modern_demo.cpp.o
+.PHONY : src/core/modern_demo.cpp.o
+
+src/core/modern_demo.i: src/core/modern_demo.cpp.i
+.PHONY : src/core/modern_demo.i
+
+# target to preprocess a source file
+src/core/modern_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/modern_demo.cpp.i
+.PHONY : src/core/modern_demo.cpp.i
+
+src/core/modern_demo.s: src/core/modern_demo.cpp.s
+.PHONY : src/core/modern_demo.s
+
+# target to generate assembly for a file
+src/core/modern_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/modern_demo.cpp.s
+.PHONY : src/core/modern_demo.cpp.s
 
 src/editor/editor.o: src/editor/editor.cpp.o
 .PHONY : src/editor/editor.o
@@ -326,6 +395,30 @@ src/graphics/lights.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/lights.cpp.s
 .PHONY : src/graphics/lights.cpp.s
 
+src/graphics/mesh.o: src/graphics/mesh.cpp.o
+.PHONY : src/graphics/mesh.o
+
+# target to build an object file
+src/graphics/mesh.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/mesh.cpp.o
+.PHONY : src/graphics/mesh.cpp.o
+
+src/graphics/mesh.i: src/graphics/mesh.cpp.i
+.PHONY : src/graphics/mesh.i
+
+# target to preprocess a source file
+src/graphics/mesh.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/mesh.cpp.i
+.PHONY : src/graphics/mesh.cpp.i
+
+src/graphics/mesh.s: src/graphics/mesh.cpp.s
+.PHONY : src/graphics/mesh.s
+
+# target to generate assembly for a file
+src/graphics/mesh.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/mesh.cpp.s
+.PHONY : src/graphics/mesh.cpp.s
+
 src/graphics/models.o: src/graphics/models.cpp.o
 .PHONY : src/graphics/models.o
 
@@ -350,6 +443,30 @@ src/graphics/models.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/models.cpp.s
 .PHONY : src/graphics/models.cpp.s
 
+src/graphics/modern_renderer.o: src/graphics/modern_renderer.cpp.o
+.PHONY : src/graphics/modern_renderer.o
+
+# target to build an object file
+src/graphics/modern_renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/modern_renderer.cpp.o
+.PHONY : src/graphics/modern_renderer.cpp.o
+
+src/graphics/modern_renderer.i: src/graphics/modern_renderer.cpp.i
+.PHONY : src/graphics/modern_renderer.i
+
+# target to preprocess a source file
+src/graphics/modern_renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/modern_renderer.cpp.i
+.PHONY : src/graphics/modern_renderer.cpp.i
+
+src/graphics/modern_renderer.s: src/graphics/modern_renderer.cpp.s
+.PHONY : src/graphics/modern_renderer.s
+
+# target to generate assembly for a file
+src/graphics/modern_renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/modern_renderer.cpp.s
+.PHONY : src/graphics/modern_renderer.cpp.s
+
 src/graphics/renderer.o: src/graphics/renderer.cpp.o
 .PHONY : src/graphics/renderer.o
 
@@ -373,6 +490,30 @@ src/graphics/renderer.s: src/graphics/renderer.cpp.s
 src/graphics/renderer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/renderer.cpp.s
 .PHONY : src/graphics/renderer.cpp.s
+
+src/graphics/shader.o: src/graphics/shader.cpp.o
+.PHONY : src/graphics/shader.o
+
+# target to build an object file
+src/graphics/shader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/shader.cpp.o
+.PHONY : src/graphics/shader.cpp.o
+
+src/graphics/shader.i: src/graphics/shader.cpp.i
+.PHONY : src/graphics/shader.i
+
+# target to preprocess a source file
+src/graphics/shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/shader.cpp.i
+.PHONY : src/graphics/shader.cpp.i
+
+src/graphics/shader.s: src/graphics/shader.cpp.s
+.PHONY : src/graphics/shader.s
+
+# target to generate assembly for a file
+src/graphics/shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/graphics/shader.cpp.s
+.PHONY : src/graphics/shader.cpp.s
 
 src/input/editor_input.o: src/input/editor_input.cpp.o
 .PHONY : src/input/editor_input.o
@@ -721,6 +862,9 @@ help:
 	@echo "... My3DGame"
 	@echo "... game_engine_lib"
 	@echo "... game_engine_tests"
+	@echo "... src/core/game_launcher.o"
+	@echo "... src/core/game_launcher.i"
+	@echo "... src/core/game_launcher.s"
 	@echo "... src/core/globals.o"
 	@echo "... src/core/globals.i"
 	@echo "... src/core/globals.s"
@@ -730,6 +874,12 @@ help:
 	@echo "... src/core/main.o"
 	@echo "... src/core/main.i"
 	@echo "... src/core/main.s"
+	@echo "... src/core/menu.o"
+	@echo "... src/core/menu.i"
+	@echo "... src/core/menu.s"
+	@echo "... src/core/modern_demo.o"
+	@echo "... src/core/modern_demo.i"
+	@echo "... src/core/modern_demo.s"
 	@echo "... src/editor/editor.o"
 	@echo "... src/editor/editor.i"
 	@echo "... src/editor/editor.s"
@@ -742,12 +892,21 @@ help:
 	@echo "... src/graphics/lights.o"
 	@echo "... src/graphics/lights.i"
 	@echo "... src/graphics/lights.s"
+	@echo "... src/graphics/mesh.o"
+	@echo "... src/graphics/mesh.i"
+	@echo "... src/graphics/mesh.s"
 	@echo "... src/graphics/models.o"
 	@echo "... src/graphics/models.i"
 	@echo "... src/graphics/models.s"
+	@echo "... src/graphics/modern_renderer.o"
+	@echo "... src/graphics/modern_renderer.i"
+	@echo "... src/graphics/modern_renderer.s"
 	@echo "... src/graphics/renderer.o"
 	@echo "... src/graphics/renderer.i"
 	@echo "... src/graphics/renderer.s"
+	@echo "... src/graphics/shader.o"
+	@echo "... src/graphics/shader.i"
+	@echo "... src/graphics/shader.s"
 	@echo "... src/input/editor_input.o"
 	@echo "... src/input/editor_input.i"
 	@echo "... src/input/editor_input.s"

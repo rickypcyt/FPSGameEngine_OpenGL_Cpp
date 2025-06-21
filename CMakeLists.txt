@@ -12,6 +12,33 @@ find_package(OpenGL REQUIRED)
 find_package(GLEW REQUIRED)
 find_package(glfw3 REQUIRED)
 find_package(GLUT REQUIRED)
+find_package(assimp REQUIRED)
+
+# Find GLM (OpenGL Mathematics) - more robust approach
+find_package(PkgConfig QUIET)
+if(PkgConfig_FOUND)
+    pkg_check_modules(GLM QUIET glm)
+endif()
+
+# If pkg-config didn't find GLM, try alternative methods
+if(NOT GLM_FOUND)
+    # Try to find GLM using find_path and find_library
+    find_path(GLM_INCLUDE_DIRS NAMES glm/glm.hpp
+        PATHS
+        /usr/include
+        /usr/local/include
+        /opt/local/include
+        /sw/include
+    )
+    
+    if(GLM_INCLUDE_DIRS)
+        set(GLM_FOUND TRUE)
+        set(GLM_INCLUDE_DIRS ${GLM_INCLUDE_DIRS})
+        message(STATUS "Found GLM: ${GLM_INCLUDE_DIRS}")
+    else()
+        message(FATAL_ERROR "GLM not found. Please install GLM library.")
+    endif()
+endif()
 
 # Include directories
 include_directories(
@@ -19,6 +46,7 @@ include_directories(
     ${CMAKE_SOURCE_DIR}/include/third_party
     ${CMAKE_SOURCE_DIR}/include/third_party/imgui
     ${CMAKE_SOURCE_DIR}/src/third_party/imgui
+    ${GLM_INCLUDE_DIRS}
 )
 
 # Source files by category
@@ -26,13 +54,19 @@ set(CORE_SOURCES
     src/core/main.cpp
     src/core/globals.cpp
     src/core/godmode.cpp
+    src/core/modern_demo.cpp
+    src/core/menu.cpp
 )
 
 set(GRAPHICS_SOURCES
     src/graphics/renderer.cpp
     src/graphics/lights.cpp
     src/graphics/models.cpp
-    src/graphics/character.cpp)
+    src/graphics/character.cpp
+    src/graphics/shader.cpp
+    src/graphics/mesh.cpp
+    src/graphics/modern_renderer.cpp
+)
 
 set(INPUT_SOURCES
     src/input/input.cpp
@@ -93,10 +127,12 @@ target_link_libraries(game_engine_lib
     GLEW::GLEW 
     glfw 
     GLUT::GLUT
+    assimp::assimp
+    ${GLM_LIBRARIES}
 )
 
 # Create main executable
-add_executable(My3DGame src/core/main.cpp)
+add_executable(My3DGame src/core/game_launcher.cpp)
 
 # Link the main executable with the library
 target_link_libraries(My3DGame PRIVATE game_engine_lib)
@@ -105,10 +141,7 @@ target_link_libraries(My3DGame PRIVATE game_engine_lib)
 message(STATUS "Using OpenGL: ${OPENGL_VERSION}")
 message(STATUS "Using GLEW: ${GLEW_VERSION}")
 message(STATUS "Using GLFW: ${GLFW_VERSION}")
+message(STATUS "Using GLM: ${GLM_VERSION}")
 
 # Add tests
 add_subdirectory(tests)
-
-find_package(assimp REQUIRED)
-
-target_link_libraries(My3DGame PRIVATE assimp::assimp)

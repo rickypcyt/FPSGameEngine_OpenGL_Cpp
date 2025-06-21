@@ -234,6 +234,9 @@ GLEW_STATIC_LIBRARY_DEBUG:FILEPATH=GLEW_STATIC_LIBRARY_DEBUG-NOTFOUND
 GLEW_STATIC_LIBRARY_RELEASE:FILEPATH=GLEW_STATIC_LIBRARY_RELEASE-NOTFOUND
 
 //Path to a file.
+GLM_INCLUDE_DIRS:PATH=/usr/include
+
+//Path to a file.
 GLUT_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a library.
@@ -315,7 +318,7 @@ PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 assimp_DIR:PATH=/usr/lib/cmake/assimp-5.4
 
 //Dependencies for the target
-game_engine_lib_LIB_DEPENDS:STATIC=general;/usr/lib/libOpenGL.so;general;/usr/lib/libGLX.so;general;/usr/lib/libGLU.so;general;GLEW::GLEW;general;glfw;general;GLUT::GLUT;
+game_engine_lib_LIB_DEPENDS:STATIC=general;/usr/lib/libOpenGL.so;general;/usr/lib/libGLX.so;general;/usr/lib/libGLU.so;general;GLEW::GLEW;general;glfw;general;GLUT::GLUT;general;assimp::assimp;
 
 //The directory containing a CMake configuration file for glfw3.
 glfw3_DIR:PATH=/usr/lib/cmake/glfw3
@@ -339,7 +342,7 @@ CMAKE_CACHE_MAJOR_VERSION:INTERNAL=4
 //Minor version of cmake used to create the current loaded cache
 CMAKE_CACHE_MINOR_VERSION:INTERNAL=0
 //Patch version of cmake used to create the current loaded cache
-CMAKE_CACHE_PATCH_VERSION:INTERNAL=1
+CMAKE_CACHE_PATCH_VERSION:INTERNAL=3
 //ADVANCED property for variable: CMAKE_COLOR_MAKEFILE
 CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 //Path to CMake executable.
@@ -484,9 +487,11 @@ FIND_PACKAGE_MESSAGE_DETAILS_GLEW:INTERNAL=[/usr/include][/usr/lib/libGLEW.so][v
 //Details about finding GLUT
 FIND_PACKAGE_MESSAGE_DETAILS_GLUT:INTERNAL=[/usr/lib/libglut.so][/usr/include][v()]
 //Details about finding GTest
-FIND_PACKAGE_MESSAGE_DETAILS_GTest:INTERNAL=[/usr/lib/cmake/GTest/GTestConfig.cmake][ ][v1.16.0()]
+FIND_PACKAGE_MESSAGE_DETAILS_GTest:INTERNAL=[/usr/lib/cmake/GTest/GTestConfig.cmake][ ][v1.17.0()]
 //Details about finding OpenGL
 FIND_PACKAGE_MESSAGE_DETAILS_OpenGL:INTERNAL=[/usr/lib/libOpenGL.so][/usr/lib/libGLX.so][/usr/include][ ][v()]
+//Details about finding PkgConfig
+FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v2.4.3()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //ADVANCED property for variable: GLEW_INCLUDE_DIR
@@ -499,6 +504,31 @@ GLEW_SHARED_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 GLEW_STATIC_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GLEW_STATIC_LIBRARY_RELEASE
 GLEW_STATIC_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
+GLM_CFLAGS:INTERNAL=
+GLM_CFLAGS_I:INTERNAL=
+GLM_CFLAGS_OTHER:INTERNAL=
+GLM_FOUND:INTERNAL=
+GLM_INCLUDEDIR:INTERNAL=
+GLM_LIBDIR:INTERNAL=
+GLM_LIBS:INTERNAL=
+GLM_LIBS_L:INTERNAL=
+GLM_LIBS_OTHER:INTERNAL=
+GLM_LIBS_PATHS:INTERNAL=
+GLM_MODULE_NAME:INTERNAL=
+GLM_PREFIX:INTERNAL=
+GLM_STATIC_CFLAGS:INTERNAL=
+GLM_STATIC_CFLAGS_I:INTERNAL=
+GLM_STATIC_CFLAGS_OTHER:INTERNAL=
+GLM_STATIC_LIBDIR:INTERNAL=
+GLM_STATIC_LIBS:INTERNAL=
+GLM_STATIC_LIBS_L:INTERNAL=
+GLM_STATIC_LIBS_OTHER:INTERNAL=
+GLM_STATIC_LIBS_PATHS:INTERNAL=
+GLM_VERSION:INTERNAL=
+GLM_glm_INCLUDEDIR:INTERNAL=
+GLM_glm_LIBDIR:INTERNAL=
+GLM_glm_PREFIX:INTERNAL=
+GLM_glm_VERSION:INTERNAL=
 //ADVANCED property for variable: GLUT_INCLUDE_DIR
 GLUT_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GLUT_Xi_LIBRARY
@@ -579,6 +609,7 @@ _CMAKE_C_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 __pkg_config_arguments_PC_GLUT:INTERNAL=QUIET;glut
+__pkg_config_checked_GLM:INTERNAL=1
 __pkg_config_checked_PC_GLUT:INTERNAL=1
 //ADVANCED property for variable: pkgcfg_lib_PC_GLUT_glut
 pkgcfg_lib_PC_GLUT_glut-ADVANCED:INTERNAL=1
