@@ -3,8 +3,7 @@ out vec4 FragColor;
 
 in vec3 FragPos;
 in vec3 Normal;
-in vec2 TexCoords;
-in vec3 Color;
+in vec2 TexCoord;
 
 uniform vec3 lightPos;
 uniform vec3 lightColor;
@@ -13,11 +12,9 @@ uniform bool useLighting;
 
 void main()
 {
-    vec3 result;
-    
     if (useLighting) {
         // Ambient lighting
-        float ambientStrength = 0.1;
+        float ambientStrength = 0.3;
         vec3 ambient = ambientStrength * lightColor;
         
         // Diffuse lighting
@@ -33,10 +30,16 @@ void main()
         float spec = pow(max(dot(viewDir, reflectDir), 0.0), 32);
         vec3 specular = specularStrength * spec * lightColor;
         
-        result = (ambient + diffuse + specular) * Color;
+        // Combine lighting
+        vec3 result = (ambient + diffuse + specular);
+        FragColor = vec4(result, 1.0);
     } else {
-        result = Color;
+        // Psychedelic color mode
+        vec3 psychedelicColor = vec3(
+            0.5 + 0.5 * sin(gl_FragCoord.x * 0.01 + gl_FragCoord.y * 0.01),
+            0.5 + 0.5 * sin(gl_FragCoord.x * 0.015 + gl_FragCoord.y * 0.02),
+            0.5 + 0.5 * sin(gl_FragCoord.x * 0.02 + gl_FragCoord.y * 0.015)
+        );
+        FragColor = vec4(psychedelicColor, 1.0);
     }
-    
-    FragColor = vec4(result, 1.0);
 } 

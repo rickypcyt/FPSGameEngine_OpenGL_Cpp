@@ -299,6 +299,30 @@ src/core/modern_demo.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/modern_demo.cpp.s
 .PHONY : src/core/modern_demo.cpp.s
 
+src/core/trippy_visuals_basic.o: src/core/trippy_visuals_basic.cpp.o
+.PHONY : src/core/trippy_visuals_basic.o
+
+# target to build an object file
+src/core/trippy_visuals_basic.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/trippy_visuals_basic.cpp.o
+.PHONY : src/core/trippy_visuals_basic.cpp.o
+
+src/core/trippy_visuals_basic.i: src/core/trippy_visuals_basic.cpp.i
+.PHONY : src/core/trippy_visuals_basic.i
+
+# target to preprocess a source file
+src/core/trippy_visuals_basic.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/trippy_visuals_basic.cpp.i
+.PHONY : src/core/trippy_visuals_basic.cpp.i
+
+src/core/trippy_visuals_basic.s: src/core/trippy_visuals_basic.cpp.s
+.PHONY : src/core/trippy_visuals_basic.s
+
+# target to generate assembly for a file
+src/core/trippy_visuals_basic.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/game_engine_lib.dir/build.make CMakeFiles/game_engine_lib.dir/src/core/trippy_visuals_basic.cpp.s
+.PHONY : src/core/trippy_visuals_basic.cpp.s
+
 src/editor/editor.o: src/editor/editor.cpp.o
 .PHONY : src/editor/editor.o
 
@@ -880,6 +904,9 @@ help:
 	@echo "... src/core/modern_demo.o"
 	@echo "... src/core/modern_demo.i"
 	@echo "... src/core/modern_demo.s"
+	@echo "... src/core/trippy_visuals_basic.o"
+	@echo "... src/core/trippy_visuals_basic.i"
+	@echo "... src/core/trippy_visuals_basic.s"
 	@echo "... src/editor/editor.o"
 	@echo "... src/editor/editor.i"
 	@echo "... src/editor/editor.s"

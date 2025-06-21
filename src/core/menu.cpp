@@ -1,6 +1,6 @@
 #include "../../include/core/menu.h"
 #include "../../include/core/main.h"
-#include "../../include/core/modern_demo.h"
+#include "../../include/core/trippy_visuals.h"
 #include <iostream>
 #include <cstdlib>
 #include <chrono>
@@ -33,7 +33,7 @@ namespace Menu {
         std::cout << "\033[0m";
         std::cout << "┌──────────────────────────────────────────────────────────────┐\n";
         std::cout << "│  [1] 🎮 Iniciar Juego Principal                              │\n";
-        std::cout << "│  [2] 🎯 Ejecutar Demo Moderno (OpenGL)                      │\n";
+        std::cout << "│  [2] 🎭 Trippy Visuals (Simulador LSD 3D)                   │\n";
         std::cout << "│  [3] 🔧 Configurar Gráficos                                 │\n";
         std::cout << "│  [4] 📊 Información del Sistema                             │\n";
         std::cout << "│  [5] ❓ Ayuda                                               │\n";
@@ -78,6 +78,11 @@ namespace Menu {
         std::cout << "│     SHIFT - Correr                                         │\n";
         std::cout << "│     G+SHIFT - Activar/Desactivar God Mode                  │\n";
         std::cout << "│     ESC - Salir del juego                                  │\n";
+        std::cout << "│                                                             │\n";
+        std::cout << "│  🎭 TRIPPY VISUALS:                                        │\n";
+        std::cout << "│     ESC - Salir de los efectos psicodélicos                │\n";
+        std::cout << "│     Efectos automáticos: colores cambiantes, figuras       │\n";
+        std::cout << "│     que se derriten, esferas flotantes, túnel 3D           │\n";
         std::cout << "│                                                             │\n";
         std::cout << "│  🔧 CONFIGURACIÓN:                                          │\n";
         std::cout << "│     Ejecuta 'source setup_graphics.sh' para optimizar      │\n";
@@ -136,11 +141,11 @@ namespace Menu {
         ::startGame();
     }
 
-    void startModernDemo() {
-        std::cout << "\033[1;32m"; // Green color
-        std::cout << "🎯 INICIANDO DEMO MODERNO...\n";
+    void startTrippyVisuals() {
+        std::cout << "\033[1;35m"; // Magenta color
+        std::cout << "🎭 INICIANDO TRIPPY VISUALS...\n";
         std::cout << "\033[0m";
-        std::cout << "Cargando OpenGL moderno...\n";
+        std::cout << "Cargando efectos psicodélicos...\n";
         
         // Add loading animation
         for (int i = 0; i < 3; i++) {
@@ -150,11 +155,11 @@ namespace Menu {
         }
         std::cout << "\n";
         
-        // Clear screen before starting demo
+        // Clear screen before starting trippy visuals
         clearScreen();
         
-        // Start the modern demo
-        runModernDemo();
+        // Start the trippy visuals
+        TrippyVisuals::runTrippyVisuals();
     }
 
     void exitGame() {
@@ -181,7 +186,7 @@ namespace Menu {
                     startGame();
                     break;
                 case 2:
-                    startModernDemo();
+                    startTrippyVisuals();
                     break;
                 case 3:
                     configureGraphics();

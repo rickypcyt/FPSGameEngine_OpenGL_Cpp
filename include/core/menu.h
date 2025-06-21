@@ -9,7 +9,7 @@ namespace Menu {
     
     // Menu options
     void startGame();
-    void startModernDemo();
+    void startTrippyVisuals();
     void configureGraphics();
     void printSystemInfo();
     void printHelp();

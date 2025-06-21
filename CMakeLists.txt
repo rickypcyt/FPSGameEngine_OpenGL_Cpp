@@ -56,6 +56,7 @@ set(CORE_SOURCES
     src/core/godmode.cpp
     src/core/modern_demo.cpp
     src/core/menu.cpp
+    src/core/trippy_visuals_basic.cpp
 )
 
 set(GRAPHICS_SOURCES
