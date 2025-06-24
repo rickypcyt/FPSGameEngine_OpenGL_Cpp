@@ -16,6 +16,10 @@ namespace EditorInput {
     
     // Editor state
     Editor::ObjectType currentObjectType = Editor::ObjectType::WALL;
+    Editor::ObjectType placingType = Editor::ObjectType::WALL;
+    glm::vec3 placingPos(0.0f);
+    glm::vec3 placingRot(0.0f);
+    glm::vec3 placingScale(1.0f);
     
     void initialize(GLFWwindow* win) {
         window = win;
@@ -159,5 +163,62 @@ namespace EditorInput {
         
         // Update editor state
         worldEditor.update();
+    }
+
+    void updatePlacement(float deltaTime, const glm::vec3& cameraPos, const glm::vec3& cameraFront) {
+        if (!isPlacingObject) return;
+        // Oculta el cursor si está en placement
+        if (window) glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+        static float placingDistance = 3.0f;
+        static float moveSpeed = 5.0f;
+        static float verticalSpeed = 3.0f;
+        
+        // Ajustar distancia con la rueda del mouse
+        double scrollY = 0.0;
+        if (window) {
+            // Captura el scroll del mouse (debería implementarse un callback para esto, pero aquí lo simulamos)
+            // Si tienes un callback real, actualiza placingDistance ahí
+        }
+        // Limita la distancia
+        if (placingDistance < 1.0f) placingDistance = 1.0f;
+        if (placingDistance > 20.0f) placingDistance = 20.0f;
+
+        // Calcula la posición 3D justo donde apunta el crosshair (centro de pantalla)
+        int width, height;
+        glfwGetWindowSize(window, &width, &height);
+        double x = width / 2.0;
+        double y = height / 2.0;
+        GLint viewport[4];
+        glGetIntegerv(GL_VIEWPORT, viewport);
+        GLdouble modelview[16];
+        GLdouble projection[16];
+        glGetDoublev(GL_MODELVIEW_MATRIX, modelview);
+        glGetDoublev(GL_PROJECTION_MATRIX, projection);
+        GLdouble worldX, worldY, worldZ;
+        gluUnProject(x, viewport[3] - y, placingDistance / 20.0, // Normaliza la profundidad
+                     modelview, projection, viewport,
+                     &worldX, &worldY, &worldZ);
+        placingPos = glm::vec3(worldX, worldY, worldZ);
+
+        // Movimiento con WASD
+        if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) placingPos += glm::vec3(cameraFront.x, 0, cameraFront.z) * moveSpeed * deltaTime;
+        if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) placingPos -= glm::vec3(cameraFront.x, 0, cameraFront.z) * moveSpeed * deltaTime;
+        glm::vec3 right = glm::normalize(glm::cross(cameraFront, glm::vec3(0,1,0)));
+        if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) placingPos += right * moveSpeed * deltaTime;
+        if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) placingPos -= right * moveSpeed * deltaTime;
+        // Altura con Q/E
+        if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS) placingPos.y += verticalSpeed * deltaTime;
+        if (glfwGetKey(window, GLFW_KEY_E) == GLFW_PRESS) placingPos.y -= verticalSpeed * deltaTime;
+        // Rotación con R
+        if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS) placingRot.y += 90.0f * deltaTime;
+        // Confirmar con click izquierdo o ENTER
+        if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS || glfwGetKey(window, GLFW_KEY_ENTER) == GLFW_PRESS) {
+            worldEditor.addObject(placingType, placingPos, placingScale);
+            isPlacingObject = false;
+        }
+        // Cancelar con ESC
+        if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+            isPlacingObject = false;
+        }
     }
 } 

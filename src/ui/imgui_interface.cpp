@@ -3,6 +3,7 @@
 #include "../../include/third_party/imgui/imgui_impl_glfw.h"
 #include "../../include/third_party/imgui/imgui_impl_opengl2.h"
 #include <iostream>
+#include "../../include/input/editor_input.h"
 
 namespace UI {
     void initializeImGui(GLFWwindow* window) {
@@ -41,8 +42,23 @@ namespace UI {
     void renderEditorWindow(Editor::WorldEditor& editor) {
         ImGui::Begin("Editor", nullptr, ImGuiWindowFlags_AlwaysAutoResize);
         
-        // Object type selection
+        // Botón para agregar un nuevo objeto
         static int currentItem = 0;
+        if (ImGui::Button("Add Object")) {
+            EditorInput::placingType = static_cast<Editor::ObjectType>(currentItem);
+            EditorInput::isPlacingObject = true;
+            EditorInput::isEditorMode = false; // Cierra el menú
+        }
+        ImGui::SameLine();
+        // Botón para eliminar el objeto seleccionado (solo si hay alguno)
+        const auto& objects = editor.getObjects();
+        if (editor.getSelectedObjectIndex() < objects.size()) {
+            if (ImGui::Button("Delete Selected")) {
+                editor.removeObject(editor.getSelectedObjectIndex());
+            }
+        }
+        ImGui::Separator();
+        // Object type selection
         const char* items[] = { "Wall", "Rectangle", "Cube" };
         if (ImGui::Combo("Object Type", &currentItem, items, IM_ARRAYSIZE(items))) {
             editor.setCurrentObjectType(static_cast<Editor::ObjectType>(currentItem));
@@ -53,7 +69,6 @@ namespace UI {
         ImGui::Text("Objects");
         ImGui::BeginChild("ObjectList", ImVec2(0, 200), true);
         
-        const auto& objects = editor.getObjects();
         for (size_t i = 0; i < objects.size(); i++) {
             const auto& obj = objects[i];
             std::string label = "Object " + std::to_string(i);

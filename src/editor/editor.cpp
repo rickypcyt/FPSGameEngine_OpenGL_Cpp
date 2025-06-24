@@ -152,6 +152,107 @@ void Rectangle::update() {
     // Rectangle-specific update logic if needed
 }
 
+// Cube implementation
+Cube::Cube(const glm::vec3& position, const glm::vec3& size)
+    : EditableObject(ObjectType::CUBE, position, size) {}
+
+void Cube::render() const {
+    glPushMatrix();
+    glTranslatef(position.x, position.y, position.z);
+    glScalef(size.x, size.y, size.z);
+    glBegin(GL_QUADS);
+    // Front face
+    glColor3f(0.2f, 0.2f, 1.0f);
+    glVertex3f(-0.5f, -0.5f, 0.5f);
+    glVertex3f(0.5f, -0.5f, 0.5f);
+    glVertex3f(0.5f, 0.5f, 0.5f);
+    glVertex3f(-0.5f, 0.5f, 0.5f);
+    // Back face
+    glColor3f(0.2f, 0.2f, 0.8f);
+    glVertex3f(-0.5f, -0.5f, -0.5f);
+    glVertex3f(-0.5f, 0.5f, -0.5f);
+    glVertex3f(0.5f, 0.5f, -0.5f);
+    glVertex3f(0.5f, -0.5f, -0.5f);
+    // Left face
+    glColor3f(0.1f, 0.1f, 0.7f);
+    glVertex3f(-0.5f, -0.5f, -0.5f);
+    glVertex3f(-0.5f, -0.5f, 0.5f);
+    glVertex3f(-0.5f, 0.5f, 0.5f);
+    glVertex3f(-0.5f, 0.5f, -0.5f);
+    // Right face
+    glColor3f(0.1f, 0.1f, 0.7f);
+    glVertex3f(0.5f, -0.5f, -0.5f);
+    glVertex3f(0.5f, 0.5f, -0.5f);
+    glVertex3f(0.5f, 0.5f, 0.5f);
+    glVertex3f(0.5f, -0.5f, 0.5f);
+    // Top face
+    glColor3f(0.3f, 0.3f, 1.0f);
+    glVertex3f(-0.5f, 0.5f, -0.5f);
+    glVertex3f(-0.5f, 0.5f, 0.5f);
+    glVertex3f(0.5f, 0.5f, 0.5f);
+    glVertex3f(0.5f, 0.5f, -0.5f);
+    // Bottom face
+    glColor3f(0.1f, 0.1f, 0.5f);
+    glVertex3f(-0.5f, -0.5f, -0.5f);
+    glVertex3f(0.5f, -0.5f, -0.5f);
+    glVertex3f(0.5f, -0.5f, 0.5f);
+    glVertex3f(-0.5f, -0.5f, 0.5f);
+    glEnd();
+    glPopMatrix();
+}
+
+void Cube::renderPreview() const {
+    glPushMatrix();
+    glTranslatef(position.x, position.y, position.z);
+    glScalef(size.x, size.y, size.z);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glBegin(GL_QUADS);
+    // Front face
+    glColor4f(0.2f, 0.2f, 1.0f, 0.3f);
+    glVertex3f(-0.5f, -0.5f, 0.5f);
+    glVertex3f(0.5f, -0.5f, 0.5f);
+    glVertex3f(0.5f, 0.5f, 0.5f);
+    glVertex3f(-0.5f, 0.5f, 0.5f);
+    // Back face
+    glColor4f(0.2f, 0.2f, 0.8f, 0.3f);
+    glVertex3f(-0.5f, -0.5f, -0.5f);
+    glVertex3f(-0.5f, 0.5f, -0.5f);
+    glVertex3f(0.5f, 0.5f, -0.5f);
+    glVertex3f(0.5f, -0.5f, -0.5f);
+    // Left face
+    glColor4f(0.1f, 0.1f, 0.7f, 0.3f);
+    glVertex3f(-0.5f, -0.5f, -0.5f);
+    glVertex3f(-0.5f, -0.5f, 0.5f);
+    glVertex3f(-0.5f, 0.5f, 0.5f);
+    glVertex3f(-0.5f, 0.5f, -0.5f);
+    // Right face
+    glColor4f(0.1f, 0.1f, 0.7f, 0.3f);
+    glVertex3f(0.5f, -0.5f, -0.5f);
+    glVertex3f(0.5f, 0.5f, -0.5f);
+    glVertex3f(0.5f, 0.5f, 0.5f);
+    glVertex3f(0.5f, -0.5f, 0.5f);
+    // Top face
+    glColor4f(0.3f, 0.3f, 1.0f, 0.3f);
+    glVertex3f(-0.5f, 0.5f, -0.5f);
+    glVertex3f(-0.5f, 0.5f, 0.5f);
+    glVertex3f(0.5f, 0.5f, 0.5f);
+    glVertex3f(0.5f, 0.5f, -0.5f);
+    // Bottom face
+    glColor4f(0.1f, 0.1f, 0.5f, 0.3f);
+    glVertex3f(-0.5f, -0.5f, -0.5f);
+    glVertex3f(0.5f, -0.5f, -0.5f);
+    glVertex3f(0.5f, -0.5f, 0.5f);
+    glVertex3f(-0.5f, -0.5f, 0.5f);
+    glEnd();
+    glDisable(GL_BLEND);
+    glPopMatrix();
+}
+
+void Cube::update() {
+    // Cube-specific update logic if needed
+}
+
 // WorldEditor implementation
 WorldEditor::WorldEditor()
     : selectedObjectIndex(0), isEditing(false), currentObjectType(ObjectType::WALL) {}
@@ -182,6 +283,11 @@ void WorldEditor::renderPreview(const glm::vec3& position, const glm::vec3& size
             previewRect.renderPreview();
             break;
         }
+        case ObjectType::CUBE: {
+            Cube previewCube(position, size);
+            previewCube.renderPreview();
+            break;
+        }
         default:
             break;
     }
@@ -195,6 +301,9 @@ void WorldEditor::addObject(ObjectType type, const glm::vec3& position, const gl
             break;
         case ObjectType::RECTANGLE:
             obj = std::make_unique<Rectangle>(position, size);
+            break;
+        case ObjectType::CUBE:
+            obj = std::make_unique<Cube>(position, size);
             break;
         default:
             return;

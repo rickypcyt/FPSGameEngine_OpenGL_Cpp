@@ -33,7 +33,7 @@ namespace Menu {
         std::cout << "\033[0m";
         std::cout << "┌──────────────────────────────────────────────────────────────┐\n";
         std::cout << "│  [1] 🎮 Iniciar Juego Principal                              │\n";
-        std::cout << "│  [2] 🚀 Viaje Galáctico (Progresión Psicodélica)            │\n";
+        std::cout << "│  [2] 🎭 Show Psicodélico (Vista 2D Automática)              │\n";
         std::cout << "│  [3] 🔧 Configurar Gráficos                                 │\n";
         std::cout << "│  [4] 📊 Información del Sistema                             │\n";
         std::cout << "│  [5] ❓ Ayuda                                               │\n";
@@ -79,10 +79,12 @@ namespace Menu {
         std::cout << "│     G+SHIFT - Activar/Desactivar God Mode                  │\n";
         std::cout << "│     ESC - Salir del juego                                  │\n";
         std::cout << "│                                                             │\n";
-        std::cout << "│  🎭 TRIPPY VISUALS:                                        │\n";
-        std::cout << "│     ESC - Salir de los efectos psicodélicos                │\n";
-        std::cout << "│     Efectos automáticos: colores cambiantes, figuras       │\n";
-        std::cout << "│     que se derriten, esferas flotantes, túnel 3D           │\n";
+        std::cout << "│  🎭 SHOW PSICODÉLICO:                                       │\n";
+        std::cout << "│     Experiencia automática en vista 2D                      │\n";
+        std::cout << "│     Objetos 3D en plano horizontal (X-Z)                    │\n";
+        std::cout << "│     ESC - Salir del show                                    │\n";
+        std::cout << "│     🎨 Progresión infinita automática                       │\n";
+        std::cout << "│     🌟 Randomización sutil para movimiento orgánico        │\n";
         std::cout << "│                                                             │\n";
         std::cout << "│  🔧 CONFIGURACIÓN:                                          │\n";
         std::cout << "│     Ejecuta 'source setup_graphics.sh' para optimizar      │\n";
@@ -143,9 +145,9 @@ namespace Menu {
 
     void startTrippyVisuals() {
         std::cout << "\033[1;35m"; // Magenta color
-        std::cout << "🚀 INICIANDO VIAJE GALÁCTICO...\n";
+        std::cout << "🎭 INICIANDO SHOW PSICODÉLICO...\n";
         std::cout << "\033[0m";
-        std::cout << "Preparando nave para el viaje psicodélico...\n";
+        std::cout << "Preparando experiencia automática en vista 2D...\n";
         
         // Add loading animation
         for (int i = 0; i < 3; i++) {

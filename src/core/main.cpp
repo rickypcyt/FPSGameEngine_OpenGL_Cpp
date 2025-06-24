@@ -44,6 +44,7 @@ void setupCallbacks();
 void mainLoop();
 void initializeInput(GLFWwindow* window);
 void cleanupGame();
+void drawUniversalCursor(GLFWwindow* window);
 
 // Function Implementations
 void displayFPS(float fps) {
@@ -127,23 +128,17 @@ void mainLoop() {
         
         drawScene();
         
-        // Render editor objects and preview
-        if (EditorInput::isEditorMode) {
-            EditorInput::worldEditor.render();
-            
-            // Draw preview if placing object
-            if (EditorInput::isPlacingObject) {
-                glPushMatrix();
-                glColor4f(1.0f, 1.0f, 1.0f, 0.5f);
-                glBegin(GL_LINES);
-                glVertex3f(EditorInput::placementStart.x, EditorInput::placementStart.y, EditorInput::placementStart.z);
-                glVertex3f(EditorInput::placementEnd.x, EditorInput::placementEnd.y, EditorInput::placementEnd.z);
-                glEnd();
-                glPopMatrix();
-            }
+        // Render editor objects (siempre)
+        EditorInput::worldEditor.render();
+        // Render preview de placement aunque no esté en modo editor
+        if (EditorInput::isPlacingObject) {
+            EditorInput::updatePlacement(deltaTime, cameraPosition, cameraFront);
+            EditorInput::worldEditor.renderPreview(EditorInput::placingPos, EditorInput::placingScale);
         }
         
         drawCrosshair(WIDTH, HEIGHT);
+        
+        drawUniversalCursor(window);
         
         if (!EditorInput::isEditorMode) {
             Movement::updateMovement(deltaTime);
@@ -219,4 +214,35 @@ void startGame() {
         std::cerr << e.what() << std::endl;
         cleanupGame();
     }
+}
+
+void drawUniversalCursor(GLFWwindow* window) {
+    double xpos, ypos;
+    glfwGetCursorPos(window, &xpos, &ypos);
+    glMatrixMode(GL_PROJECTION);
+    glPushMatrix();
+    int width, height;
+    glfwGetWindowSize(window, &width, &height);
+    glLoadIdentity();
+    gluOrtho2D(0, width, 0, height);
+    glMatrixMode(GL_MODELVIEW);
+    glPushMatrix();
+    glLoadIdentity();
+    glDisable(GL_DEPTH_TEST);
+    glColor3f(1.0f, 1.0f, 1.0f);
+    float radius = 7.0f;
+    int segments = 24;
+    glBegin(GL_LINE_LOOP);
+    for (int i = 0; i < segments; ++i) {
+        float theta = 2.0f * 3.1415926f * float(i) / float(segments);
+        float dx = radius * cosf(theta);
+        float dy = radius * sinf(theta);
+        glVertex2f(xpos + dx, height - ypos + dy);
+    }
+    glEnd();
+    glEnable(GL_DEPTH_TEST);
+    glPopMatrix();
+    glMatrixMode(GL_PROJECTION);
+    glPopMatrix();
+    glMatrixMode(GL_MODELVIEW);
 }

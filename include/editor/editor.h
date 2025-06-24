@@ -55,6 +55,14 @@ public:
     void update() override;
 };
 
+class Cube : public EditableObject {
+public:
+    Cube(const glm::vec3& position, const glm::vec3& size);
+    void render() const override;
+    void renderPreview() const override;
+    void update() override;
+};
+
 // Main editor class
 class WorldEditor {
 public:
