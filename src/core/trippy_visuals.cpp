@@ -6,6 +6,8 @@
 #include <cmath>
 #include <algorithm>
 #include <unistd.h>
+#include <GL/gl.h>
+#include <GL/glu.h>
 
 // Trippy Visuals namespace
 namespace TrippyVisuals {
@@ -44,6 +46,17 @@ namespace TrippyVisuals {
         float scalePulse = 0.3f;
         float distortionAmount = 0.1f;
     } params;
+    
+    // Parameters for smooth randomization
+    struct RandomizedParams {
+        float fractalScale = 4.0f;
+        float fractalRotation = 0.0f;
+        float cameraTheta = 0.0f, cameraPhi = 0.0f, cameraRadius = 18.0f;
+        float colorSeed = 0.0f;
+        float starTwinkle = 0.0f;
+        float fractalDepth = 3.0f;
+        float fractalJitter = 0.0f;
+    } randParams;
     
     // Initialize trippy visuals
     bool initialize() {
@@ -89,6 +102,9 @@ namespace TrippyVisuals {
         
         // Initialize morphing vertices for melting effect
         initializeMorphingVertices();
+        
+        // Initialize starfield
+        initStars();
         
         return true;
     }
@@ -274,43 +290,125 @@ namespace TrippyVisuals {
         }
     }
     
+    // Smooth random walk helper
+    template<typename T>
+    T smoothRandomWalk(T value, float speed, float minVal, float maxVal) {
+        float delta = (dis(gen) - 0.5f) * speed;
+        value += delta;
+        if (value < minVal) value = minVal;
+        if (value > maxVal) value = maxVal;
+        return value;
+    }
+    
+    // Update randomized parameters for smooth, trippy changes
+    void updateRandomizedParams() {
+        randParams.fractalScale = smoothRandomWalk(randParams.fractalScale, 0.01f, 2.5f, 6.0f);
+        randParams.fractalRotation = smoothRandomWalk(randParams.fractalRotation, 0.02f, 0.0f, 2.0f * M_PI);
+        randParams.cameraTheta = smoothRandomWalk(randParams.cameraTheta, 0.01f, 0.0f, M_PI);
+        randParams.cameraPhi = smoothRandomWalk(randParams.cameraPhi, 0.01f, 0.0f, 2.0f * M_PI);
+        randParams.cameraRadius = smoothRandomWalk(randParams.cameraRadius, 0.05f, 13.0f, 22.0f);
+        randParams.colorSeed = smoothRandomWalk(randParams.colorSeed, 0.01f, 0.0f, 100.0f);
+        randParams.starTwinkle = smoothRandomWalk(randParams.starTwinkle, 0.02f, 0.0f, 10.0f);
+        randParams.fractalDepth = smoothRandomWalk(randParams.fractalDepth, 0.05f, 2.0f, 4.0f);
+        randParams.fractalJitter = smoothRandomWalk(randParams.fractalJitter, 0.01f, 0.0f, 0.25f);
+    }
+    
+    // Draw a Sierpinski Tetrahedron fractal (recursive)
+    void drawTetrahedron(glm::vec3 p1, glm::vec3 p2, glm::vec3 p3, glm::vec3 p4, int depth) {
+        if (depth == 0) {
+            glBegin(GL_TRIANGLES);
+            glm::vec3 color = generatePsychedelicColor(time, (p1.x + p2.y + p3.z + p4.x) * 0.1f + randParams.colorSeed);
+            glColor3f(color.r, color.g, color.b);
+            // Face 1
+            glVertex3fv(&p1.x); glVertex3fv(&p2.x); glVertex3fv(&p3.x);
+            // Face 2
+            glVertex3fv(&p1.x); glVertex3fv(&p2.x); glVertex3fv(&p4.x);
+            // Face 3
+            glVertex3fv(&p1.x); glVertex3fv(&p3.x); glVertex3fv(&p4.x);
+            // Face 4
+            glVertex3fv(&p2.x); glVertex3fv(&p3.x); glVertex3fv(&p4.x);
+            glEnd();
+            return;
+        }
+        glm::vec3 mid12 = (p1 + p2) * 0.5f;
+        glm::vec3 mid13 = (p1 + p3) * 0.5f;
+        glm::vec3 mid14 = (p1 + p4) * 0.5f;
+        glm::vec3 mid23 = (p2 + p3) * 0.5f;
+        glm::vec3 mid24 = (p2 + p4) * 0.5f;
+        glm::vec3 mid34 = (p3 + p4) * 0.5f;
+        // Add jitter for trippy effect
+        float jitter = randParams.fractalJitter;
+        mid12 += glm::vec3(dis(gen)-0.5f, dis(gen)-0.5f, dis(gen)-0.5f) * jitter;
+        mid13 += glm::vec3(dis(gen)-0.5f, dis(gen)-0.5f, dis(gen)-0.5f) * jitter;
+        mid14 += glm::vec3(dis(gen)-0.5f, dis(gen)-0.5f, dis(gen)-0.5f) * jitter;
+        mid23 += glm::vec3(dis(gen)-0.5f, dis(gen)-0.5f, dis(gen)-0.5f) * jitter;
+        mid24 += glm::vec3(dis(gen)-0.5f, dis(gen)-0.5f, dis(gen)-0.5f) * jitter;
+        mid34 += glm::vec3(dis(gen)-0.5f, dis(gen)-0.5f, dis(gen)-0.5f) * jitter;
+        drawTetrahedron(p1, mid12, mid13, mid14, depth-1);
+        drawTetrahedron(mid12, p2, mid23, mid24, depth-1);
+        drawTetrahedron(mid13, mid23, p3, mid34, depth-1);
+        drawTetrahedron(mid14, mid24, mid34, p4, depth-1);
+    }
+
+    void drawFractalTrip() {
+        glPushMatrix();
+        glRotatef(randParams.fractalRotation * 57.3f, 0.3f, 1.0f, 0.7f);
+        float s = randParams.fractalScale;
+        int depth = (int)randParams.fractalDepth;
+        glm::vec3 p1(0, s, 0);
+        glm::vec3 p2(-s, -s, s);
+        glm::vec3 p3(s, -s, s);
+        glm::vec3 p4(0, -s, -s);
+        drawTetrahedron(p1, p2, p3, p4, depth);
+        glPopMatrix();
+    }
+
+    // Draw a simple 3D starfield
+    const int STAR_COUNT = 120;
+    std::vector<glm::vec3> stars;
+    void initStars() {
+        stars.clear();
+        for (int i = 0; i < STAR_COUNT; ++i) {
+            float r = 40.0f + dis(gen) * 60.0f;
+            float theta = dis(gen) * M_PI;
+            float phi = dis(gen) * 2.0f * M_PI;
+            float x = r * sin(theta) * cos(phi);
+            float y = r * sin(theta) * sin(phi);
+            float z = r * cos(theta);
+            stars.push_back(glm::vec3(x, y, z));
+        }
+    }
+    void drawStarfield() {
+        glPointSize(2.0f + 2.0f * sin(time + randParams.starTwinkle));
+        glBegin(GL_POINTS);
+        for (auto& s : stars) {
+            float twinkle = 0.7f + 0.3f * sin(time * 2.0f + s.x + s.y + s.z);
+            glColor3f(twinkle, twinkle, twinkle + 0.2f * sin(time + s.x));
+            glVertex3f(s.x, s.y, s.z);
+        }
+        glEnd();
+    }
+    
     // Main render loop
     void renderLoop() {
         while (!glfwWindowShouldClose(window)) {
-            // Update time
-            time += 0.016f; // ~60 FPS
-            colorTime += 0.016f * params.colorSpeed;
-            morphTime += 0.016f * params.morphSpeed;
-            meltTime += 0.016f * params.meltSpeed;
-            
-            // Clear screen with dark background
+            // Clear screen
             glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-            
-            // Apply wave distortion
-            applyWaveDistortion();
-            
-            // Set up camera
-            float cameraDistance = 15.0f + sin(time * 0.2f) * 2.0f;
-            glm::vec3 cameraPos(0.0f, 5.0f, cameraDistance);
-            renderer->setCameraPosition(cameraPos);
-            
+
+            // Set camera to a fixed position
+            renderer->setCameraPosition(glm::vec3(0.0f, 0.0f, 10.0f));
+
             // Begin frame
             renderer->beginFrame();
-            
-            // Draw psychedelic effects
-            drawMeltingGrid();
-            drawMorphingSpheres();
-            drawMorphingCubes();
-            drawPsychedelicTunnel();
-            
-            // End frame
+            renderer->enableLighting(false); // No lighting, pure color
+            renderer->drawCube(glm::vec3(0.0f), glm::vec3(2.0f)); // Red cube (if shader allows)
             renderer->endFrame();
-            
+
             // Swap buffers and poll events
             glfwSwapBuffers(window);
             glfwPollEvents();
-            
+
             // Check for exit key
             if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
                 break;

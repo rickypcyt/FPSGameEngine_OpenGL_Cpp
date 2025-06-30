@@ -9,6 +9,7 @@
 #include "../../include/ui/cursor.h"
 #include <stdio.h>
 #include <iostream>
+#include <algorithm>
 
 // Movement constants
 struct MovementConstants {
@@ -27,6 +28,21 @@ bool isDragging = false;
 bool godMode = false;
 float cubePos[3] = {0.0f, 0.0f, 0.0f};  // Posición del cubo en la escena
 
+glm::vec3 velocity(0.0f); // Global velocity for air movement
+
+// Bunny hop, coyote time, jump buffer, and air strafe variables
+bool isOnGround = true;
+float coyoteTime = 0.0f;
+float jumpBufferTime = 0.0f;
+const float COYOTE_TIME_MAX = 0.12f;      // 120 ms
+const float JUMP_BUFFER_MAX = 0.12f;      // 120 ms
+const float MAX_AIR_SPEED = 8.0f;         // Limite de velocidad horizontal en el aire
+
+// Parámetros para movimiento tipo Quake
+const float AIR_ACCEL = 12.0f; // Aceleración en el aire
+const float MAX_GROUND_SPEED = 8.0f;
+const float AIR_FRICTION = 0.999f; // Muy baja fricción aérea
+
 // Callback function definitions (outside namespace)
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
     if (EditorInput::isEditorMode) {
@@ -44,9 +60,31 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
                 if (godMode && canFly) {
                     moveState.moveUp = true;
                     moveState.moveDown = false;
-                } else if (!godMode && characterPosY <= MovementConstants::GROUND_LEVEL) {
+                } else if (isOnGround || coyoteTime > 0.0f) {
+                    // --- TRANSFERENCIA DE VELOCIDAD HORIZONTAL AL SALTAR ---
+                    glm::vec3 moveDir(0.0f);
+                    if (moveState.moveForward) moveDir += cameraFront;
+                    if (moveState.moveBackward) moveDir -= cameraFront;
+                    glm::vec3 right = glm::normalize(glm::cross(cameraFront, glm::vec3(0.0f, 1.0f, 0.0f)));
+                    if (moveState.moveRight) moveDir += right;
+                    if (moveState.moveLeft) moveDir -= right;
+                    if (glm::length(moveDir) > 0.0f) {
+                        moveDir = glm::normalize(moveDir);
+                        moveDir.y = 0.0f;
+                    }
+                    float speed = moveSpeed;
+                    if (!godMode && moveState.isRunning) speed *= 2.0f;
+                    // Transfiere la velocidad horizontal actual al vector de aire
+                    velocity.x = moveDir.x * speed;
+                    velocity.z = moveDir.z * speed;
+                    // Impulso vertical
                     moveState.isJumping = true;
                     moveState.verticalVelocity = MovementConstants::INITIAL_JUMP_VELOCITY;
+                    isOnGround = false;
+                    coyoteTime = 0.0f;
+                    jumpBufferTime = 0.0f;
+                } else {
+                    jumpBufferTime = JUMP_BUFFER_MAX;
                 }
                 break;
             case GLFW_KEY_LEFT_SHIFT:
@@ -124,49 +162,108 @@ namespace Movement {
     }
 
     void updateJump(float deltaTime) {
+        // Coyote time y jump buffer
+        if (!isOnGround) coyoteTime -= deltaTime;
+        if (jumpBufferTime > 0.0f) jumpBufferTime -= deltaTime;
         if (moveState.isJumping) {
             moveState.verticalVelocity -= MovementConstants::GRAVITY * deltaTime;
             characterPosY += moveState.verticalVelocity * deltaTime;
-
             // Land if below ground level
             if (characterPosY <= MovementConstants::GROUND_LEVEL) {
                 characterPosY = MovementConstants::GROUND_LEVEL;
                 moveState.verticalVelocity = 0.0f;
                 moveState.isJumping = false;
+                isOnGround = true;
+                coyoteTime = COYOTE_TIME_MAX;
+            } else {
+                isOnGround = false;
             }
+        }
+        // Bunny hop automático si hay jump buffer al aterrizar
+        if (isOnGround && jumpBufferTime > 0.0f) {
+            moveState.isJumping = true;
+            moveState.verticalVelocity = MovementConstants::INITIAL_JUMP_VELOCITY;
+            isOnGround = false;
+            jumpBufferTime = 0.0f;
+            coyoteTime = 0.0f;
         }
     }
 
     void updateMovement(float deltaTime) {
         glm::vec3 moveDirection(0.0f);
-
         if (moveState.moveForward) moveDirection += cameraFront;
         if (moveState.moveBackward) moveDirection -= cameraFront;
-
         glm::vec3 right = glm::normalize(glm::cross(cameraFront, glm::vec3(0.0f, 1.0f, 0.0f)));
         if (moveState.moveRight) moveDirection += right;
         if (moveState.moveLeft) moveDirection -= right;
-
         if (glm::length(moveDirection) > 0.0f) {
             moveDirection = glm::normalize(moveDirection);
             moveDirection.y = 0.0f;
         }
-
         if (godMode && canFly) {
             if (moveState.moveUp) moveDirection.y = 1.0f;
             if (moveState.moveDown) moveDirection.y = -1.0f;
         }
-
         float speed = moveSpeed;
-        if (!godMode && moveState.isRunning) {
-            speed *= 2.0f; // Velocidad de carrera
-        }
+        if (!godMode && moveState.isRunning) speed *= 2.0f;
         speed *= deltaTime;
-
-        characterPosX += moveDirection.x * speed;
-        characterPosY += moveDirection.y * speed;
-        characterPosZ += moveDirection.z * speed;
-
+        // --- MOVIMIENTO EN EL AIRE TIPO QUAKE ---
+        if (!isOnGround) {
+            // Air strafe: proyección y aceleración
+            if (glm::length(moveDirection) > 0.0f) {
+                glm::vec3 wishdir = glm::normalize(moveDirection);
+                float wishspeed = MAX_AIR_SPEED;
+                float currentspeed = glm::dot(velocity, wishdir);
+                float addspeed = wishspeed - currentspeed;
+                if (addspeed > 0) {
+                    float accelspeed = std::min(addspeed, AIR_ACCEL * deltaTime);
+                    velocity += wishdir * accelspeed;
+                }
+            }
+            // Limita la velocidad horizontal máxima en el aire
+            glm::vec3 horizVel = velocity; horizVel.y = 0.0f;
+            float horizSpeed = glm::length(horizVel);
+            if (horizSpeed > MAX_AIR_SPEED) {
+                horizVel = glm::normalize(horizVel) * MAX_AIR_SPEED;
+                velocity.x = horizVel.x;
+                velocity.z = horizVel.z;
+            }
+            // Aplica la velocidad
+            characterPosX += velocity.x * deltaTime;
+            characterPosY += velocity.y * deltaTime;
+            characterPosZ += velocity.z * deltaTime;
+            // Fricción aérea mínima
+            velocity.x *= AIR_FRICTION;
+            velocity.z *= AIR_FRICTION;
+        } else {
+            // Movimiento en el suelo tipo Quake
+            if (glm::length(moveDirection) > 0.0f) {
+                glm::vec3 wishdir = glm::normalize(moveDirection);
+                float wishspeed = MAX_GROUND_SPEED;
+                float currentspeed = glm::dot(velocity, wishdir);
+                float addspeed = wishspeed - currentspeed;
+                if (addspeed > 0) {
+                    float accelspeed = std::min(addspeed, AIR_ACCEL * 2.0f * deltaTime); // Más aceleración en el suelo
+                    velocity += wishdir * accelspeed;
+                }
+            } else {
+                // Fricción en el suelo
+                velocity.x *= 0.8f;
+                velocity.z *= 0.8f;
+            }
+            // Limita la velocidad horizontal máxima en el suelo
+            glm::vec3 horizVel = velocity; horizVel.y = 0.0f;
+            float horizSpeed = glm::length(horizVel);
+            if (horizSpeed > MAX_GROUND_SPEED) {
+                horizVel = glm::normalize(horizVel) * MAX_GROUND_SPEED;
+                velocity.x = horizVel.x;
+                velocity.z = horizVel.z;
+            }
+            // Aplica la velocidad
+            characterPosX += velocity.x * deltaTime;
+            characterPosY += velocity.y * deltaTime;
+            characterPosZ += velocity.z * deltaTime;
+        }
         updateJump(deltaTime);
     }
 }

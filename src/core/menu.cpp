@@ -33,10 +33,9 @@ namespace Menu {
         std::cout << "\033[0m";
         std::cout << "┌──────────────────────────────────────────────────────────────┐\n";
         std::cout << "│  [1] 🎮 Iniciar Juego Principal                              │\n";
-        std::cout << "│  [2] 🎭 Show Psicodélico (Vista 2D Automática)              │\n";
-        std::cout << "│  [3] 🔧 Configurar Gráficos                                 │\n";
-        std::cout << "│  [4] 📊 Información del Sistema                             │\n";
-        std::cout << "│  [5] ❓ Ayuda                                               │\n";
+        std::cout << "│  [2] 🔧 Configurar Gráficos                                 │\n";
+        std::cout << "│  [3] 📊 Información del Sistema                             │\n";
+        std::cout << "│  [4] ❓ Ayuda                                               │\n";
         std::cout << "│  [0] 🚪 Salir                                               │\n";
         std::cout << "└──────────────────────────────────────────────────────────────┘\n";
         std::cout << "\n";
@@ -78,13 +77,6 @@ namespace Menu {
         std::cout << "│     SHIFT - Correr                                         │\n";
         std::cout << "│     G+SHIFT - Activar/Desactivar God Mode                  │\n";
         std::cout << "│     ESC - Salir del juego                                  │\n";
-        std::cout << "│                                                             │\n";
-        std::cout << "│  🎭 SHOW PSICODÉLICO:                                       │\n";
-        std::cout << "│     Experiencia automática en vista 2D                      │\n";
-        std::cout << "│     Objetos 3D en plano horizontal (X-Z)                    │\n";
-        std::cout << "│     ESC - Salir del show                                    │\n";
-        std::cout << "│     🎨 Progresión infinita automática                       │\n";
-        std::cout << "│     🌟 Randomización sutil para movimiento orgánico        │\n";
         std::cout << "│                                                             │\n";
         std::cout << "│  🔧 CONFIGURACIÓN:                                          │\n";
         std::cout << "│     Ejecuta 'source setup_graphics.sh' para optimizar      │\n";
@@ -143,27 +135,6 @@ namespace Menu {
         ::startGame();
     }
 
-    void startTrippyVisuals() {
-        std::cout << "\033[1;35m"; // Magenta color
-        std::cout << "🎭 INICIANDO SHOW PSICODÉLICO...\n";
-        std::cout << "\033[0m";
-        std::cout << "Preparando experiencia automática en vista 2D...\n";
-        
-        // Add loading animation
-        for (int i = 0; i < 3; i++) {
-            std::cout << ".";
-            std::cout.flush();
-            std::this_thread::sleep_for(std::chrono::milliseconds(500));
-        }
-        std::cout << "\n";
-        
-        // Clear screen before starting trippy visuals
-        clearScreen();
-        
-        // Start the trippy visuals
-        TrippyVisuals::runTrippyVisuals();
-    }
-
     void exitGame() {
         std::cout << "\033[1;31m"; // Red color
         std::cout << "🚪 Cerrando Game Engine...\n";
@@ -188,19 +159,16 @@ namespace Menu {
                     startGame();
                     break;
                 case 2:
-                    startTrippyVisuals();
-                    break;
-                case 3:
                     configureGraphics();
                     break;
-                case 4:
+                case 3:
                     printBanner();
                     printSystemInfo();
                     std::cout << "Presiona ENTER para continuar...";
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                     std::cin.get();
                     break;
-                case 5:
+                case 4:
                     printBanner();
                     printHelp();
                     std::cout << "Presiona ENTER para continuar...";

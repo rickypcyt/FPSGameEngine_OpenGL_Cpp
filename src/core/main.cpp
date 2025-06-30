@@ -138,8 +138,6 @@ void mainLoop() {
         
         drawCrosshair(WIDTH, HEIGHT);
         
-        drawUniversalCursor(window);
-        
         if (!EditorInput::isEditorMode) {
             Movement::updateMovement(deltaTime);
         }
@@ -196,9 +194,9 @@ void startGame() {
         initializeGLFW();
         initializeGLEW();
 
-        int argc = 0;
-        char** argv = nullptr;
-        initializeGLUT(argc, argv);
+        // int argc = 0;
+        // char** argv = nullptr;
+        // initializeGLUT(argc, argv); // Eliminado: glutInit solo se llama una vez en main()
 
         setupCallbacks();
         setupProjection();

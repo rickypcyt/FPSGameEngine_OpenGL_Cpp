@@ -21,6 +21,10 @@ namespace TrippyVisuals {
     void drawMorphingSpheres();
     void drawMorphingCubes();
     void drawPsychedelicTunnel();
+    // New fractal and space effects
+    void drawFractalTrip();
+    void drawStarfield();
+    void updateRandomizedParams();
 }
 
 #endif // TRIPPY_VISUALS_H 
